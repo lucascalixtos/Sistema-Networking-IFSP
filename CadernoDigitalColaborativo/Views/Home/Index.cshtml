@@ -1,0 +1,238 @@
+﻿@model Usuario
+@{
+    ViewData["Title"] = "Protótipo Baixa Fidelidade Caderno";
+    //string uploadimagem = Model.UploadPictureUrl == null ? "~/images/avatar3.png" : Model.UploadPictureUrl;
+}
+
+
+<!-- Page Container -->
+<div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">
+    <!-- The Grid -->
+    <div class="w3-row">
+
+
+        <!-- Left Column -->
+        <div class="w3-col m3">
+            <!-- Profile -->
+            <div class="w3-card w3-round w3-white">
+                <div class="w3-container">
+                    <h4 class="w3-center">@Model.Nome @Model.Sobrenome</h4>
+                    <p class="w3-center">
+                        <div class=" containerPerfil" id="triggerUploadClick">
+                            <img src="@(Model.ProfilePictureUrl == null ? "~/images/avatar2.png" : Model.ProfilePictureUrl)" class="w3-circle imagemPerfil" alt="Avatar" id="imagemPerfilAlterar">
+                            <div class="overlay">
+                                <a href="#" class="icon" title="User Profile">
+                                    <i class="fa fa-camera"></i>
+                                </a>
+                            </div>
+                            <input type="file" name="uploadFotoPerfil" class="d-none" accept="image/png, image/jpeg" id="campoUploadImagem" />
+                        </div>
+                    </p>
+                    <div class="formAlterarImagemUsuario d-none">
+                        <form method="post" id="formAlterarImagem">
+                            <input name="ProfilePictureUrl" id="campoInputNovaImagem" type="text" value="@Model.ProfilePictureUrl" />
+                        </form>
+                    </div>
+
+
+                    <hr>
+                    <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> Estudante de @Model.Curso</p>
+                    <p><i class="fa fa-envelope fa-fw w3-margin-right w3-text-theme"></i> @Model.Email</p>
+                    <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> @Model.DataNascimento.ToString("MM/dd/yyyy")</p>
+                </div>
+            </div>
+            <br>
+
+            <!-- Accordion -->
+            <div class="w3-card w3-round">
+                <div class="w3-white">
+                    <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> Meus Grupos</button>
+                    <div id="Demo1" class="w3-hide w3-container">
+                        <p>Some text..</p>
+                    </div>
+                    <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i> Minhas entrevistas</button>
+                    <div id="Demo2" class="w3-hide w3-container">
+                        <p>Some other text..</p>
+                    </div>
+                    <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i> Minhas fotos</button>
+                    <div id="Demo3" class="w3-hide w3-container">
+                        <div class="w3-row-padding">
+                            <br>
+                            <div class="w3-half">
+                                <img src="~/images/lights.jpg" style="width:100%" class="w3-margin-bottom">
+                            </div>
+                            <div class="w3-half">
+                                <img src="~/images/nature.jpg" style="width:100%" class="w3-margin-bottom">
+                            </div>
+                            <div class="w3-half">
+                                <img src="~/images/mountains.jpg" style="width:100%" class="w3-margin-bottom">
+                            </div>
+                            <div class="w3-half">
+                                <img src="~/images/forest.jpg" style="width:100%" class="w3-margin-bottom">
+                            </div>
+                            <div class="w3-half">
+                                <img src="~/images/nature.jpg" style="width:100%" class="w3-margin-bottom">
+                            </div>
+                            <div class="w3-half">
+                                <img src="~/images/snow.jpg" style="width:100%" class="w3-margin-bottom">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <!-- Interests -->
+            <div class="w3-card w3-round w3-white w3-hide-small">
+                <div class="w3-container">
+                    <p>Conhecimentos</p>
+                    <p>
+                        <span class="w3-tag w3-small w3-theme-d5">HTML</span>
+                        <span class="w3-tag w3-small w3-theme-d4">CSS</span>
+                        <span class="w3-tag w3-small w3-theme-d4">PHP</span>
+                        <span class="w3-tag w3-small w3-theme-d4">MySql</span>
+                    </p>
+                </div>
+            </div>
+            <br>
+
+            <!-- Alert Box -->
+            <div class="w3-container w3-display-container w3-round w3-theme-l4 w3-border w3-theme-border w3-margin-bottom w3-hide-small">
+                <span onclick="this.parentElement.style.display='none'" class="w3-button w3-theme-l3 w3-display-topright">
+                    <i class="fa fa-remove"></i>
+                </span>
+                <p><strong>Hey!</strong></p>
+                <p>Você têm uma convocação para entrevista pendente.</p>
+            </div>
+
+            <!-- End Left Column -->
+        </div>
+
+        <!-- Middle Column -->
+        <div class="w3-col m7">
+
+            <div class="w3-row-padding">
+                <div class="w3-col m12">
+                    <div class="w3-card w3-round w3-white">
+                        <div class="w3-container w3-padding">
+                            <h6 class="w3-opacity">Publique</h6>
+                            <form method="post" id="formNewPostagem">
+                                <textarea name="TextoPost" id="TextoFormulario" class="w3-border w3-padding w-100"></textarea>
+                                <input type="hidden" name="Imagem" id="ImagemPost" />
+
+                                <div class="file-upload">
+                                    <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Adicionar imagem</button>
+
+                                    <div class="image-upload-wrap">
+                                        <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/png, image/jpeg" />
+                                        <div class="drag-text">
+                                            <h3>Arraste sua imagem até aqui para adiciona-la</h3>
+                                        </div>
+                                    </div>
+                                    <div class="file-upload-content">
+                                        <img class="file-upload-image w-100" src="#" alt="your image" />
+                                    </div>
+                                </div>
+
+                            <br />
+                            <button type="submit" class="w3-button w3-theme"><i class="fa fa-pencil"></i> &nbsp;Publicar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--chamar View component aqui-->
+            @await Component.InvokeAsync("Post") 
+
+
+            <!-- End Middle Column -->
+        </div>
+
+        <!-- Right Column -->
+        <div class="w3-col m2">
+            <div class="w3-card w3-round w3-white w3-center">
+                <div class="w3-container">
+                    <p>Proximas entrevista:</p>
+                    <img src="~/images/forest.jpg" alt="Forest" style="width:100%;">
+                    <p><strong>Amazonia Digital</strong></p>
+                    <p>Sexta, 22 de abril ás 15:00</p>
+                    <p><button class="w3-button w3-block w3-theme-l4">Mais detalhes</button></p>
+                </div>
+            </div>
+            <br>
+
+            <div class="w3-card w3-round w3-white w3-center">
+                <div class="w3-container">
+                    <p>Solicitação de amizade</p>
+                    <img src="~/images/avatar6.png" alt="Avatar" style="width:50%"><br>
+                    <span>Thiago Gamer</span>
+                    <div class="w3-row w3-opacity">
+                        <div class="w3-half">
+                            <button class="w3-button w3-block w3-green w3-section" title="Accept"><i class="fa fa-check"></i></button>
+                        </div>
+                        <div class="w3-half">
+                            <button class="w3-button w3-block w3-red w3-section" title="Decline"><i class="fa fa-remove"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <div class="w3-card w3-round w3-white w3-padding-16 w3-center">
+                <p>ADS</p>
+            </div>
+            <br>
+
+            <div class="w3-card w3-round w3-white w3-padding-32 w3-center">
+                <p><i class="fa fa-bug w3-xxlarge"></i></p>
+            </div>
+
+            <!-- End Right Column -->
+        </div>
+
+        <!-- End Grid -->
+    </div>
+
+    <!-- End Page Container -->
+</div>
+<br>
+
+<!-- Footer -->
+<footer class="w3-container w3-theme-d3 w3-padding-16">
+    <h5>Rodapé</h5>
+</footer>
+
+<footer class="w3-container w3-theme-d5">
+    <p> Estudantes IFSP - Guarulhos </p>
+</footer>
+
+<script>
+    // Accordion
+    function myFunction(id) {
+        var x = document.getElementById(id);
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+            x.previousElementSibling.className += " w3-theme-d1";
+        } else {
+            x.className = x.className.replace("w3-show", "");
+            x.previousElementSibling.className =
+                x.previousElementSibling.className.replace(" w3-theme-d1", "");
+        }
+    }
+
+    // Used to toggle the menu on smaller screens when clicking on the menu button
+    function openNav() {
+        var x = document.getElementById("navDemo");
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
+        }
+    }
+</script>
+
+
+@section Scripts{
+    <script src="~/js/uploadImagem.js"></script>
+}

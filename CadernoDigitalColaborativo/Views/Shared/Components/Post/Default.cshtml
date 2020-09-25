@@ -1,0 +1,26 @@
+﻿@model IEnumerable<CadernoDigitalColaborativo.Models.PostModel> 
+
+@{
+    ViewData["Title"] = "View";
+}
+
+
+@foreach (var item in Model.Reverse())
+{
+    <div class="w3-container w3-card w3-white w3-round w3-margin">
+        <br>
+        <img src="@(item.FotoUsuario  == null ? "~/images/avatar2.png" : item.FotoUsuario)" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px" />
+        <span class="w3-right w3-opacity">@item.PostTime.ToString("dd/MM/yyyy HH:mm")</span>
+        <h4>@item.NomeUsuario</h4><br>
+        <hr class="w3-clear">
+        <p>@item.TextoPost</p>
+        <div class="w3-row-padding" style="margin:0 -16px">
+            <div class="w3-half">
+                <img src="@item.Imagem" style="width:100%" alt="Post Image" class="w3-margin-bottom">
+            </div>
+        </div>
+
+        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom" onclick="$('.file-upload-input').trigger( 'click' )"> Curtir </button>
+        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i> &nbsp;Comentar</button>
+    </div>
+}

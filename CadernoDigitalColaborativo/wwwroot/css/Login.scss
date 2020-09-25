@@ -1,0 +1,77 @@
+﻿$primary: #0094ff;
+$light: #fafafa;
+
+.login {
+    background-color: rgba($primary, 0.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    &::after {
+        content: "";
+        opacity: 0.8;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: -1;
+        background-image: url("../images/login.jpg");
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-size: cover;
+    }
+
+    .cardLogin {
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        position: absolute;
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        background-color: rgba($light, 0.9);
+        width: 90%;
+        max-height: 80%;
+        height: fit-content;
+        max-width: 500px;
+        overflow: auto;
+        border-radius: 10px;
+    }
+
+    .link-cadastro {
+        font-size: 14px;
+    }
+
+    .formLogin {
+        padding: 20px 20px 40px 20px;
+    }
+
+    .row {
+        display: flex;
+    }
+
+    .colLabel {
+        margin-top: auto;
+        margin-bottom: auto;
+
+        .control-label {
+            margin-bottom: 0px;
+        }
+    }
+
+    .btnCadastrar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+
+}
+hr, footer {
+    display: none;
+}

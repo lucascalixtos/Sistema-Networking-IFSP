@@ -1,0 +1,273 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using CadernoDigitalColaborativo.Data;
+using CadernoDigitalColaborativo.Models;
+
+namespace CadernoDigitalColaborativo.Controllers
+{
+    public class UsuariosController : Controller
+    {
+        private readonly CadernoDigitalColaborativoContext _context;
+
+        public int IdSessao;
+
+        public UsuariosController(CadernoDigitalColaborativoContext context)
+        {
+            _context = context;
+        }
+
+        // GET: Usuarios
+        public async Task<IActionResult> Index()
+        {
+            return View(await _context.Usuario.ToListAsync());
+        }
+
+        // GET: Usuarios/Details/5
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var usuario = await _context.Usuario
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (usuario == null)
+            {
+                return NotFound();
+            }
+
+            return View(usuario);
+        }
+
+        // GET: Usuarios/Create
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: Usuarios/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("Id,Nome,Sobrenome,Email,DataNascimento,Curso,CursoId,AnoIngresso,Semestre,Senha,Situacao,ProfilePictureUrl")] Usuario usuario)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(usuario);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Login");
+            }
+            return View(usuario);
+        }
+
+        // GET: Usuarios/Edit/5
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var usuario = await _context.Usuario.FindAsync(id);
+            if (usuario == null)
+            {
+                return NotFound();
+            }
+            return View(usuario);
+        }
+
+        // POST: Usuarios/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, Usuario model)
+        {
+            if (id != model.Id)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+
+                    //Busca o usuário no contexto
+                    var usuario = await _context.Usuario.FindAsync(id);
+
+                    //Prepara os dados a serem atualizados no banco
+                    usuario.Nome = model.Nome;
+                    usuario.Sobrenome = model.Sobrenome;
+                    usuario.Curso = model.Curso;
+                    usuario.Email = model.Email;
+                    usuario.DataNascimento = model.DataNascimento;
+
+                    _context.Update(usuario);
+
+                    //Salva a alteração
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!UsuarioExists(model.Id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction("Perfil");
+            }
+            return View(model);
+        }
+
+        // GET: Usuarios/Delete/5
+        public async Task<IActionResult> Delete(int? id)
+        {
+
+            //Verifica se o id digitado é valido
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            //Busca o usuário a ser deletado
+            var usuario = await _context.Usuario
+                .FirstOrDefaultAsync(m => m.Id == id);
+
+
+            //Verifica se o usuário existe
+            if (usuario == null)
+            {
+                return NotFound();
+            }
+
+            //Retorna o usuário para a view
+            return View(usuario);
+        }
+
+        // POST: Usuarios/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var usuario = await _context.Usuario.FindAsync(id);
+            _context.Usuario.Remove(usuario);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        private bool UsuarioExists(int id)
+        {
+            return _context.Usuario.Any(e => e.Id == id);
+        }
+
+        [Route("/Cadastro")]
+        public IActionResult Cadastro()
+        {
+            return View();
+        }
+
+
+        [Route("/Login")]
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [Route("/Login")]
+        public IActionResult Login(string Email, string Senha) {
+
+            try {
+                var contaAtiva = _context.Usuario.Where(l => (l.Email == Email) && (l.Senha == Senha)).Select(l => l.Situacao).First();
+
+                System.Diagnostics.Debug.WriteLine("Conta ativa: " + contaAtiva.ToString());
+
+                if (contaAtiva.ToString().Equals("Ativo")) {
+                    var id = _context.Usuario.Where(l => (l.Email == Email) && (l.Senha == Senha)).Select(l => l.Id).First();
+                    System.Diagnostics.Debug.WriteLine("Conta ativa: Entrou no if");
+                    HttpContext.Session.SetInt32("id", id);
+                    HttpContext.Session.GetInt32("id");
+                    System.Diagnostics.Debug.WriteLine("Teste: " + HttpContext.Session.GetInt32("id").ToString());
+                    return Redirect(Url.Action("Index", "Home"));
+                } else {
+                    ViewBag.error = "Invalid Account";
+                    return View("Login");
+                }
+            } catch (Exception) {
+
+                return View("Login");
+            }
+        }
+
+        [Route("/Logout")]
+        [HttpGet]
+        public IActionResult Logout() {
+            HttpContext.Session.Remove("id");
+            return RedirectToAction("Login");
+        }
+
+        [HttpPost]
+        public async Task<bool> AlterarImagemPerfil(string ProfilePictureUrl)
+        {
+            try
+            {
+
+                Usuario usuario = _context.Usuario.First(x => x.Id == HttpContext.Session.GetInt32("id"));
+                usuario.ProfilePictureUrl = ProfilePictureUrl;
+                int sucesso = await _context.SaveChangesAsync();
+
+                return sucesso == 0 ? false:true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        [HttpPost]
+        public async Task<bool> UploadImagem(string UploadPictureUrl)
+        {
+            try
+            {
+
+                //Usuario usuario = _context.Usuario.First(x => x.Id == HttpContext.Session.GetInt32("id"));
+                //usuario.UploadPictureUrl = UploadPictureUrl;
+                //int sucesso = await _context.SaveChangesAsync();
+
+                //return sucesso == 0 ? false : true;
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        [Route("/Perfil")]
+        public  IActionResult Perfil()
+        {
+           if (HttpContext.Session.GetInt32("id") != null) {
+                Usuario usuario = _context.Usuario.First(x => x.Id == HttpContext.Session.GetInt32("id"));
+                return View(usuario);
+            } else {
+                return RedirectToAction("Login");
+            }
+            
+        }
+
+        
+    }
+}
