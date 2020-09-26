@@ -1,10 +1,11 @@
-﻿@model PlataformaNetworking.Models.Usuario
+﻿
 @{
-    ViewData["Title"] = "Protótipo Baixa Fidelidade Caderno";
-    //string uploadimagem = Model.UploadPictureUrl == null ? "~/images/avatar3.png" : Model.UploadPictureUrl;
+    ViewData["Title"] = "Vagas";
 }
 
+<h2>Vagas</h2>
 
+@model PlataformaNetworking.Models.Usuario
 <!-- Page Container -->
 <div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">
     <!-- The Grid -->
@@ -111,35 +112,17 @@
         <!-- Middle Column -->
         <div class="w3-col m7">
 
-            <div class="w3-row-padding">
-                <div class="w3-col m12">
-                    <div class="w3-card w3-round w3-white">
-                        <div class="w3-container w3-padding">
-                            <h6 class="w3-opacity">Publique</h6>
-                            <form method="post" id="formNewPostagem">
-                                <textarea name="TextoPost" id="TextoFormulario" class="w3-border w3-padding w-100"></textarea>
-                                <input type="hidden" name="Imagem" id="ImagemPost" />
+            <div class="w3-row-padding
 
-                                <div class="file-upload">
-                                    <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Adicionar imagem</button>
+                @{
+                    
+                    if (Model.GetType().ToString() == "PlataformaNetworking.Models.Empresa") {
+                        @await Component.InvokeAsync("PublicacaoVaga")
+                    }
+                }
 
-                                    <div class="image-upload-wrap">
-                                        <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/png, image/jpeg" />
-                                        <div class="drag-text">
-                                            <h3>Arraste sua imagem até aqui para adiciona-la</h3>
-                                        </div>
-                                    </div>
-                                    <div class="file-upload-content">
-                                        <img class="file-upload-image w-100" src="#" alt="your image" />
-                                    </div>
-                                </div>
 
-                            <br />
-                            <button type="submit" class="w3-button w3-theme"><i class="fa fa-pencil"></i> &nbsp;Publicar</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+
             </div>
 
             <!--chamar View component aqui-->
@@ -236,3 +219,4 @@
 @section Scripts{
     <script src="~/js/uploadImagem.js"></script>
 }
+

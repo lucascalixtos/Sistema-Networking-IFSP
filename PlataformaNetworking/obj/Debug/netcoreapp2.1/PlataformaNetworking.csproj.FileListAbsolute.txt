@@ -93,3 +93,10 @@ C:\Users\lucas\Desktop\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\ne
 C:\Users\lucas\Desktop\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Aluno\Details.cshtml.g.cs
 C:\Users\lucas\Desktop\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Aluno\Edit.cshtml.g.cs
 C:\Users\lucas\Desktop\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Aluno\Index.cshtml.g.cs
+C:\Users\lucas\Desktop\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Empresa\Create.cshtml.g.cs
+C:\Users\lucas\Desktop\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Empresa\Delete.cshtml.g.cs
+C:\Users\lucas\Desktop\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Empresa\Details.cshtml.g.cs
+C:\Users\lucas\Desktop\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Empresa\Edit.cshtml.g.cs
+C:\Users\lucas\Desktop\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Empresa\Index.cshtml.g.cs
+C:\Users\lucas\Desktop\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Home\Vagas.cshtml.g.cs
+C:\Users\lucas\Desktop\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Components\PublicacaoVaga\Default.cshtml.g.cs

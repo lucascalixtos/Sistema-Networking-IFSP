@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PlataformaNetworking.Data;
 
 namespace PlataformaNetworking.Migrations
 {
     [DbContext(typeof(PlataformaNetworkingContext))]
-    partial class CadernoDigitalColaborativoContextModelSnapshot : ModelSnapshot
+    [Migration("20200926011735_empresa")]
+    partial class empresa
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -157,23 +159,6 @@ namespace PlataformaNetworking.Migrations
                     b.HasDiscriminator<string>("Discriminator").HasValue("Usuario");
                 });
 
-            modelBuilder.Entity("PlataformaNetworking.Models.Vaga", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Conteudo");
-
-                    b.Property<DateTime>("DataPostagem");
-
-                    b.Property<string>("Titulo");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Vaga");
-                });
-
             modelBuilder.Entity("PlataformaNetworking.Models.Aluno", b =>
                 {
                     b.HasBaseType("PlataformaNetworking.Models.Usuario");
@@ -185,10 +170,6 @@ namespace PlataformaNetworking.Migrations
                     b.Property<string>("Curso");
 
                     b.Property<string>("Habilidades");
-
-                    b.Property<int?>("VagaId");
-
-                    b.HasIndex("VagaId");
 
                     b.ToTable("Aluno");
 
@@ -256,13 +237,6 @@ namespace PlataformaNetworking.Migrations
                     b.HasOne("PlataformaNetworking.Models.Usuario", "UsuarioPost")
                         .WithMany()
                         .HasForeignKey("UsuarioPostId");
-                });
-
-            modelBuilder.Entity("PlataformaNetworking.Models.Aluno", b =>
-                {
-                    b.HasOne("PlataformaNetworking.Models.Vaga")
-                        .WithMany("Candidatos")
-                        .HasForeignKey("VagaId");
                 });
 #pragma warning restore 612, 618
         }

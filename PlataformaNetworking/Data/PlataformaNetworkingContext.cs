@@ -16,5 +16,7 @@ namespace PlataformaNetworking.Data
         public DbSet<LikeModel> Like { get; set; }
         public DbSet<DislikeModel> Dislike { get; set; }
         public DbSet<CommentModel> Comment { get; set; }
+        public DbSet<Vaga> Vaga { get; set; }
+        public DbSet<PlataformaNetworking.Models.Empresa> Empresa { get; set; }
     }
 }
