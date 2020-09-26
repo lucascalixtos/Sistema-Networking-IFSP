@@ -1,0 +1,33 @@
+﻿@model PlataformaNetworking.Models.Usuario
+@{
+    ViewData["Title"] = "Login";
+    Layout = "_LoginLayout";
+}
+    <link rel="stylesheet" href="~/css/Login.css">
+
+<div class="login">
+    <div class="cardLogin">
+        <form class="formLogin" method="post" asp-action="Login">
+            <div class="form-group row">
+                <div class="col-sm-4 colLabel">
+                    <label asp-for="Email" class="control-label"></label>
+                </div>
+                <div class="col-sm-8">
+                    <input asp-for="Email" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-4 colLabel">
+                    <label asp-for="Senha" class="control-label"></label>
+                </div>
+                <div class="col-sm-8">
+                    <input asp-for="Senha" type="password" class="form-control" />
+                </div>
+            </div>
+                <a asp-action="Cadastro">Não é cadastrado? se cadastre agora mesmo</a>
+            <div class="form-group">
+                <input type="submit" value="Login" class="w3-button w3-black w3-hover-blue btnCadastrar" />
+            </div>
+        </form>
+    </div>
+</div>
