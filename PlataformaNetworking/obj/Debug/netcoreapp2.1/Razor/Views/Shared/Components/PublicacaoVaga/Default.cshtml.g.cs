@@ -55,7 +55,7 @@ namespace AspNetCore
             WriteLiteral("\r\n<div class=\"w3-col m12\">\r\n    <div class=\"w3-card w3-round w3-white\">\r\n        <div class=\"w3-container w3-padding\">\r\n            <h6 class=\"w3-opacity\">Publique</h6>\r\n            ");
             EndContext();
             BeginContext(281, 572, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0cb777850678482caa84379820619b2f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d398ac27060640458003ba62eff9f58d", async() => {
                 BeginContext(322, 524, true);
                 WriteLiteral(@"
                 <input type=""text"" name=""TituloVaga"" placeholder=""Titulo"" id=""TituloVagaFormulario"" class=""w3-border w3-padding w-100"" />

@@ -1,0 +1,19 @@
+﻿@model IEnumerable<PlataformaNetworking.Models.Vaga>
+
+@{
+    ViewData["Title"] = "View";
+}
+
+
+@foreach (var item in Model.Reverse()) {
+    <div class="w3-container w3-card w3-white w3-round w3-margin">
+        <br />
+        <span class="w3-right w3-opacity">@item.DataPostagem.ToString("dd/MM/yyyy HH:mm")</span>
+        <h4>@item.Titulo</h4><br>
+        <hr class="w3-clear">
+        <p>@item.Conteudo</p>
+
+        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom" > Candidatar </button>
+        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i> &nbsp;Comentar</button>
+    </div>
+}
