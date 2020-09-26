@@ -9,7 +9,7 @@ using PlataformaNetworking.Data;
 
 namespace PlataformaNetworking.Migrations
 {
-    [DbContext(typeof(CadernoDigitalColaborativoContext))]
+    [DbContext(typeof(PlataformaNetworkingContext))]
     [Migration("20200917223521_Usuario")]
     partial class Usuario
     {

@@ -31,8 +31,8 @@ namespace PlataformaNetworking
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            services.AddDbContext<CadernoDigitalColaborativoContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("CadernoDigitalColaborativoContext")));
+            services.AddDbContext<PlataformaNetworkingContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("PlataformaNetworkingContext")));
             services.AddSession();
         }
 

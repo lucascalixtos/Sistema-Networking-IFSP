@@ -9,9 +9,9 @@ namespace PlataformaNetworking.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly CadernoDigitalColaborativoContext _context;
+        private readonly PlataformaNetworkingContext _context;
 
-        public HomeController(CadernoDigitalColaborativoContext context)
+        public HomeController(PlataformaNetworkingContext context)
         {
             _context = context;
         }

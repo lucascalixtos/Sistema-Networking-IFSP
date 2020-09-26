@@ -8,9 +8,9 @@ namespace PlataformaNetworking.ViewComponents
 
     public class PostViewComponent : ViewComponent
     {
-        private readonly CadernoDigitalColaborativoContext _context;
+        private readonly PlataformaNetworkingContext _context;
 
-        public PostViewComponent(CadernoDigitalColaborativoContext context)
+        public PostViewComponent(PlataformaNetworkingContext context)
         {
             _context = context;
         }

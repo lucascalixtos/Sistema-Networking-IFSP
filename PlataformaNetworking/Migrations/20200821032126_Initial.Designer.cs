@@ -9,7 +9,7 @@ using PlataformaNetworking.Data;
 
 namespace PlataformaNetworking.Migrations
 {
-    [DbContext(typeof(CadernoDigitalColaborativoContext))]
+    [DbContext(typeof(PlataformaNetworkingContext))]
     [Migration("20200821032126_Initial")]
     partial class Initial
     {

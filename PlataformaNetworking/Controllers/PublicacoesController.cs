@@ -10,10 +10,10 @@ namespace PlataformaNetworking.Controllers
 {
     public class PublicacoesController : Controller
     {
-        private readonly CadernoDigitalColaborativoContext _context;
+        private readonly PlataformaNetworkingContext _context;
 
 
-        public PublicacoesController(CadernoDigitalColaborativoContext context)
+        public PublicacoesController(PlataformaNetworkingContext context)
         {
             _context = context;
         }

@@ -11,11 +11,11 @@ namespace PlataformaNetworking.Controllers
 {
     public class UsuariosController : Controller
     {
-        private readonly CadernoDigitalColaborativoContext _context;
+        private readonly PlataformaNetworkingContext _context;
 
         public int IdSessao;
 
-        public UsuariosController(CadernoDigitalColaborativoContext context)
+        public UsuariosController(PlataformaNetworkingContext context)
         {
             _context = context;
         }
@@ -105,7 +105,7 @@ namespace PlataformaNetworking.Controllers
                     //Prepara os dados a serem atualizados no banco
                     usuario.Nome = model.Nome;
                     usuario.Sobrenome = model.Sobrenome;
-                    usuario.Curso = model.Curso;
+                    //usuario.Curso = model.Curso;
                     usuario.Email = model.Email;
                     usuario.DataNascimento = model.DataNascimento;
 

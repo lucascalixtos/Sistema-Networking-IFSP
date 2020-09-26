@@ -14,10 +14,6 @@ namespace PlataformaNetworking.Models
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         [DataType(DataType.Date)]
         public DateTime DataNascimento { get; set; }
-        public string Curso { get; set; }
-        public int CursoId { get; set; }
-        public int AnoIngresso { get; set; }
-        public int Semestre { get; set; }
         public string Senha { get; set; }
         public Situacao Situacao { get; set; }
 
@@ -27,16 +23,13 @@ namespace PlataformaNetworking.Models
         {
         }
 
-        public Usuario(int id, string nome, string sobrenome, string email, DateTime dataNascimento, string curso, int cursoId, int anoIngresso, int semestre, string senha, Situacao situacao)
+        public Usuario(int id, string nome, string sobrenome, string email, DateTime dataNascimento, string senha, Situacao situacao)
         {
             Id = id;
             Nome = nome;
             Sobrenome = sobrenome;
             Email = email;
             DataNascimento = dataNascimento;
-            Curso = curso;
-            AnoIngresso = anoIngresso;
-            Semestre = semestre;
             Senha = senha;
             Situacao = situacao;
         }
