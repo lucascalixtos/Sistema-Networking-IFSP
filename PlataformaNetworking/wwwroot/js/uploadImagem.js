@@ -98,6 +98,19 @@ $('body').on('submit', '#formNewPostagem', function (evt) {
     });
 });
 
+$('body').on('submit', '#formNewVaga', function (evt) {
+    evt.preventDefault();
+    //throw new error("Passou aqui");
+    $.ajax({
+        url: '/Vaga/NovaVaga',
+        type: 'post',
+        data: $('#formNewVaga').serialize(),
+        success: function () {
+            document.location.reload();
+        }
+    });
+});
+
 $('body').on('click', '#triggerUploadClick', function (){
     document.getElementById("campoUploadImagem").click();
 });

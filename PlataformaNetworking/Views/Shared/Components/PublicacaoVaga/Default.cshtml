@@ -4,15 +4,17 @@
     ViewData["Title"] = "Default";
 }
 
+@section Scripts{
+    <script src="~/js/uploadImagem.js"></script>
+}
+
 <div class="w3-col m12">
     <div class="w3-card w3-round w3-white">
         <div class="w3-container w3-padding">
             <h6 class="w3-opacity">Publique</h6>
-            <form method="post" id="formNewPostagem">
-                <input type="text" name="TituloVaga" placeholder="Titulo" id="TituloVagaFormulario" class="w3-border w3-padding w-100" />
-                <textarea name="ConteudoVaga" placeholder="Conteudo da Vaga" id="ConteudoVagaFormulario" class="w3-border w3-padding w-100"></textarea>
-                <input type="hidden" name="Imagem" id="ImagemPost" />
-
+            <form method="post" id="formNewVaga">
+                <input type="text" name="Titulo" placeholder="Titulo" id="TituloVagaFormulario" class="w3-border w3-padding w-100" />
+                <textarea name="Conteudo" placeholder="Conteudo da Vaga" id="ConteudoVagaFormulario" class="w3-border w3-padding w-100"></textarea>
 
                 <br />
                 <button type="submit" class="w3-button w3-theme"><i class="fa fa-pencil"></i> &nbsp;Publicar</button>
@@ -20,3 +22,4 @@
         </div>
     </div>
 </div>
+

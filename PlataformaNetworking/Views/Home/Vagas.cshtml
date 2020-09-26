@@ -3,8 +3,6 @@
     ViewData["Title"] = "Vagas";
 }
 
-<h2>Vagas</h2>
-
 @model PlataformaNetworking.Models.Usuario
 <!-- Page Container -->
 <div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">
@@ -126,7 +124,7 @@
             </div>
 
             <!--chamar View component aqui-->
-            @await Component.InvokeAsync("Post")
+            @await Component.InvokeAsync("ConteudoVaga")
 
 
             <!-- End Middle Column -->

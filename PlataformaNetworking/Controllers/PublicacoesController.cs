@@ -22,6 +22,8 @@ namespace PlataformaNetworking.Controllers
         [HttpPost]
         public async Task<bool> NovaPublicacao([Bind("Imagem,TextoPost")]  PostModel publicacao)
         {
+
+            
             try
             {
                 if (string.IsNullOrEmpty(publicacao.TextoPost) && string.IsNullOrEmpty(publicacao.Imagem))

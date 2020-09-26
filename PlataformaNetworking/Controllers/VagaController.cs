@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PlataformaNetworking.Data;
 using PlataformaNetworking.Models;
 
-namespace PlataformaNetworking.Controllers
-{
-    public class VagaController : Controller
-    {
- 
+namespace PlataformaNetworking.Controllers {
+    public class VagaController : Controller {
+
 
         private readonly PlataformaNetworkingContext _context;
 
@@ -21,20 +20,21 @@ namespace PlataformaNetworking.Controllers
 
 
         [HttpPost]
-        public async Task<bool> NovaPublicacao([Bind("Imagem,TextoPost")]  Vaga publicacao) {
-           /* try {
-                if (string.IsNullOrEmpty(publicacao.TextoPost) && string.IsNullOrEmpty(publicacao.Imagem))
+        public async Task<bool> NovaVaga([Bind("Titulo,Conteudo")]  Vaga PublicacaoVaga) {
+
+            System.Diagnostics.Debug.WriteLine("Chegou aqui");
+            try {
+                if (string.IsNullOrEmpty(PublicacaoVaga.Titulo) && string.IsNullOrEmpty(PublicacaoVaga.Conteudo))
                     return false;
 
                 //Busca o usuário logado 
                 Usuario usuario = _context.Usuario.First(x => x.Id == HttpContext.Session.GetInt32("id"));
 
-                publicacao.PostTime = DateTime.Now;
-                publicacao.IdUsuario = usuario.Id;
-                publicacao.NomeUsuario = usuario.Nome + " " + usuario.Sobrenome;
-                publicacao.FotoUsuario = usuario.ProfilePictureUrl;
+                PublicacaoVaga.DataPostagem = DateTime.Now;
+                PublicacaoVaga.IdUsuario = usuario.Id;
+          
 
-                _context.Add(publicacao);
+                _context.Add(PublicacaoVaga);
 
                 //Salva os dados no banco
                 int sucesso = await _context.SaveChangesAsync();
@@ -43,6 +43,8 @@ namespace PlataformaNetworking.Controllers
             } catch (Exception) {
                 return false;
             }
-        }*/
+        }
+         
+        
     }
 }
