@@ -173,3 +173,6 @@ C:\Users\thiag\Desktop\FACULDADE\Caderno-Digital-Colaborativo\Caderno-Digital-Co
 C:\Users\thiag\Desktop\FACULDADE\Caderno-Digital-Colaborativo\Caderno-Digital-Colaborativo\Caderno-Digital-Colaborativo\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Home\Vagas.cshtml.g.cs
 C:\Users\thiag\Desktop\FACULDADE\Caderno-Digital-Colaborativo\Caderno-Digital-Colaborativo\Caderno-Digital-Colaborativo\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Components\ConteudoVaga\Default.cshtml.g.cs
 C:\Users\thiag\Desktop\FACULDADE\Caderno-Digital-Colaborativo\Caderno-Digital-Colaborativo\Caderno-Digital-Colaborativo\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Components\PublicacaoVaga\Default.cshtml.g.cs
+C:\Users\lucas\Desktop\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index - Cópia.cshtml.g.cs
+C:\Users\lucas\Desktop\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Home\Vagas - Cópia.cshtml.g.cs
+C:\Users\lucas\Desktop\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Components\PedidoAmizade\Default.cshtml.g.cs
