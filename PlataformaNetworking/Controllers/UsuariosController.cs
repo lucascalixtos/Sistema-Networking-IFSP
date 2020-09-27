@@ -266,6 +266,27 @@ namespace PlataformaNetworking.Controllers
             
         }
 
-        
+        [HttpPost]
+        public async Task<bool> NovaHabilidade([Bind("NomeHabilidade")]  Habilidade habilidade) {
+            try {
+                if (string.IsNullOrEmpty(habilidade.NomeHabilidade))
+                    return false;
+
+                //Busca o usuário logado 
+                Usuario usuario = _context.Usuario.First(x => x.Id == HttpContext.Session.GetInt32("id"));
+
+                habilidade.IdAluno = usuario.Id;
+
+                _context.Add(habilidade);
+
+                int sucesso = await _context.SaveChangesAsync();
+
+                return sucesso == 0 ? false : true;
+            } catch (Exception) {
+                return false;
+            }
+        }
+
+
     }
 }

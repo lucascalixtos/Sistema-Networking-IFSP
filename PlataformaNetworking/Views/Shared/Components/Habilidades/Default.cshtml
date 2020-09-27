@@ -1,0 +1,26 @@
+﻿@model List<PlataformaNetworking.Models.Habilidade>
+
+@{
+    ViewData["Title"] = "Default";
+}
+
+                       
+<li class="list-group-item">
+    <div class="h6 text-muted">Conhecimentos</div>
+    <div>
+        @foreach(var item in Model) {
+            <span class="badge badge-primary">@item.NomeHabilidade</span>
+        }
+        <a href="#"><span class="badge badge-primary" id="adicionarHabilidade">+</span></a>
+        <div class="row mt-2">
+            <form method="post" id="formNewHabilidade" style="display:none">
+                <div class="col-md-5">
+                    <input type="text" class="form-control" name="NomeHabilidade" id="NomeHabilidade" />
+                </div>
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-primary">Adicionar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</li>

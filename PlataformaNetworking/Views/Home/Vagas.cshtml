@@ -49,18 +49,12 @@
 
 
                     </li>
-                    <li class="list-group-item">
-                        <div class="h6 text-muted">Conhecimentos</div>
-                        <div>
-                            <span class="badge badge-primary">JavaScript</span>
-                            <span class="badge badge-primary">Android</span>
-                            <span class="badge badge-primary">PHP</span>
-                            <span class="badge badge-primary">Node.js</span>
-                            <span class="badge badge-primary">Ruby</span>
-                            <span class="badge badge-primary">Paython</span>
-                            <span class="badge badge-primary">+</span>
-                        </div>
-                    </li>
+                    @{
+                        if (Model.GetType().Name == "Aluno") {
+                            @await Component.InvokeAsync("Habilidades");
+                        }
+
+                    }
 
                 </ul>
             </div>

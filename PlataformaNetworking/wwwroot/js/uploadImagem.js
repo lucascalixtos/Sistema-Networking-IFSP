@@ -98,6 +98,20 @@ $('body').on('submit', '#formNewPostagem', function (evt) {
     });
 });
 
+
+$('body').on('submit', '#formNewHabilidade', function (evt) {
+    evt.preventDefault();
+    $.ajax({
+        url: '/Usuarios/NovaHabilidade',
+        type: 'post',
+        data: $('#formNewHabilidade').serialize(),
+        success: function () {
+            document.location.reload();
+        }
+    });
+});
+
+
 $('body').on('submit', '#formNewVaga', function (evt) {
     evt.preventDefault();
     //throw new error("Passou aqui");
@@ -130,4 +144,8 @@ $('body').on('click', '#triggerUploadClick', function (){
 
 $('body').on('click', '#triggerUpload', function () {
     document.getElementById("UploadImagem").click();
+});
+
+$("#adicionarHabilidade").click(function () {
+    $("#formNewHabilidade").show();
 });
