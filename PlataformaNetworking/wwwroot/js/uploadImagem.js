@@ -111,6 +111,19 @@ $('body').on('submit', '#formNewVaga', function (evt) {
     });
 });
 
+$('#btnCandidatar').on('click',function (evt) {
+    evt.preventDefault();
+    //throw new error("Passou aqui");
+    $.ajax({
+        type: "POST",
+        url: "/Vaga/Candidatar",
+        async: true,
+        success: function () {
+            document.location.reload();
+        }
+    });
+});
+
 $('body').on('click', '#triggerUploadClick', function (){
     document.getElementById("campoUploadImagem").click();
 });

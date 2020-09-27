@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vinic\\Desktop\\Vini\\tcc\\tcc\\Sistema-Networking-IFSP\\PlataformaNetworking\\PlataformaNetworking.csproj": {}
+    "C:\\Users\\thiag\\Desktop\\FACULDADE\\Caderno-Digital-Colaborativo\\Caderno-Digital-Colaborativo\\Caderno-Digital-Colaborativo\\PlataformaNetworking\\PlataformaNetworking.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vinic\\Desktop\\Vini\\tcc\\tcc\\Sistema-Networking-IFSP\\PlataformaNetworking\\PlataformaNetworking.csproj": {
+    "C:\\Users\\thiag\\Desktop\\FACULDADE\\Caderno-Digital-Colaborativo\\Caderno-Digital-Colaborativo\\Caderno-Digital-Colaborativo\\PlataformaNetworking\\PlataformaNetworking.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vinic\\Desktop\\Vini\\tcc\\tcc\\Sistema-Networking-IFSP\\PlataformaNetworking\\PlataformaNetworking.csproj",
+        "projectUniqueName": "C:\\Users\\thiag\\Desktop\\FACULDADE\\Caderno-Digital-Colaborativo\\Caderno-Digital-Colaborativo\\Caderno-Digital-Colaborativo\\PlataformaNetworking\\PlataformaNetworking.csproj",
         "projectName": "PlataformaNetworking",
-        "projectPath": "C:\\Users\\vinic\\Desktop\\Vini\\tcc\\tcc\\Sistema-Networking-IFSP\\PlataformaNetworking\\PlataformaNetworking.csproj",
-        "packagesPath": "C:\\Users\\vinic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vinic\\Desktop\\Vini\\tcc\\tcc\\Sistema-Networking-IFSP\\PlataformaNetworking\\obj\\",
+        "projectPath": "C:\\Users\\thiag\\Desktop\\FACULDADE\\Caderno-Digital-Colaborativo\\Caderno-Digital-Colaborativo\\Caderno-Digital-Colaborativo\\PlataformaNetworking\\PlataformaNetworking.csproj",
+        "packagesPath": "C:\\Users\\thiag\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\thiag\\Desktop\\FACULDADE\\Caderno-Digital-Colaborativo\\Caderno-Digital-Colaborativo\\Caderno-Digital-Colaborativo\\PlataformaNetworking\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\vinic\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\thiag\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
@@ -74,7 +70,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -44,7 +44,35 @@ namespace PlataformaNetworking.Controllers {
                 return false;
             }
         }
-         
+
+        [HttpPost]
+        public async Task<bool> Candidatar(Vaga vaga)
+        {
+            try
+            {
+                //Busca o usuário logado 
+                Usuario usuario = _context.Usuario.First(x => x.Id == HttpContext.Session.GetInt32("id"));
+
+                Candidato candidato = new Candidato();
+
+                candidato.IdUsuario = usuario.Id;
+                candidato.Nome = usuario.Nome;
+                candidato.Sobrenome = usuario.Sobrenome;
+                candidato.Email = usuario.Email;
+                candidato.IdVaga = vaga.Id;
+                _context.Add(candidato);
+
+                //Salva os dados no banco
+                int sucesso = await _context.SaveChangesAsync();
+                return sucesso == 0 ? false : true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+
+        }
         
     }
 }
