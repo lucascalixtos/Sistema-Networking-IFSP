@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0fDcSck2WRXKmXW/6FFMajwoT+TUaZfgU3TaqLuOeEJXWwE2/X2eLIiQjUeoI/rBDXQ5OuUUjt5789/qotA3pg==",
+  "dgSpecHash": "OrJKdowKr/Z0wXeyeMMEBas47PUvE4BzKL5BtJYWcpx4Gkgdt3LaBH/gk61aqZXGNnANUDM1RyizMITeD2kFIw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\thiag\\Desktop\\FACULDADE\\Caderno-Digital-Colaborativo\\Caderno-Digital-Colaborativo\\Caderno-Digital-Colaborativo\\PlataformaNetworking\\PlataformaNetworking.csproj",
+  "projectFilePath": "C:\\Users\\thiag\\Desktop\\FACULDADE\\Sistema-Networking-IFSP\\PlataformaNetworking\\PlataformaNetworking.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\thiag\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.6\\microsoft.aspnet.webapi.client.5.2.6.nupkg.sha512",
     "C:\\Users\\thiag\\.nuget\\packages\\microsoft.aspnetcore\\2.1.1\\microsoft.aspnetcore.2.1.1.nupkg.sha512",

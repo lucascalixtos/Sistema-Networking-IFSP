@@ -45,8 +45,13 @@ namespace PlataformaNetworking.Controllers {
             }
         }
 
+        public class JsonRequest
+        {
+            public string IdVaga { get; set; }
+        }
+
         [HttpPost]
-        public async Task<bool> Candidatar(Vaga vaga)
+        public async Task<bool> Candidatar([FromBody] JsonRequest data)
         {
             try
             {
@@ -59,7 +64,7 @@ namespace PlataformaNetworking.Controllers {
                 candidato.Nome = usuario.Nome;
                 candidato.Sobrenome = usuario.Sobrenome;
                 candidato.Email = usuario.Email;
-                candidato.IdVaga = vaga.Id;
+                candidato.IdVaga = Convert.ToInt32(data.IdVaga);
                 _context.Add(candidato);
 
                 //Salva os dados no banco
