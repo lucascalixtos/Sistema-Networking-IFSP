@@ -60,7 +60,7 @@ namespace PlataformaNetworking.Controllers
             {
                 _context.Add(aluno);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Login","Usuarios");
             }
             return View(aluno);
         }

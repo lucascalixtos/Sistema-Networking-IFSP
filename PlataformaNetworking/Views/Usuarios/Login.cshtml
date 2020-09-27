@@ -24,7 +24,8 @@
                     <input asp-for="Senha" type="password" class="form-control" />
                 </div>
             </div>
-                <a asp-action="Cadastro">Não é cadastrado? se cadastre agora mesmo</a>
+                <a href="@Url.Action("Create","Empresa")">É empresa? se cadastre por aqui</a><br />
+                <a href="@Url.Action("Create","Aluno")">É aluno? se cadastre por aqui</a>
             <div class="form-group">
                 <input type="submit" value="Login" class="w3-button w3-black w3-hover-blue btnCadastrar" />
             </div>
