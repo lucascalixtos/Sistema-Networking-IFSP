@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OrJKdowKr/Z0wXeyeMMEBas47PUvE4BzKL5BtJYWcpx4Gkgdt3LaBH/gk61aqZXGNnANUDM1RyizMITeD2kFIw==",
+  "dgSpecHash": "5IEiPmY6jIWfeY/PjlsDCAPdNZj3fB0WkqaXTjr7cyBG8ZwVMEETGixlIXaqS5b0hMi0ncC9xj9dXDmr4MG57Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\thiag\\Desktop\\FACULDADE\\Sistema-Networking-IFSP\\PlataformaNetworking\\PlataformaNetworking.csproj",
+  "projectFilePath": "C:\\Users\\thiag\\Desktop\\FACULDADE\\Sistema-Networking-IFSP\\Sistema-Networking-IFSP\\PlataformaNetworking\\PlataformaNetworking.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\thiag\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.6\\microsoft.aspnet.webapi.client.5.2.6.nupkg.sha512",
     "C:\\Users\\thiag\\.nuget\\packages\\microsoft.aspnetcore\\2.1.1\\microsoft.aspnetcore.2.1.1.nupkg.sha512",
