@@ -2,7 +2,7 @@
 @{
     ViewData["Title"] = "Perfil";
     string usuario = Model.Nome + " " + Model.Sobrenome;
-    //string curso = Model.Curso;
+    ///string curso = Model.Curso;
     string email = Model.Email;
     string nascimento = Model.DataNascimento.ToString("MM/dd/yyyy");
     string imagemPerfil = Model.ProfilePictureUrl == null ? "~/images/avatar2.png" : Model.ProfilePictureUrl;
