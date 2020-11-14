@@ -7,10 +7,10 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace PlataformaNetworking.ViewComponents {
-    public class ConteudoVagaViewComponent: ViewComponent {
+    public class ConteudoVagaAlunoViewComponent: ViewComponent {
         private readonly PlataformaNetworkingContext _context;
 
-        public ConteudoVagaViewComponent(PlataformaNetworkingContext context) {
+        public ConteudoVagaAlunoViewComponent(PlataformaNetworkingContext context) {
             _context = context;
         }
 

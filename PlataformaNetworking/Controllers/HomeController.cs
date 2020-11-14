@@ -1,8 +1,10 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using PlataformaNetworking.Data;
 using PlataformaNetworking.Models;
 
@@ -60,6 +62,18 @@ namespace PlataformaNetworking.Controllers
                 return Redirect(Url.Action("Login", "Usuarios"));
             }
         }
+
+
+        [Route("/ListaCandidatosVaga")]
+        
+        public async Task<IActionResult> ListaCandidatosVaga(int idVaga)
+        {
+           
+
+            return View(await _context.Candidato.FromSql("SELECT * FROM dbo.Candidato").
+                Where(c => c.IdVaga == idVaga).ToListAsync());
+        }
+
 
         public IActionResult Privacy()
         {

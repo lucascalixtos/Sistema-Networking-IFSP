@@ -36,21 +36,29 @@
         </div>
         <div class="col-md-6 gedf-main">
 
-           
+
 
             @{
-                    
-                if (Model.GetType().Name == "Empresa") {
+
+                if (Model.GetType().Name == "Empresa")
+                {
                     @await Component.InvokeAsync("PublicacaoVaga")
                 }
             }
 
 
-
-            
-
             <!--chamar View component aqui-->
-            @await Component.InvokeAsync("ConteudoVaga")
+            @{
+                if (Model.GetType().Name == "Empresa")
+                {
+                    @await Component.InvokeAsync("ConteudoVagaEmpresa")
+                }
+
+                else if (Model.GetType().Name == "Aluno")
+                {
+                    @await Component.InvokeAsync("ConteudoVagaAluno")
+                }
+            }
 
         </div>
         <div class="col-md-3 justify-content">
