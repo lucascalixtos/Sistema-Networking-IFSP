@@ -70,6 +70,7 @@ namespace PlataformaNetworking.Controllers {
                 //Salva os dados no banco
                 int sucesso = await _context.SaveChangesAsync();
                 return sucesso == 0 ? false : true;
+                
             }
             catch (Exception)
             {

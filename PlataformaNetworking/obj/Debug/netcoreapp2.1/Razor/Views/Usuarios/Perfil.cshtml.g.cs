@@ -89,7 +89,7 @@ WriteAttributeValue("", 709, imagemPerfil, 709, 13, false);
             ");
             EndContext();
             BeginContext(1239, 187, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5eb8f769c8914e5e898d120d660893ad", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4207308c7c144a1c81a24214a185d15c", async() => {
                 BeginContext(1282, 87, true);
                 WriteLiteral("\r\n                <input name=\"ProfilePictureUrl\" id=\"campoInputNovaImagem\" type=\"text\"");
                 EndContext();
@@ -348,7 +348,7 @@ WriteAttributeValue("", 1377, Model.ProfilePictureUrl, 1377, 24, false);
                 WriteLiteral("\r\n        ");
                 EndContext();
                 BeginContext(5986, 44, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a19c6296be364b85ac7df66e1399e343", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b25162efa0ba4b78beb5cb4aedcc4f93", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

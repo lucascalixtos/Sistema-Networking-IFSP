@@ -306,3 +306,4 @@ C:\Users\thiag\Desktop\FACULDADE\Sistema-Networking-IFSP\Sistema-Networking-IFSP
 C:\Users\thiag\Desktop\FACULDADE\Sistema-Networking-IFSP\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Components\ConteudoVagaAluno\Default.cshtml.g.cs
 C:\Users\thiag\Desktop\FACULDADE\Sistema-Networking-IFSP\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Components\ConteudoVagaEmpresa\Default.cshtml.g.cs
 C:\Users\thiag\Desktop\FACULDADE\Sistema-Networking-IFSP\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Home\ListaCandidatosVaga.cshtml.g.cs
+C:\Users\thiag\Desktop\FACULDADE\Sistema-Networking-IFSP\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Components\ConteudoCandidato\Default.cshtml.g.cs
