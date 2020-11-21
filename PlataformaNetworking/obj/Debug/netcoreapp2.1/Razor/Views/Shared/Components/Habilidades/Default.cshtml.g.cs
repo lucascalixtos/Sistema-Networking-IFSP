@@ -82,7 +82,7 @@ namespace AspNetCore
             WriteLiteral("        <a href=\"#\"><span class=\"badge badge-primary\" id=\"adicionarHabilidade\">+</span></a>\r\n        <div class=\"row mt-2\">\r\n            ");
             EndContext();
             BeginContext(480, 405, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c17bdec83d114162b4b48e51ca519c61", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e01255b56cbe473cb2b1cd5e0af11b89", async() => {
                 BeginContext(544, 334, true);
                 WriteLiteral(@"
                 <div class=""col-md-5"">

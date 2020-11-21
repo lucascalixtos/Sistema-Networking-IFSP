@@ -55,12 +55,12 @@ namespace AspNetCore
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             BeginContext(0, 224, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("environment", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e505ddd97c4a4cafa15f1312b43b23b3", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("environment", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a41bef2435e742ee83b359a282e7df9c", async() => {
                 BeginContext(35, 6, true);
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(41, 71, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "236654a700a0423d8f509a6058bc4939", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0a6c866debd84f7095ea977bb9c5811d", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -78,7 +78,7 @@ namespace AspNetCore
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(118, 90, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "980af4642e7b43c085431bbedc940ca4", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e397f25abeb643dca0a3ec69fb5cf6e7", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -113,12 +113,12 @@ namespace AspNetCore
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(226, 944, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("environment", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e006830d81a94f558e869cb4ea3b8296", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("environment", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2ff3c318cec94276988f6cab10dd131f", async() => {
                 BeginContext(261, 6, true);
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(267, 399, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7b76fd4d77334ea3a79b19a292888b50", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "caac2fb1a61846f5a7f479cea3be8038", async() => {
                     BeginContext(651, 6, true);
                     WriteLiteral("\r\n    ");
                     EndContext();
@@ -146,7 +146,7 @@ namespace AspNetCore
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(672, 482, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "06fbdd0e99dc4f5e84969b817c3a7a11", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ea37381cde4344209d54486ab47bd320", async() => {
                     BeginContext(1139, 6, true);
                     WriteLiteral("\r\n    ");
                     EndContext();

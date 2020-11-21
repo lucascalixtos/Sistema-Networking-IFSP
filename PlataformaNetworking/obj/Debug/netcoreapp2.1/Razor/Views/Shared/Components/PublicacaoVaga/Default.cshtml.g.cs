@@ -61,7 +61,7 @@ namespace AspNetCore
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(124, 44, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "66f5922713e5423a81b2e3cf2e535b2a", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "88f6c74c777e483597468b711e043d49", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -84,7 +84,7 @@ namespace AspNetCore
             WriteLiteral("\r\n\r\n<div class=\"card gedf-card\">\r\n    <div class=\"card-body\">\r\n        <div class=\"tab-content\" id=\"myTabContent\">\r\n\r\n            <div class=\"form-group\">\r\n                ");
             EndContext();
             BeginContext(345, 469, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d4086bf29dc04681bcfd23daa767f95f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98bf5f8918c442e8b9aa5cdc49651aea", async() => {
                 BeginContext(382, 425, true);
                 WriteLiteral(@"
                     <input type=""text"" name=""Titulo"" placeholder=""Titulo"" id=""TituloVagaFormulario"" class=""form-control"" />

@@ -278,12 +278,12 @@ namespace AspNetCore
             WriteLiteral("\r\n        </dd>\r\n    </dl>\r\n    \r\n    ");
             EndContext();
             BeginContext(2159, 207, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c2ff1e5bc434488d862f45b7adca068a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8f8f0988cd8b413b8279dc57951b85fa", async() => {
                 BeginContext(2185, 10, true);
                 WriteLiteral("\r\n        ");
                 EndContext();
                 BeginContext(2195, 36, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "502fb9e3a09842dababab71e51a38c0d", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "6704514f017c40088f44732e2667efb5", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -308,7 +308,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 WriteLiteral("\r\n        <input type=\"submit\" value=\"Delete\" class=\"btn btn-default\" /> |\r\n        ");
                 EndContext();
                 BeginContext(2315, 38, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "40f7883bc8984577a4340bce40809e68", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "205b91865b874375bf313bbaadf17b5a", async() => {
                     BeginContext(2337, 12, true);
                     WriteLiteral("Back to List");
                     EndContext();

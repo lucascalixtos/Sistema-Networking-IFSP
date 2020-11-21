@@ -3,7 +3,29 @@
 @{
     ViewData["Title"] = "View";
 }
+    <script>
 
+    async function Like(idPost) {
+        var parametros = {
+            IdPost: idPost
+        };
+
+        $.ajax({
+            datatype: 'json',
+            contentType: "application/json",
+            type: "POST",
+            url: "/Publicacoes/Like",
+            data: JSON.stringify(parametros),
+            async: true,
+            success: function (data) {
+                //console.log("parametros.IdVaga: " + parametros.IdVaga);
+               // console.log("data: " + data.parametros);
+                document.location.reload();
+
+            }
+        });
+    }
+    </script>
 
 @foreach (var item in Model.Reverse()) {
 
@@ -43,7 +65,8 @@
 
         </div>
         <div class="card-footer">
-            <a href="#" class="card-link"><i class="fa fa-gittip"></i> Like</a>
+            <i class="fa fa-gittip"></i><a href="#" onclick="Like(@item.Id)">Likes</a>
+            <p>Likes: @item.Like</p>
             <a href="#" class="card-link"><i class="fa fa-comment"></i> Comment</a>
             <a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Share</a>
         </div>

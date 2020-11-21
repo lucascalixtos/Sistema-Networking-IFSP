@@ -40,43 +40,42 @@
                 <div class="card gedf-card">
                     <div class="card-body">
                         <div class="tab-content" id="myTabContent">
-                            
-                                <div class="form-group">
-                                    <form method="post" id="formNewPostagem">
-                                        <label class="sr-only" for="message">post</label>
-                                        <textarea class="form-control" name="TextoPost" id="TextoFormulario" rows="3" placeholder="Escreva sua publicação"></textarea>
-                                        <input type="hidden" name="Imagem" id="ImagemPost" />
+
+                            <div class="form-group">
+                                <form method="post" id="formNewPostagem">
+                                    <label class="sr-only" for="message">post</label>
+                                    <textarea class="form-control" name="TextoPost" id="TextoFormulario" rows="3" placeholder="Escreva sua publicação"></textarea>
+                                    <input type="hidden" name="Imagem" id="ImagemPost" />
 
 
-                                        <div class="file-upload">
-                                            <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Adicionar imagem</button>
+                                    <div class="file-upload">
+                                        <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Adicionar imagem</button>
 
-                                            <div class="image-upload-wrap">
-                                                <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/png, image/jpeg" />
-                                                <div class="drag-text">
-                                                    <h3>Arraste sua imagem até aqui para adiciona-la</h3>
-                                                </div>
-                                            </div>
-                                            <div class="file-upload-content">
-                                                <img class="file-upload-image w-100" src="#" alt="your image" />
+                                        <div class="image-upload-wrap">
+                                            <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/png, image/jpeg" />
+                                            <div class="drag-text">
+                                                <h3>Arraste sua imagem até aqui para adiciona-la</h3>
                                             </div>
                                         </div>
-
-                                        <div class="btn-toolbar justify-content-between">
-                                            <div class="btn-group">
-                                                <button type="submit" class="btn btn-primary">Publicar</button>
-                                            </div>
+                                        <div class="file-upload-content">
+                                            <img class="file-upload-image w-100" src="#" alt="your image" />
                                         </div>
-                                    </form>
-                                </div>   
+                                    </div>
+
+                                    <div class="btn-toolbar justify-content-between">
+                                        <div class="btn-group">
+                                            <button type="submit" class="btn btn-primary">Publicar</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
 
                     </div>
                 </div>
 
                 <!--Publicações-->
-                
-                @await Component.InvokeAsync("Post")
+                 @await Component.InvokeAsync("Post") 
 
             </div>
             <div class="col-md-3 justify-content">

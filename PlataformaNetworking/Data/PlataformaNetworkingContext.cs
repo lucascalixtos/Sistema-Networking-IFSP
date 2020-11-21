@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PlataformaNetworking.Models;
+using PlataformaNetworking.ViewModels;
 
 namespace PlataformaNetworking.Data
 {
@@ -14,6 +15,7 @@ namespace PlataformaNetworking.Data
         public DbSet<Aluno> Aluno { get; set; }
         public DbSet<PostModel> Post { get; set; }
         public DbSet<LikeModel> Like { get; set; }
+       // public DbSet<PostLikeViewModel> PostLikeViewModel { get; set; }
         public DbSet<DislikeModel> Dislike { get; set; }
         public DbSet<CommentModel> Comment { get; set; }
         public DbSet<Vaga> Vaga { get; set; }

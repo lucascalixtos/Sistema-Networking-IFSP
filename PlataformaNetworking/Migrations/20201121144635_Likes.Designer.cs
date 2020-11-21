@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PlataformaNetworking.Data;
 
 namespace PlataformaNetworking.Migrations
 {
     [DbContext(typeof(PlataformaNetworkingContext))]
-    partial class CadernoDigitalColaborativoContextModelSnapshot : ModelSnapshot
+    [Migration("20201121144635_Likes")]
+    partial class Likes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -115,11 +117,19 @@ namespace PlataformaNetworking.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("IdPost");
+                    b.Property<int>("IdUsuario1");
 
-                    b.Property<int>("IdUsuario");
+                    b.Property<int>("IdUsuario2");
+
+                    b.Property<int?>("Usuario1Id");
+
+                    b.Property<int?>("Usuario2Id");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Usuario1Id");
+
+                    b.HasIndex("Usuario2Id");
 
                     b.ToTable("Like");
                 });
@@ -258,6 +268,17 @@ namespace PlataformaNetworking.Migrations
                     b.HasOne("PlataformaNetworking.Models.Usuario", "Usario2")
                         .WithMany()
                         .HasForeignKey("Usario2Id");
+                });
+
+            modelBuilder.Entity("PlataformaNetworking.Models.LikeModel", b =>
+                {
+                    b.HasOne("PlataformaNetworking.Models.Usuario", "Usuario1")
+                        .WithMany()
+                        .HasForeignKey("Usuario1Id");
+
+                    b.HasOne("PlataformaNetworking.Models.Usuario", "Usuario2")
+                        .WithMany()
+                        .HasForeignKey("Usuario2Id");
                 });
 
             modelBuilder.Entity("PlataformaNetworking.Models.PostModel", b =>

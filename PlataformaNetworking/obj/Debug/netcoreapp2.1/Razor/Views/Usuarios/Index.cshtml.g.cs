@@ -53,7 +53,7 @@ namespace AspNetCore
             WriteLiteral("\r\n<h2>Index</h2>\r\n\r\n<p>\r\n    ");
             EndContext();
             BeginContext(129, 37, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "287edc7b3478456aa8513cdddced92df", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98bcb41285c7473c92999bf1c13e25ad", async() => {
                 BeginContext(152, 10, true);
                 WriteLiteral("Create New");
                 EndContext();
