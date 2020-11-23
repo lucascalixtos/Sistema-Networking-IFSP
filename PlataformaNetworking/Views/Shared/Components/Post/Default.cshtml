@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "View";
 }
-    <script>
+<script>
 
     async function Like(idPost) {
         var parametros = {
@@ -19,15 +19,16 @@
             async: true,
             success: function (data) {
                 //console.log("parametros.IdVaga: " + parametros.IdVaga);
-               // console.log("data: " + data.parametros);
+                // console.log("data: " + data.parametros);
                 document.location.reload();
 
             }
         });
     }
-    </script>
+</script>
 
-@foreach (var item in Model.Reverse()) {
+@foreach (var item in Model.Reverse())
+{
 
     <div class="card gedf-card">
         <div class="card-header">
@@ -65,10 +66,15 @@
 
         </div>
         <div class="card-footer">
-            <i class="fa fa-gittip"></i><a href="#" onclick="Like(@item.Id)">Likes</a>
-            <p>Likes: @item.Like</p>
-            <a href="#" class="card-link"><i class="fa fa-comment"></i> Comment</a>
-            <a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Share</a>
+            <i class="fa fa-gittip"></i><a href="#" onclick="Like(@item.Id)">Curtir</a>
+            <a href="#" class="card-link"><i class="fa fa-comment"></i> Comentar</a>
+            <a href="#" class="card-link"><i class="fa fa-mail-forward"></i>Compartilhar</a>
+            <p>
+                <span class="glyphicon glyphicon-thumbs-up"></span> @item.Like
+                <span class="glyphicon glyphicon-comment"></span> 0 
+                <span class="glyphicon glyphicon-share"></span> 0 
+            </p>
+
         </div>
     </div>
 }
