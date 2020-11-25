@@ -81,15 +81,32 @@ namespace PlataformaNetworking.Controllers
             }
         }
 
+        [HttpPost]
+        public async Task<bool> Comentario([Bind("IdPost", "CommentText")] Comment comment)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(comment.CommentText))
+                    return false;
 
-        /* public IActionResult Like(int id)
-         {
-             PostModel update = _context.Post.ToList().Find(u => u.Id == id);
-             update.Like += 1;
-             _context.SaveChangesAsync();
-             //return RedirectToAction("Index", "Home");
-             return;
-         }
-     }*/
+                //Busca o usuário logado 
+                Usuario usuario = _context.Usuario.First(x => x.Id == HttpContext.Session.GetInt32("id"));
+
+                comment.IdUsuario = usuario.Id;
+                comment.CommentTime = DateTime.Now;
+
+                _context.Add(comment);
+
+                //Salva os dados no banco
+                int sucesso = await _context.SaveChangesAsync();
+
+                return sucesso == 0 ? false : true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
     }
 }

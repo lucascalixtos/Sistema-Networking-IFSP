@@ -3,29 +3,7 @@
 @{
     ViewData["Title"] = "View";
 }
-<script>
 
-    async function Like(idPost) {
-        var parametros = {
-            IdPost: idPost
-        };
-
-        $.ajax({
-            datatype: 'json',
-            contentType: "application/json",
-            type: "POST",
-            url: "/Publicacoes/Like",
-            data: JSON.stringify(parametros),
-            async: true,
-            success: function (data) {
-                //console.log("parametros.IdVaga: " + parametros.IdVaga);
-                // console.log("data: " + data.parametros);
-                document.location.reload();
-
-            }
-        });
-    }
-</script>
 
 @foreach (var item in Model.Reverse())
 {
@@ -67,14 +45,61 @@
         </div>
         <div class="card-footer">
             <i class="fa fa-gittip"></i><a href="#" class="card-link" onclick="Like(@item.Id)">Curtir</a>
-            <a href="#" class="card-link"><i class="fa fa-comment"></i> Comentar</a>
+            <span class="card-link" id="comentar"><i class="fa fa-comment"></i> Comentar</span>
+            <div class="row mt-2">
+                <form method="post" id="formComentario" style="display:none">
+                    <input type="hidden" id="IdPost" name="IdPost" value="@item.Id" />
+                    <div class="col-md-5">
+                        <input type="text" class="form-control" name="CommentText" id="CommentText" />
+                    </div>
+                    <div class="col-md-3">
+                        <button type="submit" class="btn btn-primary">Comentar</button>
+                    </div>
+                </form>
+            </div>
             <a href="#" class="card-link"><i class="fa fa-mail-forward"></i>Compartilhar</a>
             <p>
                 <span class="glyphicon glyphicon-thumbs-up card-link"></span> @item.Like
-                <span class="glyphicon glyphicon-comment card-link"></span> 0 
-                <span class="glyphicon glyphicon-share card-link"></span> 0 
+                <span class="glyphicon glyphicon-comment card-link"></span> 0
+                <span class="glyphicon glyphicon-share card-link"></span> 0
             </p>
 
         </div>
     </div>
 }
+
+<script>
+    async function Like(idPost) {
+    var parametros = {
+        IdPost: idPost
+    };
+
+    $.ajax({
+        datatype: 'json',
+        contentType: "application/json",
+        type: "POST",
+        url: "/Publicacoes/Like",
+        data: JSON.stringify(parametros),
+        async: true,
+        success: function (data) {
+            document.location.reload();
+        }
+    });
+}
+
+$('body').on('submit', '#formComentario', function (evt) {
+    evt.preventDefault();
+    $.ajax({
+        url: '/Publicacoes/Comentario',
+        type: 'post',
+        data: $('#formComentario').serialize(),
+        success: function () {
+            document.location.reload();
+        }
+    });
+});
+
+$("#comentar").click(function () {
+    $("#formComentario").show();
+});
+</script>

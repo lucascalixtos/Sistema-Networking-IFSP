@@ -9,7 +9,7 @@ namespace PlataformaNetworking.Models
         public int IdUsuario { get; set; }
         public Usuario UsuarioPost { get; set; }
         public int Like { get; set; }
-        public List<CommentModel> Comments { get; set; }
+        public List<Comment> Comments { get; set; }
         public DateTime PostTime { get; set; }
         public string Imagem { get; set; }
         public string TextoPost { get; set; }

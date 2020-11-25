@@ -24,3 +24,5 @@
         FR.readAsDataURL(this.files[0]);
     }
 });
+
+
