@@ -8,8 +8,6 @@ using System.Threading.Tasks;
 namespace PlataformaNetworking.ViewComponents
 {
 
-
-
     public class PainelViewComponent : ViewComponent {
         private readonly PlataformaNetworkingContext _context;
 

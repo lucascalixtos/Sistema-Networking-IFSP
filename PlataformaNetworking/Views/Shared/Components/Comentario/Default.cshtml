@@ -1,0 +1,20 @@
+﻿@model IEnumerable<PlataformaNetworking.Models.Comment>
+
+@{
+    ViewData["Title"] = "View";
+}
+
+
+@foreach (var item in Model.Reverse())
+{
+
+        <div class="card-body">
+            <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>@item.CommentTime.ToString("dd/MM/yyyy HH:mm")</div>
+            <p class="card-text">
+                @item.CommentText            
+            </p>
+
+        </div>
+}
+
+
