@@ -150,4 +150,4 @@ $("#adicionarHabilidade").click(function () {
     $("#formNewHabilidade").show();
 });
 
-$("#adicionarHabilidade").style.cursor = "pointer";
+

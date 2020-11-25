@@ -73,40 +73,44 @@
 
 <script>
     async function Like(idPost) {
-    var parametros = {
-        IdPost: idPost
-    };
+        var parametros = {
+            IdPost: idPost
+        };
 
-    $.ajax({
-        datatype: 'json',
-        contentType: "application/json",
-        type: "POST",
-        url: "/Publicacoes/Like",
-        data: JSON.stringify(parametros),
-        async: true,
-        success: function (data) {
-            document.location.reload();
-        }
+        $.ajax({
+            datatype: 'json',
+            contentType: "application/json",
+            type: "POST",
+            url: "/Publicacoes/Like",
+            data: JSON.stringify(parametros),
+            async: true,
+            success: function (data) {
+                document.location.reload();
+            }
+        });
+    }
+
+    $('body').on('submit', '#formComentario', function (evt) {
+        evt.preventDefault();
+        $.ajax({
+            url: '/Publicacoes/Comentario',
+            type: 'post',
+            data: $('#formComentario').serialize(),
+            success: function () {
+                document.location.reload();
+            }
+        });
     });
-}
 
-$('body').on('submit', '#formComentario', function (evt) {
-    evt.preventDefault();
-    $.ajax({
-        url: '/Publicacoes/Comentario',
-        type: 'post',
-        data: $('#formComentario').serialize(),
-        success: function () {
-            document.location.reload();
-        }
+    $("#comentar").click(function () {
+        $("#formComentario").toggle();
     });
-});
 
-$("#comentar").click(function () {
-    $("#formComentario").show();
-});
+    $("#mostrarComentarios").click(function () {
+        $("#comentarios").toggle();
+    });
 
-$("#mostrarComentarios").click(function () {
-    $("#comentarios").toggle();
-});
+    $("#comentar").css("cursor", "pointer");
+    $("#mostrarComentarios").css("cursor", "pointer");
+
 </script>
