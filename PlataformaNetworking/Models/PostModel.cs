@@ -15,6 +15,8 @@ namespace PlataformaNetworking.Models
         public string TextoPost { get; set; }
         public string NomeUsuario { get; set; }
         public string FotoUsuario { get; set; }
+        public int Comentarios { get; set; }
+        public int Compartilhamentos { get; set; }
 
         //TODO - Falta colocar o conteúdo 
     }

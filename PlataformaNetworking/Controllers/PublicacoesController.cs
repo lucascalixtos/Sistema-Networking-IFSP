@@ -92,6 +92,9 @@ namespace PlataformaNetworking.Controllers
                 //Busca o usuário logado 
                 Usuario usuario = _context.Usuario.First(x => x.Id == HttpContext.Session.GetInt32("id"));
 
+                PostModel updatePostComentarios = _context.Post.ToList().Find(u => u.Id == Convert.ToInt32(comment.IdPost));
+                updatePostComentarios.Comentarios += 1;
+
                 comment.IdUsuario = usuario.Id;
                 comment.CommentTime = DateTime.Now;
 
