@@ -45,30 +45,32 @@
         </div>
         <div class="card-footer">
             <i class="fa fa-gittip"></i><a href="#" class="card-link" onclick="Like(@item.Id)">Curtir</a>
-            <span class="card-link" id="comentar"><i class="fa fa-comment"></i> Comentar</span>
+            <span class="card-link" id="comentar" onclick="Comentar(@item.Id)" style="cursor: pointer"><i class="fa fa-comment"></i> Comentar</span>
             <div class="row mt-2">
-                <form method="post" id="formComentario" style="display:none">
+                <form method="post" id="formComentario-@item.Id" style="display:none">
                     <input type="hidden" id="IdPost" name="IdPost" value="@item.Id" />
                     <div class="col-md-5">
                         <input type="text" class="form-control" name="CommentText" id="CommentText" />
                     </div>
                     <div class="col-md-3">
-                        <button type="submit" class="btn btn-primary">Comentar</button>
+                        <button onclick="FormComentario(@item.Id)" type="submit" class="btn btn-primary">Comentar</button>
                     </div>
                 </form>
             </div>
             <a href="#" class="card-link"><i class="fa fa-mail-forward"></i>Compartilhar</a>
             <p>
                 <span class="glyphicon glyphicon-thumbs-up card-link"></span> @item.Like
-                <span class="glyphicon glyphicon-comment card-link" id="mostrarComentarios"></span> 0
+                <span class="glyphicon glyphicon-comment card-link" onclick="MostrarComentarios(@item.Id)" id="mostrarComentarios" style="cursor: pointer"></span> 0
                 <span class="glyphicon glyphicon-share card-link"></span> 0
             </p>
 
-            <div id="comentarios" style="display: none">
-                @await Component.InvokeAsync("Comentario")
+            <div id="comentarios-@item.Id" style="display: none">
+                @await Component.InvokeAsync("Comentario", item.Id)
             </div>
         </div>
     </div>
+
+    
 }
 
 <script>
@@ -90,27 +92,36 @@
         });
     }
 
-    $('body').on('submit', '#formComentario', function (evt) {
-        evt.preventDefault();
-        $.ajax({
-            url: '/Publicacoes/Comentario',
-            type: 'post',
-            data: $('#formComentario').serialize(),
-            success: function () {
-                document.location.reload();
-            }
+    function FormComentario(id) {
+        $('body').on('submit', '#formComentario-' + id, function (evt) {
+            evt.preventDefault();
+            $.ajax({
+                url: '/Publicacoes/Comentario',
+                type: 'post',
+                data: $('#formComentario-' + id).serialize(),
+                success: function () {
+                    document.location.reload();
+                }
+            });
         });
-    });
+    }
+    
 
-    $("#comentar").click(function () {
+    function Comentar(id) {
+            $("#formComentario-" + id).toggle();
+    }
+
+    function MostrarComentarios(id) {
+        $("#comentarios-" + id).toggle();
+    }
+
+   /* $("#comentar").click(function () {
         $("#formComentario").toggle();
     });
 
     $("#mostrarComentarios").click(function () {
         $("#comentarios").toggle();
-    });
+    });*/
 
-    $("#comentar").css("cursor", "pointer");
-    $("#mostrarComentarios").css("cursor", "pointer");
 
 </script>
