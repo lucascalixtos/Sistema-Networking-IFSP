@@ -44,8 +44,10 @@
 
         </div>
         <div class="card-footer">
-            <i class="fa fa-gittip"></i><a href="#" class="card-link" onclick="Like(@item.Id)">Curtir</a>
+            <span class="card-link" id="curtir" style="cursor: pointer;" onclick="Like(@item.Id)">Curtir</span>
+            <span class="card-link" id="descurtir" style="cursor: pointer; display: none" onclick="Dislike(@item.Id)">Descurtir</span>
             <span class="card-link" id="comentar" onclick="Comentar(@item.Id)" style="cursor: pointer"><i class="fa fa-comment"></i> Comentar</span>
+            <span class="card-link" style="cursor: pointer;">Compartilhar</span>
             <div class="row mt-2">
                 <form method="post" id="formComentario-@item.Id" style="display:none">
                     <input type="hidden" id="IdPost" name="IdPost" value="@item.Id" />
@@ -57,7 +59,7 @@
                     </div>
                 </form>
             </div>
-            <a href="#" class="card-link"><i class="fa fa-mail-forward"></i>Compartilhar</a>
+
             <p>
                 <span class="glyphicon glyphicon-thumbs-up card-link"></span> @item.Like
                 <span class="glyphicon glyphicon-comment card-link" onclick="MostrarComentarios(@item.Id)" id="mostrarComentarios" style="cursor: pointer"></span> @item.Comentarios
@@ -70,6 +72,29 @@
         </div>
     </div>
 
+    <script>
+        VerificaLike(@item.Id);
+
+        async function VerificaLike(idPost) {
+
+            $.ajax({
+                datatype: 'json',
+                contentType: 'application/json',
+                type: "GET",
+                url: "/Publicacoes/VerificaLike?idPost=" + idPost,
+                /*data: {
+                    idPost: idPost;
+                },*/
+                success: function (like) {
+                    if (like) {
+                        $('#curtir').hide();
+                        $('#descurtir').show();
+                    }
+                }
+            })
+        }
+
+    </script>
     
 }
 
@@ -91,6 +116,26 @@
             }
         });
     }
+
+    async function Dislike(idPost) {
+        var parametros = {
+            IdPost: idPost
+        };
+
+        $.ajax({
+            datatype: 'json',
+            contentType: "application/json",
+            type: "POST",
+            url: "/Publicacoes/Dislike",
+            data: JSON.stringify(parametros),
+            async: true,
+            success: function (data) {
+                document.location.reload();
+            }
+        });
+    }
+
+    
 
     function FormComentario(id) {
         $('body').on('submit', '#formComentario-' + id, function (evt) {

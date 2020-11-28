@@ -369,6 +369,6 @@ C:\Users\lele\Desktop\LinkedIF\Sistema-Networking-IFSP\PlataformaNetworking\obj\
 C:\Users\lele\Desktop\LinkedIF\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\PlataformaNetworking.pdb
 C:\Users\lele\Desktop\LinkedIF\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\PlataformaNetworking.csproj.CopyComplete
 C:\Users\thiag\Desktop\FACULDADE\Sistema-Networking-IFSP\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\PlataformaNetworking.csprojAssemblyReference.cache
-C:\Users\thiag\Desktop\FACULDADE\Sistema-Networking-IFSP\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\PlataformaNetworking.csproj.CoreCompileInputs.cache
 C:\Users\lele\Desktop\LinkedIF\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Components\Comentario\Default.cshtml.g.cs
 C:\Users\thiag\Desktop\FACULDADE\Sistema-Networking-IFSP\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Components\Comentario\Default.cshtml.g.cs
+C:\Users\thiag\Desktop\FACULDADE\Sistema-Networking-IFSP\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\PlataformaNetworking.csproj.CoreCompileInputs.cache

@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Query.ExpressionTranslators.Internal;
 using PlataformaNetworking.Data;
 using PlataformaNetworking.Models;
 
@@ -72,6 +74,38 @@ namespace PlataformaNetworking.Controllers
                 like.IdPost = Convert.ToInt32(data.IdPost);
                 like.IdUsuario = usuario.Id;
                 _context.Like.Add(like);
+                int sucesso = await _context.SaveChangesAsync();
+                return sucesso == 0 ? false : true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public JsonResult VerificaLike(int idPost)
+        {
+            //Busca o usuário logado 
+            Usuario usuario = _context.Usuario.First(x => x.Id == HttpContext.Session.GetInt32("id"));
+
+            LikeModel like = _context.Like.First(x => x.IdPost == idPost && x.IdUsuario == usuario.Id);
+            return Json(like, new Newtonsoft.Json.JsonSerializerSettings());
+        }
+
+        [HttpPost]
+        public async Task<bool> Dislike([FromBody]JsonRequest data)
+        {
+            try
+            {
+                //Busca o usuário logado 
+                Usuario usuario = _context.Usuario.First(x => x.Id == HttpContext.Session.GetInt32("id"));
+
+
+                PostModel updatePostLikes = _context.Post.ToList().Find(u => u.Id == Convert.ToInt32(data.IdPost));
+                updatePostLikes.Like -= 1;
+
+                LikeModel postLike = _context.Like.First(x => x.IdPost == Convert.ToInt32(data.IdPost) && x.IdUsuario == usuario.Id);
+                _context.Like.Remove(postLike);
                 int sucesso = await _context.SaveChangesAsync();
                 return sucesso == 0 ? false : true;
             }

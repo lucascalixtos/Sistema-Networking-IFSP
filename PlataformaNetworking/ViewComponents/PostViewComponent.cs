@@ -1,7 +1,9 @@
-﻿using System.Threading.Tasks;
+﻿using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PlataformaNetworking.Data;
+using PlataformaNetworking.Models.ViewModels;
 
 namespace PlataformaNetworking.ViewComponents
 {
@@ -17,7 +19,9 @@ namespace PlataformaNetworking.ViewComponents
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            return View(await _context.Post.ToListAsync());
+            
+            var posts = await _context.Post.ToListAsync();
+            return View(posts);
         }
     }
 }
