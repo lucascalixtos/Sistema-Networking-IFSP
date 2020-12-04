@@ -9,13 +9,13 @@ namespace PlataformaNetworking.Models.Enums
         [Display(Name = "Inativo")]
         Inativo
     }
-    public enum RelationshipStatus
+    public enum AmizadeStatus
     {
         [Display(Name = "Pendente")]
-        Pending = 1,
+        Pendente = 1,
         [Display(Name = "Ativo")]
-        Active = 2,
+        Ativo = 2,
         [Display(Name = "Bloqueado")]
-        Blocked = 3
+        Bloqueado = 3
     }
 }

@@ -13,10 +13,10 @@
             <div class="d-flex justify-content-between align-items-center">
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="mr-3">
-                        <img class="rounded-circle" width="50" src="@(item.FotoUsuario  == null ? "~/images/avatar2.png" : item.FotoUsuario)" alt="">
+                        <img class="rounded-circle" width="50" id="FotoPerfil" src="" alt="">
                     </div>
                     <div class="ml-2">
-                        <div class="h5 m-0">@item.NomeUsuario</div>
+                        <a class="h5 m-0" id="NomeUsuario" href=""></a>
                     </div>
                 </div>
                 <div>
@@ -74,6 +74,8 @@
 
     <script>
         VerificaLike(@item.Id);
+        VerificaInfoUsuario(@item.IdUsuario);
+
 
         async function VerificaLike(idPost) {
 
@@ -90,6 +92,27 @@
                         $('#curtir').hide();
                         $('#descurtir').show();
                     }
+                }
+            })
+        }
+
+        async function VerificaInfoUsuario(idUsuario) {
+
+            $.ajax({
+                datatype: 'json',
+                contentType: 'application/json',
+                type: "GET",
+                url: "/Publicacoes/VerificaInfoUsuario?idUsuario=" + idUsuario,
+                /*data: {
+                    idPost: idPost;
+                },*/
+                success: function (usuario) {
+                    $('#NomeUsuario').html(usuario.Nome + " " + usuario.Sobrenome);
+                    $('#NomeUsuario').attr("href", "Usuarios/Perfil/" + usuario.Id);
+                    if (usuario.ProfilePictureUrl == null) {
+                        $('#FotoPerfil').attr("src", "~/images/avatar2.png");
+                    }
+                    $('#FotoPerfil').attr("src", usuario.ProfilePictureUrl);
                 }
             })
         }

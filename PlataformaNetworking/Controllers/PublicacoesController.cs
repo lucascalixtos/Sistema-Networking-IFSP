@@ -6,7 +6,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Query.ExpressionTranslators.Internal;
 using PlataformaNetworking.Data;
+using PlataformaNetworking.Migrations;
 using PlataformaNetworking.Models;
+using Usuario = PlataformaNetworking.Models.Usuario;
 
 namespace PlataformaNetworking.Controllers
 {
@@ -90,6 +92,12 @@ namespace PlataformaNetworking.Controllers
 
             LikeModel like = _context.Like.First(x => x.IdPost == idPost && x.IdUsuario == usuario.Id);
             return Json(like, new Newtonsoft.Json.JsonSerializerSettings());
+        }
+
+        public JsonResult VerificaInfoUsuario(int idUsuario)
+        {
+            Usuario usuario = _context.Usuario.First(x => x.Id == idUsuario);
+            return Json(usuario, new Newtonsoft.Json.JsonSerializerSettings());
         }
 
         [HttpPost]

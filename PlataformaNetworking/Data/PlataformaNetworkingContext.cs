@@ -21,6 +21,7 @@ namespace PlataformaNetworking.Data
         public DbSet<Vaga> Vaga { get; set; }
         public DbSet<Candidato> Candidato { get; set; }
         public DbSet<Habilidade> Habilidade { get; set; }
+        public DbSet<Amizade> Amizade { get; set; }
         public DbSet<PlataformaNetworking.Models.Empresa> Empresa { get; set; }
     }
 }

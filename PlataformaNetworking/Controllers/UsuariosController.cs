@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PlataformaNetworking.Data;
 using PlataformaNetworking.Models;
+using PlataformaNetworking.Models.Enums;
 
 namespace PlataformaNetworking.Controllers
 {
@@ -254,8 +255,8 @@ namespace PlataformaNetworking.Controllers
             }
         }
 
-        [Route("/Perfil")]
-        public  IActionResult Perfil()
+        [Route("/MeuPerfil")]
+        public  IActionResult MeuPerfil()
         {
            if (HttpContext.Session.GetInt32("id") != null) {
                 Usuario usuario = _context.Usuario.First(x => x.Id == HttpContext.Session.GetInt32("id"));
@@ -264,6 +265,24 @@ namespace PlataformaNetworking.Controllers
                 return RedirectToAction("Login");
             }
             
+        }
+
+        // GET: Usuarios/Perfil/5
+        public async Task<IActionResult> Perfil(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var usuario = await _context.Usuario
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (usuario == null)
+            {
+                return NotFound();
+            }
+
+            return View(usuario);
         }
 
         [HttpPost]
@@ -283,6 +302,28 @@ namespace PlataformaNetworking.Controllers
 
                 return sucesso == 0 ? false : true;
             } catch (Exception) {
+                return false;
+            }
+        }
+
+        public async Task<bool> SolicitaAmizade([Bind("IdUsuario2")] Amizade amizade)
+        {
+            try
+            {
+                //Busca o usuário logado 
+                Usuario usuario = _context.Usuario.First(x => x.Id == HttpContext.Session.GetInt32("id"));
+
+                amizade.IdUsuario1 = usuario.Id;
+                amizade.Status = AmizadeStatus.Pendente;
+
+                _context.Add(amizade);
+
+                int sucesso = await _context.SaveChangesAsync();
+
+                return sucesso == 0 ? false : true;
+            }
+            catch (Exception)
+            {
                 return false;
             }
         }

@@ -10,6 +10,7 @@ namespace PlataformaNetworking.Models
         public string Nome { get; set; }
         public string Sobrenome { get; set; }
         public string Email { get; set; }
+        public string Curso { get; set; }
         [Display(Name = "DataNascimento")]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         [DataType(DataType.Date)]
@@ -18,12 +19,13 @@ namespace PlataformaNetworking.Models
         public Situacao Situacao { get; set; }
 
         public string ProfilePictureUrl { get; set; }
+        public int Amizades { get; set; }
 
         public Usuario()
         {
         }
 
-        public Usuario(int id, string nome, string sobrenome, string email, DateTime dataNascimento, string senha, Situacao situacao)
+        public Usuario(int id, string nome, string sobrenome, string email, string curso, DateTime dataNascimento, string senha, Situacao situacao)
         {
             Id = id;
             Nome = nome;
@@ -32,6 +34,7 @@ namespace PlataformaNetworking.Models
             DataNascimento = dataNascimento;
             Senha = senha;
             Situacao = situacao;
-        }
+            Curso = curso;
+;        }
     }
 }
