@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PlataformaNetworking.Data;
 using PlataformaNetworking.Models;
+using PlataformaNetworking.Models.Enums;
 
 namespace PlataformaNetworking.Controllers
 {
@@ -54,10 +55,11 @@ namespace PlataformaNetworking.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CNPJ,RazaoSocial,Ramo,Id,Nome,Sobrenome,Email,DataNascimento,Senha,Situacao,ProfilePictureUrl")] Empresa empresa)
+        public async Task<IActionResult> Create([Bind("CNPJ,RazaoSocial,Ramo,Id,Nome,Sobrenome,Email,DataNascimento,Senha,ProfilePictureUrl")] Empresa empresa)
         {
             if (ModelState.IsValid)
             {
+                empresa.Situacao = Situacao.Inativo;
                 _context.Add(empresa);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Login", "Usuarios");

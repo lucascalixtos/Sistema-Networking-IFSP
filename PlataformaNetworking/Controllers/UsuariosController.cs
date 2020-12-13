@@ -58,10 +58,11 @@ namespace PlataformaNetworking.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,Sobrenome,Email,DataNascimento,Curso,CursoId,AnoIngresso,Semestre,Senha,Situacao,ProfilePictureUrl")] Usuario usuario)
+        public async Task<IActionResult> Create([Bind("Id,Nome,Sobrenome,Email,DataNascimento,Curso,CursoId,AnoIngresso,Semestre,Senha,ProfilePictureUrl")] Usuario usuario)
         {
             if (ModelState.IsValid)
             {
+                usuario.Situacao = Situacao.Ativo;
                 _context.Add(usuario);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Login");
@@ -197,12 +198,19 @@ namespace PlataformaNetworking.Controllers
                 System.Diagnostics.Debug.WriteLine("Conta ativa: " + contaAtiva.ToString());
 
                 if (contaAtiva.ToString().Equals("Ativo")) {
-                    var id = _context.Usuario.Where(l => (l.Email == Email) && (l.Senha == Senha)).Select(l => l.Id).First();
+                    Usuario usuario = _context.Usuario.Where(l => (l.Email == Email) && (l.Senha == Senha)).FirstOrDefault();
                     System.Diagnostics.Debug.WriteLine("Conta ativa: Entrou no if");
-                    HttpContext.Session.SetInt32("id", id);
+                    HttpContext.Session.SetInt32("id", usuario.Id);
                     HttpContext.Session.GetInt32("id");
                     System.Diagnostics.Debug.WriteLine("Teste: " + HttpContext.Session.GetInt32("id").ToString());
-                    return Redirect(Url.Action("Index", "Home"));
+                    string tipo = usuario.GetType().Name;
+                    HttpContext.Session.SetString("tipo", tipo);
+                    if (tipo == "Administrador"){
+                        return Redirect(Url.Action("Index", "Administradors"));
+                    } else {
+                        return Redirect(Url.Action("Index", "Home"));
+                    }
+
                 } else {
                     ViewBag.error = "Invalid Account";
                     return View("Login");
