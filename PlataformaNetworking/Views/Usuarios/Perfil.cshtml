@@ -48,6 +48,9 @@
     </form>
 </div>
 
+<h2>Amigos</h2>
+@await Component.InvokeAsync("Amizade", Model.Id)
+
 <!-- The Modal -->
 <div class="modal fade" id="myModal">
     <div class="modal-dialog">

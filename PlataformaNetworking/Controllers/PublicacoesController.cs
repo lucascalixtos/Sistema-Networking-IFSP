@@ -87,11 +87,19 @@ namespace PlataformaNetworking.Controllers
 
         public JsonResult VerificaLike(int idPost)
         {
-            //Busca o usuário logado 
-            Usuario usuario = _context.Usuario.First(x => x.Id == HttpContext.Session.GetInt32("id"));
+            try
+            {
+                //Busca o usuário logado 
+                Usuario usuario = _context.Usuario.First(x => x.Id == HttpContext.Session.GetInt32("id"));
 
-            LikeModel like = _context.Like.First(x => x.IdPost == idPost && x.IdUsuario == usuario.Id);
-            return Json(like, new Newtonsoft.Json.JsonSerializerSettings());
+                LikeModel like = _context.Like.First(x => x.IdPost == idPost && x.IdUsuario == usuario.Id);
+
+                return Json(like, new Newtonsoft.Json.JsonSerializerSettings());
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
         public JsonResult VerificaInfoUsuario(int idUsuario)

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PlataformaNetworking.Data;
 using PlataformaNetworking.Models;
+using PlataformaNetworking.Models.ViewModels;
 
 namespace PlataformaNetworking.Controllers
 {
@@ -24,7 +25,10 @@ namespace PlataformaNetworking.Controllers
             if(HttpContext.Session.GetInt32("id") != null) {
                 
                 //Busca o usuário logado 
-                Usuario usuario = _context.Usuario.First(x => x.Id == HttpContext.Session.GetInt32("id"));
+                Usuario usuarioLogado = _context.Usuario.First(x => x.Id == HttpContext.Session.GetInt32("id"));
+                HomeViewModel usuario = new HomeViewModel();
+                usuario.Usuario = usuarioLogado;
+      
                 return View(usuario);
 
             } else {
@@ -52,10 +56,12 @@ namespace PlataformaNetworking.Controllers
 
             if (HttpContext.Session.GetInt32("id") != null) {
                 //Busca o usuário logado 
-                Usuario usuario = _context.Usuario.First(x => x.Id == HttpContext.Session.GetInt32("id"));
-                var tipo = usuario.GetType();
-                System.Diagnostics.Debug.WriteLine("Tipo: " + usuario.GetType().ToString());
+                Usuario usuarioLogado = _context.Usuario.First(x => x.Id == HttpContext.Session.GetInt32("id"));
+                var tipo = usuarioLogado.GetType();
+                System.Diagnostics.Debug.WriteLine("Tipo: " + usuarioLogado.GetType().ToString());
                 //var discriminator = _context.Usuario.Where(l => (l.Id == HttpContext.Session.GetInt32("id"))).Select(l => l.Discriminator).first();
+                HomeViewModel usuario = new HomeViewModel();
+                usuario.Usuario = usuarioLogado;
                 return View(usuario);
 
             } else {

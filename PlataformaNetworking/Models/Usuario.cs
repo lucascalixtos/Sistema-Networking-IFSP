@@ -20,6 +20,7 @@ namespace PlataformaNetworking.Models
 
         public string ProfilePictureUrl { get; set; }
         public int Amizades { get; set; }
+        public bool AmizadesPendentes { get; set; }
 
         public Usuario()
         {
@@ -35,6 +36,7 @@ namespace PlataformaNetworking.Models
             Senha = senha;
             Situacao = situacao;
             Curso = curso;
+            AmizadesPendentes = false;
 ;        }
     }
 }

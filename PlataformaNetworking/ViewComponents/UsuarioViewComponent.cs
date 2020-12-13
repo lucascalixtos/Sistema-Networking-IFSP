@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 namespace PlataformaNetworking.ViewComponents
 {
 
-    public class PainelViewComponent : ViewComponent {
+    public class UsuarioViewComponent : ViewComponent {
         private readonly PlataformaNetworkingContext _context;
 
-        public PainelViewComponent(PlataformaNetworkingContext context)
+        public UsuarioViewComponent(PlataformaNetworkingContext context)
         {
             _context = context;
         }

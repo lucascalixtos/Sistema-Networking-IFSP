@@ -1,4 +1,4 @@
-﻿@model PlataformaNetworking.Models.Usuario
+﻿@model PlataformaNetworking.Models.ViewModels.HomeViewModel
 @{
     ViewData["Title"] = "Vagas";
     //string uploadimagem = Model.UploadPictureUrl == null ? "~/images/avatar3.png" : Model.UploadPictureUrl;
@@ -10,27 +10,7 @@
     <div class="row">
         <div class="col-md-3">
             <div class="card">
-                <div class="card-body">
-
-                    <p class="w3-center">
-                        <div class=" containerPerfil" id="triggerUploadClick">
-                            <img src="@(Model.ProfilePictureUrl == null ? "~/images/avatar2.png" : Model.ProfilePictureUrl)" class="rounded-circle imagemPerfil" alt="Avatar" id="imagemPerfilAlterar">
-                            <div class="overlay">
-                                <a href="#" class="icon" title="User Profile">
-                                    <i class="fa fa-camera"></i>
-                                </a>
-                            </div>
-                            <input type="file" name="uploadFotoPerfil" class="d-none" accept="image/png, image/jpeg" id="campoUploadImagem" />
-                        </div>
-                    </p>
-                    <div class="formAlterarImagemUsuario d-none">
-                        <form method="post" id="formAlterarImagem">
-                            <input name="ProfilePictureUrl" id="campoInputNovaImagem" type="text" value="@Model.ProfilePictureUrl" />
-                        </form>
-                    </div>
-                    <div class="h5">@Model.Nome @Model.Sobrenome</div>
-                    <div class="h7 text-muted">@Model.GetType().Name</div>
-                </div>
+                @await Component.InvokeAsync("Usuario")
                 @await Component.InvokeAsync("Painel")
             </div>
         </div>

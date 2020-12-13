@@ -2,7 +2,9 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Rewrite.Internal.UrlActions;
 using Microsoft.EntityFrameworkCore;
 using PlataformaNetworking.Data;
 using PlataformaNetworking.Models;
@@ -299,6 +301,7 @@ namespace PlataformaNetworking.Controllers
                 _context.Add(habilidade);
 
                 int sucesso = await _context.SaveChangesAsync();
+                
 
                 return sucesso == 0 ? false : true;
             } catch (Exception) {
@@ -315,6 +318,7 @@ namespace PlataformaNetworking.Controllers
 
                 amizade.IdUsuario1 = usuario.Id;
                 amizade.Status = AmizadeStatus.Pendente;
+                usuario.AmizadesPendentes = true;
 
                 _context.Add(amizade);
 
@@ -325,6 +329,27 @@ namespace PlataformaNetworking.Controllers
             catch (Exception)
             {
                 return false;
+            }
+        }
+
+        public async Task<ActionResult> AceitaSolicitacaoAmizade(int id)
+        {
+            try
+            {
+                Amizade amizade = _context.Amizade.First(x => x.Id == id);
+                amizade.Status = AmizadeStatus.Ativo;
+
+                _context.Amizade.Update(amizade);
+
+                int sucesso = await _context.SaveChangesAsync();
+
+                return RedirectToAction("Index", "Home");
+
+                //return sucesso == 0 ? false : true;
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("Index", "Home");
             }
         }
 

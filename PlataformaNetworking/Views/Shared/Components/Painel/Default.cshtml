@@ -13,7 +13,7 @@
                 Vagas
             </a>
             @{
-                if (Model.GetType().Name == "Aluno")
+                if (Model.Usuario.GetType().Name == "Aluno")
                 {
                     <a class="dropdown-item" href="@Url.Action("Vagas", "Home")">
                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bookmark" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -27,15 +27,14 @@
     </ul>
 
 
-    </li>
+    
     <!--Add aqui-->
     @{
-        if (Model.GetType().Name == "Aluno")
+        if (Model.Usuario.GetType().Name == "Aluno")
         {
             @await Component.InvokeAsync("Habilidades");
         }
 
     }
 
-</ul>
 
