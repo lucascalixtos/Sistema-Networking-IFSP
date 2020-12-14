@@ -80,6 +80,23 @@ namespace PlataformaNetworking.Migrations
                     b.ToTable("Comment");
                 });
 
+            modelBuilder.Entity("PlataformaNetworking.Models.Curriculo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<byte[]>("Dados");
+
+                    b.Property<string>("Nome");
+
+                    b.Property<string>("Tipo");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Curriculo");
+                });
+
             modelBuilder.Entity("PlataformaNetworking.Models.DislikeModel", b =>
                 {
                     b.Property<int>("Id")
@@ -223,15 +240,27 @@ namespace PlataformaNetworking.Migrations
                     b.ToTable("Vaga");
                 });
 
+            modelBuilder.Entity("PlataformaNetworking.Models.Administrador", b =>
+                {
+                    b.HasBaseType("PlataformaNetworking.Models.Usuario");
+
+
+                    b.ToTable("Administrador");
+
+                    b.HasDiscriminator().HasValue("Administrador");
+                });
+
             modelBuilder.Entity("PlataformaNetworking.Models.Aluno", b =>
                 {
                     b.HasBaseType("PlataformaNetworking.Models.Usuario");
 
                     b.Property<int>("AnoIngresso");
 
-                    b.Property<string>("Curriculo");
+                    b.Property<int?>("CurriculoId");
 
                     b.Property<string>("Habilidades");
+
+                    b.HasIndex("CurriculoId");
 
                     b.ToTable("Aluno");
 
@@ -276,6 +305,13 @@ namespace PlataformaNetworking.Migrations
                     b.HasOne("PlataformaNetworking.Models.Usuario", "UsuarioPost")
                         .WithMany()
                         .HasForeignKey("UsuarioPostId");
+                });
+
+            modelBuilder.Entity("PlataformaNetworking.Models.Aluno", b =>
+                {
+                    b.HasOne("PlataformaNetworking.Models.Curriculo", "Curriculo")
+                        .WithMany()
+                        .HasForeignKey("CurriculoId");
                 });
 #pragma warning restore 612, 618
         }

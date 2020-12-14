@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -148,6 +150,28 @@ namespace PlataformaNetworking.Controllers
         private bool AlunoExists(int id)
         {
             return _context.Aluno.Any(e => e.Id == id);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UploadCurriculo([FromForm(Name = "arquivo")] IFormFile arquivo) {
+            int? id = HttpContext.Session.GetInt32("id");
+            Aluno aluno = _context.Aluno.Where(al => al.Id == id).FirstOrDefault();
+            aluno.Curriculo = new Curriculo();
+            aluno.Curriculo.Nome = arquivo.FileName;
+            aluno.Curriculo.Tipo = arquivo.ContentType;
+            using (var dataStream = new MemoryStream()) {
+                await arquivo.CopyToAsync(dataStream);
+                aluno.Curriculo.Dados = dataStream.ToArray();
+            }
+            _context.Curriculo.Add(aluno.Curriculo);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> DownloadFileFromDatabase(int id) {
+            var arquivo = await _context.Curriculo.Where(x => x.Id == id).FirstOrDefaultAsync();
+            if (arquivo == null) return null;
+            return File(arquivo.Dados, arquivo.Tipo, arquivo.Nome);
         }
     }
 }

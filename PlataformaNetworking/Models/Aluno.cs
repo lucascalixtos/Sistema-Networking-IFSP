@@ -10,6 +10,6 @@ namespace PlataformaNetworking.Models {
         public string Habilidades { get; set; }
         //public ??? Recomendacoes { get; set; }
         //Candidaturas
-        public string Curriculo { get; set;}
+        public Curriculo Curriculo { get; set;}
     }
 }

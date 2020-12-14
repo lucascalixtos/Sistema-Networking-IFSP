@@ -35,14 +35,30 @@
         </p>
 
         <p>
-            <i class="fa fa-envelope fa-fw w3-margin-right w3-text-theme"></i> @email
+            <i class="fa fa-envelope fa-fw w3-margin-right w3-text-theme">Email: @email</i>
         </p>
         <p>
-            <i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> @nascimento
+            <i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme">Data de nascimento: @nascimento </i>
+        </p>
+        <p>
+
+            @{
+                if (Model.GetType().Name == "Aluno") {
+                    @await Component.InvokeAsync("Curriculo", new { id = Model.Id });
+                }
+            }
+
         </p>
 
     </div><br />
-        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Editar</button><br />
+    <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Editar</button><br />
+    @{
+        if (Model.GetType().Name == "Aluno") {
+            <button class="btn btn-primary" data-toggle="modal" data-target="#addCurriculo">Adicionar Curriculo</button><br />
+        }
+    }
+
+
     <form method="post" id="formAmizade">
         <input type="hidden" id="IdUsuario2" name="IdUsuario2" value="@Model.Id" />
         <button onclick="SolicitaAmizade()" type="submit" class="btn btn-primary">Solicitar Amizade</button>
@@ -54,8 +70,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
 
-            @using (Html.BeginForm("Edit", "Usuarios"))
-            {
+            @using (Html.BeginForm("Edit", "Usuarios")) {
                 <!-- Modal Header -->
                 <div class="modal-header">
                     <h4 class="modal-title">Editar Usuário</h4>
@@ -122,23 +137,52 @@
             }
         </div>
     </div>
+    </div>
 
-    @section Scripts{
-        <script src="~/js/uploadImagem.js"></script>
-        <script>
-            function SolicitaAmizade() {
-                $('body').on('submit', '#formAmizade', function (evt) {
-                    evt.preventDefault();
-                    $.ajax({
-                        url: '/Usuarios/SolicitaAmizade',
-                        type: 'post',
-                        data: $('#formAmizade').serialize(),
-                        success: function () {
-                            document.location.reload();
-                        }
+        <div class="modal fade" id="addCurriculo">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Editar Usuário</h4>
+                            <button type="button" class="close" data-dismiss="modal">×</button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <div class="form-horizontal">
+                                <form method="post" enctype="multipart/form-data" asp-action="UploadCurriculo" asp-controller="Aluno">
+                                    <input type="file" name="arquivo" required />
+                                    <button class="btn btn-success" type="submit" asp-action="UploadCurriculo" asp-controller="Aluno">Salvar</button>
+                                </form>
+                            </div>
+
+                            <!-- Modal footer -->
+
+
+                        </div>
+                 
+                </div>
+            </div>
+        </div>
+
+        @section Scripts{
+            <script src="~/js/uploadImagem.js"></script>
+            <script>
+                function SolicitaAmizade() {
+                    $('body').on('submit', '#formAmizade', function (evt) {
+                        evt.preventDefault();
+                        $.ajax({
+                            url: '/Usuarios/SolicitaAmizade',
+                            type: 'post',
+                            data: $('#formAmizade').serialize(),
+                            success: function () {
+                                document.location.reload();
+                            }
+                        });
                     });
-                });
-            }
-        </script>
-    }
-</div>
+                }
+            </script>
+        }
+    </div>

@@ -90,7 +90,7 @@ WriteAttributeValue("", 706, imagemPerfil, 706, 13, false);
             ");
             EndContext();
             BeginContext(1236, 187, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1e9da6fd5b9b4c9fa3ce9b8db03580a8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fc10bea33d5349e881d66e2ba659b3e1", async() => {
                 BeginContext(1279, 87, true);
                 WriteLiteral("\r\n                <input name=\"ProfilePictureUrl\" id=\"campoInputNovaImagem\" type=\"text\"");
                 EndContext();
@@ -155,7 +155,7 @@ WriteAttributeValue("", 1374, Model.ProfilePictureUrl, 1374, 24, false);
             WriteLiteral("\r\n        </p>\r\n\r\n    </div><br />\r\n    ");
             EndContext();
             BeginContext(1843, 245, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e680e28e7098404f99bcede60fcf1b6f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b50d29141c75422d8835b83def708d33", async() => {
                 BeginContext(1880, 64, true);
                 WriteLiteral("\r\n        <input type=\"hidden\" id=\"IdUsuario2\" name=\"IdUsuario2\"");
                 EndContext();
@@ -419,7 +419,7 @@ Write(await Component.InvokeAsync("Amizade", Model.Id));
                 WriteLiteral("\r\n        ");
                 EndContext();
                 BeginContext(6202, 44, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3468998209b44d1f94e9fc6fa5010849", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6cc25624db3240f0a8cc3533c76a6cae", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
