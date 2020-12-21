@@ -3,7 +3,7 @@
     ViewData["Title"] = "Login";
     Layout = "_LoginLayout";
 }
-    <link rel="stylesheet" href="~/css/Login.css">
+<link rel="stylesheet" href="~/css/Login.css">
 
 <div class="login">
     <div class="cardLogin">
@@ -24,8 +24,9 @@
                     <input asp-for="Senha" type="password" class="form-control" />
                 </div>
             </div>
-                <a href="@Url.Action("Create","Empresa")">É empresa? se cadastre por aqui</a><br />
-                <a href="@Url.Action("Create","Aluno")">É aluno? se cadastre por aqui</a>
+            <a href="@Url.Action("Create","Empresa")">É empresa? Cadastre-se por aqui</a><br />
+            <a href="@Url.Action("Create","Aluno")">É aluno? Cadastre-se por aqui</a><br />
+            <a href="@Url.Action("Create","Professor")">É professor? Cadastre-se por aqui</a>
             <div class="form-group">
                 <input type="submit" value="Login" class="w3-button w3-black w3-hover-blue btnCadastrar" />
             </div>

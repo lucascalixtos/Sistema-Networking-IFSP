@@ -449,3 +449,14 @@ C:\Users\lucas\Source\Repos\Sistema-Networking-IFSP\PlataformaNetworking\obj\Deb
 C:\Users\lucas\Source\Repos\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Administradors\Edit.cshtml.g.cs
 C:\Users\lucas\Source\Repos\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Administradors\Index.cshtml.g.cs
 C:\Users\lucas\Source\Repos\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Components\Curriculo\Default.cshtml.g.cs
+C:\Users\thiag\Desktop\FACULDADE\Sistema-Networking-IFSP\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Administradors\Create.cshtml.g.cs
+C:\Users\thiag\Desktop\FACULDADE\Sistema-Networking-IFSP\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Administradors\Delete.cshtml.g.cs
+C:\Users\thiag\Desktop\FACULDADE\Sistema-Networking-IFSP\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Administradors\Details.cshtml.g.cs
+C:\Users\thiag\Desktop\FACULDADE\Sistema-Networking-IFSP\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Administradors\Edit.cshtml.g.cs
+C:\Users\thiag\Desktop\FACULDADE\Sistema-Networking-IFSP\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Administradors\Index.cshtml.g.cs
+C:\Users\thiag\Desktop\FACULDADE\Sistema-Networking-IFSP\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Components\Curriculo\Default.cshtml.g.cs
+C:\Users\thiag\Desktop\FACULDADE\Sistema-Networking-IFSP\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Professor\Create.cshtml.g.cs
+C:\Users\thiag\Desktop\FACULDADE\Sistema-Networking-IFSP\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Professor\Delete.cshtml.g.cs
+C:\Users\thiag\Desktop\FACULDADE\Sistema-Networking-IFSP\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Professor\Details.cshtml.g.cs
+C:\Users\thiag\Desktop\FACULDADE\Sistema-Networking-IFSP\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Professor\Edit.cshtml.g.cs
+C:\Users\thiag\Desktop\FACULDADE\Sistema-Networking-IFSP\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Professor\Index.cshtml.g.cs

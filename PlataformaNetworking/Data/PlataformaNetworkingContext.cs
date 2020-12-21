@@ -27,5 +27,6 @@ namespace PlataformaNetworking.Data
         public DbSet<Administrador> Administrador { get; set; }
         //public DbSet<AmizadeUsuarioViewModel> AmizadeUsuario { get; set; }
         public DbSet<Curriculo> Curriculo { get; set; }
+        public DbSet<Professor> Professor { get; set; }
     }
 }
