@@ -96,7 +96,7 @@ WriteAttributeValue("", 706, imagemPerfil, 706, 13, false);
             ");
             EndContext();
             BeginContext(1236, 187, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "82950bb2849845b183402b90c2355e95", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "42550f0ff48b46c092873f1233328a15", async() => {
                 BeginContext(1279, 87, true);
                 WriteLiteral("\r\n                <input name=\"ProfilePictureUrl\" id=\"campoInputNovaImagem\" type=\"text\"");
                 EndContext();
@@ -203,7 +203,7 @@ WriteAttributeValue("", 1374, Model.ProfilePictureUrl, 1374, 24, false);
             WriteLiteral("\r\n\r\n    ");
             EndContext();
             BeginContext(2401, 245, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "df2b8248ef1e441c9d4a1728b72b2cbe", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "17d8759f0fca431883f34be246adcea3", async() => {
                 BeginContext(2438, 64, true);
                 WriteLiteral("\r\n        <input type=\"hidden\" id=\"IdUsuario2\" name=\"IdUsuario2\"");
                 EndContext();
@@ -469,12 +469,12 @@ WriteAttributeValue("", 2510, Model.Id, 2510, 9, false);
                                 ");
             EndContext();
             BeginContext(7286, 377, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f77920a38aa2400c9a82fefbbbe8ecd2", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a331032ad1fa4415b7c65294b43af690", async() => {
                 BeginContext(7388, 121, true);
                 WriteLiteral("\r\n                                    <input type=\"file\" name=\"arquivo\" required />\r\n                                    ");
                 EndContext();
                 BeginContext(7509, 113, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c645ee1db34e472c9e53582d1165f611", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "41d7a5f828a24b6e94e73933219852f0", async() => {
                     BeginContext(7607, 6, true);
                     WriteLiteral("Salvar");
                     EndContext();
@@ -528,7 +528,7 @@ WriteAttributeValue("", 2510, Model.Id, 2510, 9, false);
                 WriteLiteral("\r\n            ");
                 EndContext();
                 BeginContext(7910, 44, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0602b58d2ada47f983f49c5568e1adca", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e68ee424e5ae41ae9cdc32b613c4f298", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

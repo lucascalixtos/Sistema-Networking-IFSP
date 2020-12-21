@@ -8,48 +8,53 @@
     string imagemPerfil = Model.ProfilePictureUrl == null ? "~/images/avatar2.png" : Model.ProfilePictureUrl;
 }
 
-<h2>Perfil</h2>
+<div class="container">
+    <h2>Perfil</h2>
 
-<div class="w3-card w3-round w3-white col-lg-6" style="padding: 20px;">
-    <div class="w3-container">
-        <div class="w3-content"><h3><b>@usuario</b></h3></div>
-        <p class="w3-center">
-            <div class=" containerPerfil" id="triggerUploadClick">
-                <img src="@imagemPerfil" class="w3-circle imagemPerfil" alt="Avatar" id="imagemPerfilAlterar">
-                <div class="overlay">
-                    <a href="#" class="icon" title="User Profile">
-                        <i class="fa fa-camera"></i>
-                    </a>
+    <div class="w3-card w3-round w3-white col-lg-6" style="padding: 20px;">
+        <div class="w3-container">
+            <div class="w3-content"><h3><b>@usuario</b></h3></div>
+            <p class="w3-center">
+                <div class=" containerPerfil" id="triggerUploadClick">
+                    <img src="@imagemPerfil" class="w3-circle imagemPerfil" alt="Avatar" id="imagemPerfilAlterar">
+                    <div class="overlay">
+                        <a href="#" class="icon" title="User Profile">
+                            <i class="fa fa-camera"></i>
+                        </a>
+                    </div>
+                    <input type="file" name="uploadFotoPerfil" class="d-none" accept="image/png, image/jpeg" id="campoUploadImagem" />
                 </div>
-                <input type="file" name="uploadFotoPerfil" class="d-none" accept="image/png, image/jpeg" id="campoUploadImagem" />
+            </p>
+            <div class="formAlterarImagemUsuario d-none">
+                <form method="post" id="formAlterarImagem">
+                    <input name="ProfilePictureUrl" id="campoInputNovaImagem" type="text" value="@Model.ProfilePictureUrl" />
+                </form>
             </div>
-        </p>
-        <div class="formAlterarImagemUsuario d-none">
-            <form method="post" id="formAlterarImagem">
-                <input name="ProfilePictureUrl" id="campoInputNovaImagem" type="text" value="@Model.ProfilePictureUrl" />
-            </form>
-        </div>
-        <hr>
-        <p>
-            <i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i>Estudante de @curso
-        </p>
+            <hr>
+            <p>
+                <i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i>Estudante de @curso
+            </p>
 
-        <p>
-            <i class="fa fa-envelope fa-fw w3-margin-right w3-text-theme"></i> @email
-        </p>
-        <p>
-            <i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> @nascimento
-        </p>
+            <p>
+                <i class="fa fa-envelope fa-fw w3-margin-right w3-text-theme"></i> @email
+            </p>
+            <p>
+                <i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> @nascimento
+            </p>
 
-    </div><br />
-    <form method="post" id="formAmizade">
-        <input type="hidden" id="IdUsuario2" name="IdUsuario2" value="@Model.Id" />
-        <button onclick="SolicitaAmizade()" type="submit" class="btn btn-primary">Solicitar Amizade</button>
-    </form>
+        </div><br />
+        <form method="post" id="formAmizade">
+            <input type="hidden" id="IdUsuario2" name="IdUsuario2" value="@Model.Id" />
+            <button onclick="SolicitaAmizade()" type="submit" class="btn btn-primary">Solicitar Amizade</button>
+        </form>
+    </div>
+    
+</div><br />
+<div class="container">
+    <h2>Amigos</h2>
+    @await Component.InvokeAsync("Amizade", Model.Id)
 </div>
 
-<h2>Amigos</h2>
-@await Component.InvokeAsync("Amizade", Model.Id)
 
 <!-- The Modal -->
 <div class="modal fade" id="myModal">
