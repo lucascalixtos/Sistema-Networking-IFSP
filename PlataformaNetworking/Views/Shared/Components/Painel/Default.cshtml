@@ -30,20 +30,20 @@
 
 <!--Add aqui-->
 <li class="list-group-item">
-    <div class="h6 text-muted">Meus Conhecimentos</div>
+    <div class="h5 text-muted">Meus Conhecimentos e Recomendações</div>
     @{
         if (Model.Usuario.GetType().Name == "Aluno")
         {
             <div>
                 @await Component.InvokeAsync("Habilidades")
-                <span class="badge badge-primary" id="adicionarHabilidade">+</span>
+                <span class="badge badge-dark" id="adicionarHabilidade">+</span>
                 <div class="row mt-2">
                     <form method="post" id="formNewHabilidade" style="display:none">
                         <div class="col-md-5">
                             <input type="text" class="form-control" name="NomeHabilidade" id="NomeHabilidade" />
                         </div>
                         <div class="col-md-3">
-                            <button type="submit" class="btn btn-primary">Adicionar</button>
+                            <button type="submit" class="btn btn-secondary">Adicionar</button>
                         </div>
                     </form>
                 </div>

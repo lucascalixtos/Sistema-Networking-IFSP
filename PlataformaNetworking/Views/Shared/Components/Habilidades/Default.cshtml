@@ -3,10 +3,44 @@
 @{
     ViewData["Title"] = "Default";
 }
+
+@foreach (var item in Model)
+{
+    <div class="btn btn-default" id="habilidade-@item.Id">
+        @item.NomeHabilidade <span class="badge badge-light">@item.Recomendacoes</span>
+        <span class="btn btn-secondary" id="recomendar-@item.Id" onclick="recomendar(@item.Id, @item.IdAluno)" style="display: none">Recomendar</span>
+    </div>
     
-        @foreach (var item in Model)
-        {
-            <span class="badge badge-primary">@item.NomeHabilidade</span>
-        }
         
+
+    <script>
+        $("#habilidade-" + @item.Id).css("cursor", "default");
+
+        async function recomendar(idHabilidade, idAluno) {
+            var parametros = {
+                IdHabilidade: idHabilidade,
+                idAluno: idAluno
+            };
+
+            $.ajax({
+                datatype: 'json',
+                contentType: "application/json",
+                type: "POST",
+                url: "/Usuarios/RecomendaHabilidade",
+                data: JSON.stringify(parametros),
+                async: true,
+                success: function (data) {
+                    document.location.reload();
+                }
+            });
+        }
+
+        $("#habilidade-" + @item.Id).click(function () {
+            $("#recomendar-" + @item.Id).toggle();
+        });
+    </script>
+}
+
+
+
 

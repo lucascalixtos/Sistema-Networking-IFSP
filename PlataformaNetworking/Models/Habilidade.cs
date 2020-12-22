@@ -9,5 +9,6 @@ namespace PlataformaNetworking.Models {
         public int Id { get; set; }
         public int IdAluno { get; set; }
         public string NomeHabilidade { get; set; }
+        public int Recomendacoes { get; set; }
     }
 }

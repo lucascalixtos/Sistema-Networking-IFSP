@@ -66,7 +66,7 @@ WriteAttributeValue("", 158, Model.Usuario.ProfilePictureUrl == null ? "~/images
             ");
             EndContext();
             BeginContext(781, 195, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6799a50c696249808a85a11af5aedb72", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0101144e7bd545479c9725e4c511e47a", async() => {
                 BeginContext(824, 87, true);
                 WriteLiteral("\r\n                <input name=\"ProfilePictureUrl\" id=\"campoInputNovaImagem\" type=\"text\"");
                 EndContext();

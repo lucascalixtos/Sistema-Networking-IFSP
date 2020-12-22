@@ -322,6 +322,34 @@ namespace PlataformaNetworking.Controllers
             }
         }
 
+        public class JsonRequest
+        {
+            public string IdHabilidade { get; set; }
+            public string IdAluno { get; set; }
+        }
+
+        [HttpPost]
+        public async Task<bool> RecomendaHabilidade([FromBody]JsonRequest data)
+        {
+            try
+            {
+                //Busca o usuário logado 
+                Usuario usuario = _context.Usuario.First(x => x.Id == HttpContext.Session.GetInt32("id"));
+
+
+                Habilidade habilidade = _context.Habilidade.ToList()
+                    .Find(u => u.Id == Convert.ToInt32(data.IdHabilidade) && u.IdAluno == Convert.ToInt32(data.IdAluno));
+                habilidade.Recomendacoes += 1;
+
+                int sucesso = await _context.SaveChangesAsync();
+                return sucesso == 0 ? false : true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public async Task<bool> SolicitaAmizade([Bind("IdUsuario2")] Amizade amizade)
         {
             try
