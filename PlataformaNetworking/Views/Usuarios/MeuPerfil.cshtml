@@ -1,14 +1,20 @@
-﻿@model PlataformaNetworking.Models.Usuario
+﻿@model PlataformaNetworking.Models.ViewModels.HomeViewModel
 @{
     ViewData["Title"] = "Perfil";
-    string usuario = Model.Nome + " " + Model.Sobrenome;
-    string curso = Model.Curso;
-    string email = Model.Email;
-    string nascimento = Model.DataNascimento.ToString("MM/dd/yyyy");
-    string imagemPerfil = Model.ProfilePictureUrl == null ? "~/images/avatar2.png" : Model.ProfilePictureUrl;
+    string usuario = Model.Usuario.Nome + " " + Model.Usuario.Sobrenome;
+    string curso = Model.Usuario.Curso;
+    string email = Model.Usuario.Email;
+    string nascimento = Model.Usuario.DataNascimento.ToString("MM/dd/yyyy");
+    string imagemPerfil = Model.Usuario.ProfilePictureUrl == null ? "~/images/avatar2.png" : Model.Usuario.ProfilePictureUrl;
 }
 
 <h2>Perfil</h2>
+
+<div class="col-md-3">
+    <div class="card">
+        @await Component.InvokeAsync("Painel")
+    </div>
+</div>
 
 <div class="w3-card w3-round w3-white col-lg-6" style="padding: 20px;">
     <div class="w3-container">
@@ -26,7 +32,7 @@
         </p>
         <div class="formAlterarImagemUsuario d-none">
             <form method="post" id="formAlterarImagem">
-                <input name="ProfilePictureUrl" id="campoInputNovaImagem" type="text" value="@Model.ProfilePictureUrl" />
+                <input name="ProfilePictureUrl" id="campoInputNovaImagem" type="text" value="@Model.Usuario.ProfilePictureUrl" />
             </form>
         </div>
         <hr>
@@ -43,8 +49,9 @@
         <p>
 
             @{
-                if (Model.GetType().Name == "Aluno") {
-                    @await Component.InvokeAsync("Curriculo", new { id = Model.Id });
+                if (Model.Usuario.GetType().Name == "Aluno")
+                {
+                    @await Component.InvokeAsync("Curriculo", new { id = Model.Usuario.Id });
                 }
             }
 
@@ -53,24 +60,20 @@
     </div><br />
     <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Editar</button><br />
     @{
-        if (Model.GetType().Name == "Aluno") {
+        if (Model.Usuario.GetType().Name == "Aluno")
+        {
             <button class="btn btn-primary" data-toggle="modal" data-target="#addCurriculo">Adicionar Curriculo</button><br />
         }
     }
 
-
-    <form method="post" id="formAmizade">
-        <input type="hidden" id="IdUsuario2" name="IdUsuario2" value="@Model.Id" />
-        <button onclick="SolicitaAmizade()" type="submit" class="btn btn-primary">Solicitar Amizade</button>
-    </form>
-</div>
 
 <!-- The Modal -->
 <div class="modal fade" id="myModal">
     <div class="modal-dialog">
         <div class="modal-content">
 
-            @using (Html.BeginForm("Edit", "Usuarios")) {
+            @using (Html.BeginForm("Edit", "Usuarios"))
+            {
                 <!-- Modal Header -->
                 <div class="modal-header">
                     <h4 class="modal-title">Editar Usuário</h4>
@@ -83,45 +86,45 @@
                     <div class="form-horizontal">
                         <hr />
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                        @Html.HiddenFor(model => model.Id)
+                        @Html.HiddenFor(model => model.Usuario.Id)
 
                         <div class="form-group">
-                            @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.LabelFor(model => model.Usuario.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
                             <div class="col-md-10">
-                                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.Usuario.Nome, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Usuario.Nome, "", new { @class = "text-danger" })
                             </div>
                         </div>
 
                         <div class="form-group">
-                            @Html.LabelFor(model => model.Sobrenome, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.LabelFor(model => model.Usuario.Sobrenome, htmlAttributes: new { @class = "control-label col-md-2" })
                             <div class="col-md-10">
-                                @Html.EditorFor(model => model.Sobrenome, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.Sobrenome, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.Usuario.Sobrenome, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Usuario.Sobrenome, "", new { @class = "text-danger" })
                             </div>
                         </div>
 
                         <div class="form-group">
-                            @Html.LabelFor(model => model.Curso, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.LabelFor(model => model.Usuario.Curso, htmlAttributes: new { @class = "control-label col-md-2" })
                             <div class="col-md-10">
-                                @Html.EditorFor(model => model.Curso, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.Curso, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.Usuario.Curso, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Usuario.Curso, "", new { @class = "text-danger" })
                             </div>
                         </div>
 
                         <div class="form-group">
-                            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.LabelFor(model => model.Usuario.Email, htmlAttributes: new { @class = "control-label col-md-2" })
                             <div class="col-md-10">
-                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.Usuario.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Usuario.Email, "", new { @class = "text-danger" })
                             </div>
                         </div>
 
                         <div class="form-group">
-                            @Html.LabelFor(model => model.DataNascimento, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.LabelFor(model => model.Usuario.DataNascimento, htmlAttributes: new { @class = "control-label col-md-2" })
                             <div class="col-md-10">
-                                @Html.EditorFor(model => model.DataNascimento, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.DataNascimento, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.Usuario.DataNascimento, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Usuario.DataNascimento, "", new { @class = "text-danger" })
                             </div>
                         </div>
                     </div>
@@ -137,52 +140,52 @@
             }
         </div>
     </div>
-    </div>
+</div>
 
-        <div class="modal fade" id="addCurriculo">
-            <div class="modal-dialog">
-                <div class="modal-content">
+<div class="modal fade" id="addCurriculo">
+    <div class="modal-dialog">
+        <div class="modal-content">
 
-                        <!-- Modal Header -->
-                        <div class="modal-header">
-                            <h4 class="modal-title">Editar Usuário</h4>
-                            <button type="button" class="close" data-dismiss="modal">×</button>
-                        </div>
-
-                        <!-- Modal body -->
-                        <div class="modal-body">
-                            <div class="form-horizontal">
-                                <form method="post" enctype="multipart/form-data" asp-action="UploadCurriculo" asp-controller="Aluno">
-                                    <input type="file" name="arquivo" required />
-                                    <button class="btn btn-success" type="submit" asp-action="UploadCurriculo" asp-controller="Aluno">Salvar</button>
-                                </form>
-                            </div>
-
-                            <!-- Modal footer -->
-
-
-                        </div>
-                 
-                </div>
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Editar Usuário</h4>
+                <button type="button" class="close" data-dismiss="modal">×</button>
             </div>
-        </div>
 
-        @section Scripts{
-            <script src="~/js/uploadImagem.js"></script>
-            <script>
-                function SolicitaAmizade() {
-                    $('body').on('submit', '#formAmizade', function (evt) {
-                        evt.preventDefault();
-                        $.ajax({
-                            url: '/Usuarios/SolicitaAmizade',
-                            type: 'post',
-                            data: $('#formAmizade').serialize(),
-                            success: function () {
-                                document.location.reload();
-                            }
-                        });
-                    });
-                }
-            </script>
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="form-horizontal">
+                    <form method="post" enctype="multipart/form-data" asp-action="UploadCurriculo" asp-controller="Aluno">
+                        <input type="file" name="arquivo" required />
+                        <button class="btn btn-success" type="submit" asp-action="UploadCurriculo" asp-controller="Aluno">Salvar</button>
+                    </form>
+                </div>
+
+                <!-- Modal footer -->
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/js/uploadImagem.js"></script>
+    <script>
+        function SolicitaAmizade() {
+            $('body').on('submit', '#formAmizade', function (evt) {
+                evt.preventDefault();
+                $.ajax({
+                    url: '/Usuarios/SolicitaAmizade',
+                    type: 'post',
+                    data: $('#formAmizade').serialize(),
+                    success: function () {
+                        document.location.reload();
+                    }
+                });
+            });
         }
+    </script>
+}
     </div>

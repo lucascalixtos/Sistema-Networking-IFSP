@@ -14,8 +14,13 @@ namespace PlataformaNetworking.ViewComponents {
             _context = context;
         }
 
-        public async Task<IViewComponentResult> InvokeAsync() {
-            return View( _context.Habilidade.Where(x => x.IdAluno == HttpContext.Session.GetInt32("id")).ToList());
+        public async Task<IViewComponentResult> InvokeAsync(int id) {
+            if (id == 0)
+            {
+                return View(_context.Habilidade.Where(x => x.IdAluno == HttpContext.Session.GetInt32("id")).ToList());
+            }
+            return View(_context.Habilidade.Where(x => x.IdAluno == id).ToList());
         }
+
     }
 }

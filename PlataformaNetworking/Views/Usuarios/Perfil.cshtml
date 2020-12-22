@@ -1,151 +1,87 @@
-﻿@model PlataformaNetworking.Models.Usuario
+﻿@model PlataformaNetworking.Models.ViewModels.HomeViewModel
 @{
     ViewData["Title"] = "Perfil";
-    string usuario = Model.Nome + " " + Model.Sobrenome;
-    string curso = Model.Curso;
-    string email = Model.Email;
-    string nascimento = Model.DataNascimento.ToString("MM/dd/yyyy");
-    string imagemPerfil = Model.ProfilePictureUrl == null ? "~/images/avatar2.png" : Model.ProfilePictureUrl;
+    string usuario = Model.Usuario.Nome + " " + Model.Usuario.Sobrenome;
+    string curso = Model.Usuario.Curso;
+    string email = Model.Usuario.Email;
+    string nascimento = Model.Usuario.DataNascimento.ToString("MM/dd/yyyy");
+    string imagemPerfil = Model.Usuario.ProfilePictureUrl == null ? "~/images/avatar2.png" : Model.Usuario.ProfilePictureUrl;
 }
 
-<div class="container">
-    <h2>Perfil</h2>
+<h2>Perfil</h2>
 
-    <div class="w3-card w3-round w3-white col-lg-6" style="padding: 20px;">
-        <div class="w3-container">
-            <div class="w3-content"><h3><b>@usuario</b></h3></div>
-            <p class="w3-center">
-                <div class=" containerPerfil" id="triggerUploadClick">
-                    <img src="@imagemPerfil" class="w3-circle imagemPerfil" alt="Avatar" id="imagemPerfilAlterar">
-                    <div class="overlay">
-                        <a href="#" class="icon" title="User Profile">
-                            <i class="fa fa-camera"></i>
-                        </a>
-                    </div>
-                    <input type="file" name="uploadFotoPerfil" class="d-none" accept="image/png, image/jpeg" id="campoUploadImagem" />
+
+
+<div class="w3-card w3-round w3-white col-lg-6" style="padding: 20px;">
+    <div class="w3-container">
+        <div class="w3-content"><h3><b>@usuario</b></h3></div>
+        <p class="w3-center">
+            <div class=" containerPerfil" id="triggerUploadClick">
+                <img src="@imagemPerfil" class="w3-circle imagemPerfil" alt="Avatar" id="imagemPerfilAlterar">
+                <div class="overlay">
+                    <a href="#" class="icon" title="User Profile">
+                        <i class="fa fa-camera"></i>
+                    </a>
                 </div>
-            </p>
-            <div class="formAlterarImagemUsuario d-none">
-                <form method="post" id="formAlterarImagem">
-                    <input name="ProfilePictureUrl" id="campoInputNovaImagem" type="text" value="@Model.ProfilePictureUrl" />
-                </form>
+                <input type="file" name="uploadFotoPerfil" class="d-none" accept="image/png, image/jpeg" id="campoUploadImagem" />
             </div>
-            <hr>
-            <p>
-                <i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i>Estudante de @curso
-            </p>
-
-            <p>
-                <i class="fa fa-envelope fa-fw w3-margin-right w3-text-theme"></i> @email
-            </p>
-            <p>
-                <i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> @nascimento
-            </p>
-
-        </div><br />
-        <form method="post" id="formAmizade">
-            <input type="hidden" id="IdUsuario2" name="IdUsuario2" value="@Model.Id" />
-            <button onclick="SolicitaAmizade()" type="submit" class="btn btn-primary">Solicitar Amizade</button>
-        </form>
-    </div>
-    
-</div><br />
-<div class="container">
-    <h2>Amigos</h2>
-    @await Component.InvokeAsync("Amizade", Model.Id)
-</div>
-
-
-<!-- The Modal -->
-<div class="modal fade" id="myModal">
-    <div class="modal-dialog">
-        <div class="modal-content">
-
-            @using (Html.BeginForm("Edit", "Usuarios"))
-            {
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Editar Usuário</h4>
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                </div>
-
-                @Html.AntiForgeryToken()
-                <!-- Modal body -->
-                <div class="modal-body">
-                    <div class="form-horizontal">
-                        <hr />
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                        @Html.HiddenFor(model => model.Id)
-
-                        <div class="form-group">
-                            @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
-                            <div class="col-md-10">
-                                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            @Html.LabelFor(model => model.Sobrenome, htmlAttributes: new { @class = "control-label col-md-2" })
-                            <div class="col-md-10">
-                                @Html.EditorFor(model => model.Sobrenome, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.Sobrenome, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            @Html.LabelFor(model => model.Curso, htmlAttributes: new { @class = "control-label col-md-2" })
-                            <div class="col-md-10">
-                                @Html.EditorFor(model => model.Curso, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.Curso, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
-                            <div class="col-md-10">
-                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            @Html.LabelFor(model => model.DataNascimento, htmlAttributes: new { @class = "control-label col-md-2" })
-                            <div class="col-md-10">
-                                @Html.EditorFor(model => model.DataNascimento, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.DataNascimento, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Modal footer -->
-                    <div class="modal-footer">
-                        <input type="submit" value="Salvar" class="btn btn-primary" />
-                        <input type="button" value="Cancelar" class="btn btn-danger" data-dismiss="modal" />
-
-                    </div>
-
-                </div>
-            }
+        </p>
+        <div class="formAlterarImagemUsuario d-none">
+            <form method="post" id="formAlterarImagem">
+                <input name="ProfilePictureUrl" id="campoInputNovaImagem" type="text" value="@Model.Usuario.ProfilePictureUrl" />
+            </form>
         </div>
-    </div>
+        <hr>
+        <p>
+            <i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i>Estudante de @curso
+        </p>
 
-    @section Scripts{
-        <script src="~/js/uploadImagem.js"></script>
-        <script>
-            function SolicitaAmizade() {
-                $('body').on('submit', '#formAmizade', function (evt) {
-                    evt.preventDefault();
-                    $.ajax({
-                        url: '/Usuarios/SolicitaAmizade',
-                        type: 'post',
-                        data: $('#formAmizade').serialize(),
-                        success: function () {
-                            document.location.reload();
-                        }
-                    });
-                });
-            }
-        </script>
-    }
+        <p>
+            <i class="fa fa-envelope fa-fw w3-margin-right w3-text-theme"></i> @email
+        </p>
+        <p>
+            <i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> @nascimento
+        </p>
+        @await Component.InvokeAsync("Curriculo", new { id = Model.Usuario.Id })
+    </div><br />
+    <form method="post" id="formAmizade">
+        <input type="hidden" id="IdUsuario2" name="IdUsuario2" value="@Model.Usuario.Id" />
+        <button onclick="SolicitaAmizade()" type="submit" class="btn btn-primary">Solicitar Amizade</button>
+    </form>
 </div>
+
+</div>
+<br />
+
+<li class="list-group-item">
+    <div class="h6 text-muted">Conhecimentos</div>
+    <div>
+        @await Component.InvokeAsync("Habilidades", Model.Usuario.Id)
+    </div>
+</li>
+
+
+<div class="container col-md-3">
+    <h2>Amigos</h2>
+    @await Component.InvokeAsync("Amizade", Model.Usuario.Id)
+</div>
+
+
+@section Scripts{
+    <script src="~/js/uploadImagem.js"></script>
+    <script>
+        function SolicitaAmizade() {
+            $('body').on('submit', '#formAmizade', function (evt) {
+                evt.preventDefault();
+                $.ajax({
+                    url: '/Usuarios/SolicitaAmizade',
+                    type: 'post',
+                    data: $('#formAmizade').serialize(),
+                    success: function () {
+                        document.location.reload();
+                    }
+                });
+            });
+        }
+    </script>
+}

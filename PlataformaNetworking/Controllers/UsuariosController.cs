@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using PlataformaNetworking.Data;
 using PlataformaNetworking.Models;
 using PlataformaNetworking.Models.Enums;
+using PlataformaNetworking.Models.ViewModels;
 
 namespace PlataformaNetworking.Controllers
 {
@@ -269,7 +270,9 @@ namespace PlataformaNetworking.Controllers
         public  IActionResult MeuPerfil()
         {
            if (HttpContext.Session.GetInt32("id") != null) {
-                Usuario usuario = _context.Usuario.First(x => x.Id == HttpContext.Session.GetInt32("id"));
+                Usuario usuarioLogado = _context.Usuario.First(x => x.Id == HttpContext.Session.GetInt32("id"));
+                HomeViewModel usuario = new HomeViewModel();
+                usuario.Usuario = usuarioLogado;
                 return View(usuario);
             } else {
                 return RedirectToAction("Login");
@@ -285,8 +288,10 @@ namespace PlataformaNetworking.Controllers
                 return NotFound();
             }
 
-            var usuario = await _context.Usuario
+            var usuarioLogado = await _context.Usuario
                 .FirstOrDefaultAsync(m => m.Id == id);
+            HomeViewModel usuario = new HomeViewModel();
+            usuario.Usuario = usuarioLogado;
             if (usuario == null)
             {
                 return NotFound();
