@@ -102,11 +102,7 @@ namespace PlataformaNetworking.Controllers
             }
         }
 
-        public JsonResult VerificaInfoUsuario(int idUsuario)
-        {
-            Usuario usuario = _context.Usuario.First(x => x.Id == idUsuario);
-            return Json(usuario, new Newtonsoft.Json.JsonSerializerSettings());
-        }
+        
 
         [HttpPost]
         public async Task<bool> Dislike([FromBody]JsonRequest data)

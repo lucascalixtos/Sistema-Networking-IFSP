@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PlataformaNetworking.Models;
-using PlataformaNetworking.Models.ViewModels;
-using PlataformaNetworking.ViewModels;
+
 
 namespace PlataformaNetworking.Data
 {

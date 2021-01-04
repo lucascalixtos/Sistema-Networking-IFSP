@@ -26,6 +26,7 @@ namespace PlataformaNetworking.ViewComponents {
             int? usuarioLogado = HttpContext.Session.GetInt32("id");
             foreach (var item in listaAmizades)
             {
+                
                 if (item.IdUsuario2 == usuarioLogado && item.Status == AmizadeStatus.Pendente)
                 {
                     amizade.Amizade = item;

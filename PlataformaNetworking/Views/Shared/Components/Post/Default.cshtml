@@ -1,4 +1,4 @@
-﻿@model IEnumerable<PlataformaNetworking.Models.PostModel>
+﻿@model IEnumerable<PlataformaNetworking.Models.ViewModels.HomePostViewModel>
 
 @{
     ViewData["Title"] = "View";
@@ -13,10 +13,10 @@
             <div class="d-flex justify-content-between align-items-center">
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="mr-3">
-                        <img class="rounded-circle" width="50" id="FotoPerfil-@item.Id" src="" alt="">
+                        <img class="rounded-circle" width="50" id="FotoPerfil-@item.Post.Id" src="@item.Usuario.ProfilePictureUrl" alt="">
                     </div>
                     <div class="ml-2">
-                        <a class="h5 m-0" id="NomeUsuario-@item.Id" href=""></a>
+                        <a class="h5 m-0" href="Usuarios/Perfil/@item.Usuario.Id">@item.Usuario.Nome @item.Usuario.Sobrenome</a>
                     </div>
                 </div>
                 <div>
@@ -36,47 +36,45 @@
 
         </div>
         <div class="card-body">
-            <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>@item.PostTime.ToString("dd/MM/yyyy HH:mm")</div>
+            <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>@item.Post.PostTime.ToString("dd/MM/yyyy HH:mm")</div>
             <p class="card-text">
-                @item.TextoPost
+                @item.Post.TextoPost
             </p>
-            <img src="@item.Imagem" style="width:100%" alt="Post Image" class="w3-margin-bottom">
+            <img src="@item.Post.Imagem" style="width:100%" alt="Post Image" class="w3-margin-bottom">
 
         </div>
         <div class="card-footer">
-            <span class="card-link" id="curtir" style="cursor: pointer;" onclick="Like(@item.Id)">Curtir</span>
-            <span class="card-link" id="descurtir" style="cursor: pointer; display: none" onclick="Dislike(@item.Id)">Descurtir</span>
-            <span class="card-link" id="comentar" onclick="Comentar(@item.Id)" style="cursor: pointer"><i class="fa fa-comment"></i> Comentar</span>
+            <span class="card-link" id="curtir" style="cursor: pointer;" onclick="Like(@item.Post.Id)">Curtir</span>
+            <span class="card-link" id="descurtir" style="cursor: pointer; display: none" onclick="Dislike(@item.Post.Id)">Descurtir</span>
+            <span class="card-link" id="comentar" onclick="Comentar(@item.Post.Id)" style="cursor: pointer"><i class="fa fa-comment"></i> Comentar</span>
             <span class="card-link" style="cursor: pointer;">Compartilhar</span>
             <div class="row mt-2">
-                <form method="post" id="formComentario-@item.Id" style="display:none">
-                    <input type="hidden" id="IdPost" name="IdPost" value="@item.Id" />
+                <form method="post" id="formComentario-@item.Post.Id" style="display:none">
+                    <input type="hidden" id="IdPost" name="IdPost" value="@item.Post.Id" />
                     <div class="col-md-5">
                         <input type="text" class="form-control" name="CommentText" id="CommentText" />
                     </div>
                     <div class="col-md-3">
-                        <button onclick="FormComentario(@item.Id)" type="submit" class="btn btn-primary">Comentar</button>
+                        <button onclick="FormComentario(@item.Post.Id)" type="submit" class="btn btn-primary">Comentar</button>
                     </div>
                 </form>
             </div>
 
             <p>
-                <span class="glyphicon glyphicon-thumbs-up card-link"></span> @item.Like
-                <span class="glyphicon glyphicon-comment card-link" onclick="MostrarComentarios(@item.Id)" id="mostrarComentarios" style="cursor: pointer"></span> @item.Comentarios
+                <span class="glyphicon glyphicon-thumbs-up card-link"></span> @item.Post.Like
+                <span class="glyphicon glyphicon-comment card-link" onclick="MostrarComentarios(@item.Post.Id)" id="mostrarComentarios" style="cursor: pointer"></span> @item.Post.Comentarios
                 <span class="glyphicon glyphicon-share card-link"></span> 0
             </p>
 
-            <div id="comentarios-@item.Id" style="display: none">
-                @await Component.InvokeAsync("Comentario", item.Id)
+            <div id="comentarios-@item.Post.Id" style="display: none">
+                @await Component.InvokeAsync("Comentario", item.Post.Id)
             </div>
         </div>
     </div>
 
     <script>
-        VerificaLike(@item.Id);
-        VerificaInfoUsuario(@item.IdUsuario);
-
-
+        VerificaLike(@item.Post.Id);
+        
         async function VerificaLike(idPost) {
 
             $.ajax({
@@ -96,26 +94,7 @@
             })
         }
 
-        async function VerificaInfoUsuario(idUsuario) {
-
-            $.ajax({
-                datatype: 'json',
-                contentType: 'application/json',
-                type: "GET",
-                url: "/Publicacoes/VerificaInfoUsuario?idUsuario=" + idUsuario,
-                /*data: {
-                    idPost: idPost;
-                },*/
-                success: function (usuario) {
-                    $('#NomeUsuario-' + idUsuario).html(usuario.Nome + " " + usuario.Sobrenome);
-                    $('#NomeUsuario-' + idUsuario).attr("href", "Usuarios/Perfil/" + usuario.Id);
-                    if (usuario.ProfilePictureUrl == null) {
-                        $('#FotoPerfil-' + idUsuario).attr("src", "~/images/avatar2.png");
-                    }
-                    $('#FotoPerfil-' + idUsuario).attr("src", usuario.ProfilePictureUrl);
-                }
-            })
-        }
+        
 
     </script>
     

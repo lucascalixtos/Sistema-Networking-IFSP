@@ -25,12 +25,13 @@ namespace PlataformaNetworking.ViewComponents
         public async Task<IViewComponentResult> InvokeAsync(int id)
         {
             List<HomeViewModel> amizadesUsuario = new List<HomeViewModel>();
-            HomeViewModel amizade = new HomeViewModel();
+            
             List<Amizade> listaAmizades = new List<Amizade>();
 
             listaAmizades = await _context.Amizade.ToListAsync();
             foreach (var item in listaAmizades)
             {
+                HomeViewModel amizade = new HomeViewModel();
                 if (item.IdUsuario2 == id && item.Status == AmizadeStatus.Ativo)
                 {
                     amizade.Amizade = item;

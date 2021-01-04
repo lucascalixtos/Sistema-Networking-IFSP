@@ -1,10 +1,10 @@
 ﻿using PlataformaNetworking.Models;
 
-namespace PlataformaNetworking.ViewModels
+namespace PlataformaNetworking.Models.ViewModels
 {
     public class HomePostViewModel
     {
-        public PostModel PostModel { get; set; }
+        public PostModel Post { get; set; }
         public Usuario Usuario { get; set; }
     }
 }
