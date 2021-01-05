@@ -118,7 +118,7 @@ WriteAttributeValue("", 802, Model.ProfilePictureUrl == null ? "~/images/avatar2
                         ");
             EndContext();
             BeginContext(1524, 211, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c1a2367cff3f48b789617f72dfd7ebb9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d4c7b4e61f734c4e95d885e96c489bf4", async() => {
                 BeginContext(1567, 99, true);
                 WriteLiteral("\r\n                            <input name=\"ProfilePictureUrl\" id=\"campoInputNovaImagem\" type=\"text\"");
                 EndContext();
@@ -207,7 +207,7 @@ WriteAttributeValue("", 2441, Url.Action("Vagas", "Home"), 2441, 28, false);
                                 ");
             EndContext();
             BeginContext(3444, 75, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "e7aa4cab732841bf97dbc6be89e71d90", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "a6b9bfc89a654fcabd4d82241ab08d1a", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -227,7 +227,7 @@ WriteAttributeValue("", 2441, Url.Action("Vagas", "Home"), 2441, 28, false);
             WriteLiteral("\r\n                            </div>\r\n                            <div class=\"w3-half\">\r\n                                ");
             EndContext();
             BeginContext(3640, 75, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "91d946b654734bc9a06091e541e7a1be", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "99f4abd313f14b53a5f15665c492fa2b", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -247,7 +247,7 @@ WriteAttributeValue("", 2441, Url.Action("Vagas", "Home"), 2441, 28, false);
             WriteLiteral("\r\n                            </div>\r\n                            <div class=\"w3-half\">\r\n                                ");
             EndContext();
             BeginContext(3836, 78, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "955e6dff7fdf4353ac86f44385fd5b5a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "74c06b8e7d5e49ff8a97cb6e15db62c4", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -267,7 +267,7 @@ WriteAttributeValue("", 2441, Url.Action("Vagas", "Home"), 2441, 28, false);
             WriteLiteral("\r\n                            </div>\r\n                            <div class=\"w3-half\">\r\n                                ");
             EndContext();
             BeginContext(4035, 75, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "21126039424c422a9b91fd14d4386449", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "7066406cc9b849c2ae44afdafb283334", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -287,7 +287,7 @@ WriteAttributeValue("", 2441, Url.Action("Vagas", "Home"), 2441, 28, false);
             WriteLiteral("\r\n                            </div>\r\n                            <div class=\"w3-half\">\r\n                                ");
             EndContext();
             BeginContext(4231, 75, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d20d7275a34843679cccebd7c75b0851", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "47df7e6996b8489e861180f79586467b", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -307,7 +307,7 @@ WriteAttributeValue("", 2441, Url.Action("Vagas", "Home"), 2441, 28, false);
             WriteLiteral("\r\n                            </div>\r\n                            <div class=\"w3-half\">\r\n                                ");
             EndContext();
             BeginContext(4427, 73, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "0e1fb572ae1443bf99ae6f017e534bd4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "5d1d9ce0710449c888965bde2d8d59cb", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -370,7 +370,7 @@ WriteAttributeValue("", 2441, Url.Action("Vagas", "Home"), 2441, 28, false);
                             ");
             EndContext();
             BeginContext(6214, 1419, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bbfbe1fe10e44731b8b202f396060816", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ea542c755a8448088139e14f23098431", async() => {
                 BeginContext(6255, 1371, true);
                 WriteLiteral(@"
                                 <textarea name=""TextoPost"" id=""TextoFormulario"" class=""w3-border w3-padding w-100""></textarea>
@@ -437,7 +437,7 @@ WriteAttributeValue("", 2441, Url.Action("Vagas", "Home"), 2441, 28, false);
                     ");
             EndContext();
             BeginContext(8140, 64, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "92ae36595b5148aeb46fa9199609cb08", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "86dbafea344b42b7958cad50513f45bb", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -514,7 +514,7 @@ WriteAttributeValue("", 2441, Url.Action("Vagas", "Home"), 2441, 28, false);
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(9712, 44, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "07d1b380309b48adb41a54a7cbb2a42c", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ad67a14b830843259b5f9bab956971e8", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

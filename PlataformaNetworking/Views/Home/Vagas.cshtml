@@ -20,7 +20,7 @@
 
             @{
 
-                if (Model.GetType().Name == "Empresa")
+                if (Model.Usuario.GetType().Name == "Empresa")
                 {
                     @await Component.InvokeAsync("PublicacaoVaga")
                 }
@@ -29,12 +29,12 @@
 
             <!--chamar View component aqui-->
             @{
-                if (Model.GetType().Name == "Empresa")
+                if (Model.Usuario.GetType().Name == "Empresa")
                 {
                     @await Component.InvokeAsync("ConteudoVagaEmpresa")
                 }
 
-                else if (Model.GetType().Name == "Aluno")
+                else if (Model.Usuario.GetType().Name == "Aluno")
                 {
                     @await Component.InvokeAsync("ConteudoVagaAluno")
                 }

@@ -112,6 +112,8 @@ $('body').on('submit', '#formNewHabilidade', function (evt) {
 });
 
 
+
+
 $('body').on('submit', '#formNewVaga', function (evt) {
     evt.preventDefault();
     //throw new error("Passou aqui");

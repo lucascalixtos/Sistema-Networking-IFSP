@@ -7,23 +7,28 @@ using Microsoft.AspNetCore.Mvc;
 using PlataformaNetworking.Data;
 using PlataformaNetworking.Models;
 
-namespace PlataformaNetworking.Controllers {
-    public class VagaController : Controller {
+namespace PlataformaNetworking.Controllers
+{
+    public class VagaController : Controller
+    {
 
 
         private readonly PlataformaNetworkingContext _context;
 
 
-        public VagaController(PlataformaNetworkingContext context) {
+        public VagaController(PlataformaNetworkingContext context)
+        {
             _context = context;
         }
 
 
         [HttpPost]
-        public async Task<bool> NovaVaga([Bind("Titulo,Conteudo")]  Vaga PublicacaoVaga) {
+        public async Task<bool> NovaVaga([Bind("Titulo,Conteudo")]  Vaga PublicacaoVaga)
+        {
 
             System.Diagnostics.Debug.WriteLine("Chegou aqui");
-            try {
+            try
+            {
                 if (string.IsNullOrEmpty(PublicacaoVaga.Titulo) && string.IsNullOrEmpty(PublicacaoVaga.Conteudo))
                     return false;
 
@@ -32,7 +37,7 @@ namespace PlataformaNetworking.Controllers {
 
                 PublicacaoVaga.DataPostagem = DateTime.Now;
                 PublicacaoVaga.IdUsuario = usuario.Id;
-          
+
 
                 _context.Add(PublicacaoVaga);
 
@@ -40,7 +45,9 @@ namespace PlataformaNetworking.Controllers {
                 int sucesso = await _context.SaveChangesAsync();
 
                 return sucesso == 0 ? false : true;
-            } catch (Exception) {
+            }
+            catch (Exception)
+            {
                 return false;
             }
         }
@@ -70,7 +77,7 @@ namespace PlataformaNetworking.Controllers {
                 //Salva os dados no banco
                 int sucesso = await _context.SaveChangesAsync();
                 return sucesso == 0 ? false : true;
-                
+
             }
             catch (Exception)
             {
@@ -79,6 +86,43 @@ namespace PlataformaNetworking.Controllers {
 
 
         }
-        
+
+        public JsonResult VerificaCandidatura(int idVaga)
+        {
+            try
+            {
+                //Busca o usuário logado 
+                Usuario usuario = _context.Usuario.First(x => x.Id == HttpContext.Session.GetInt32("id"));
+
+                Candidato candidato = _context.Candidato.First(x => x.IdVaga == idVaga && x.IdUsuario == usuario.Id);
+
+                return Json(candidato, new Newtonsoft.Json.JsonSerializerSettings());
+
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        [HttpPost]
+        public async Task<bool> DesfazerCandidatura([FromBody]JsonRequest data)
+        {
+            try
+            {
+                //Busca o usuário logado 
+                Usuario usuario = _context.Usuario.First(x => x.Id == HttpContext.Session.GetInt32("id"));
+
+                Candidato candidato = _context.Candidato.First(x => x.IdVaga == Convert.ToInt32(data.IdVaga) && x.IdUsuario == usuario.Id);
+                _context.Candidato.Remove(candidato);
+                int sucesso = await _context.SaveChangesAsync();
+                return sucesso == 0 ? false : true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
     }
 }

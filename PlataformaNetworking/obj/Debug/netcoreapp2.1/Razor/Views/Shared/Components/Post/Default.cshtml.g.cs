@@ -205,7 +205,7 @@ WriteAttributeValue("", 2418, item.Post.Id, 2418, 13, false);
             WriteLiteral(" style=\"cursor: pointer\"><i class=\"fa fa-comment\"></i> Comentar</span>\r\n            <span class=\"card-link\" style=\"cursor: pointer;\">Compartilhar</span>\r\n            <div class=\"row mt-2\">\r\n                ");
             EndContext();
             BeginContext(2639, 570, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "da579cfca8c94db8956924d7c4119444", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ed4fef82421948669f42f3155d35b905", async() => {
                 BeginContext(2714, 68, true);
                 WriteLiteral("\r\n                    <input type=\"hidden\" id=\"IdPost\" name=\"IdPost\"");
                 EndContext();
