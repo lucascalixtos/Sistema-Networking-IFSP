@@ -124,5 +124,20 @@ namespace PlataformaNetworking.Controllers
             }
         }
 
+        [HttpPost]
+        public async Task<bool> NovaHabilidade([Bind("IdVaga, NomeHabilidade")] HabilidadeVaga habilidade)
+        {
+            try
+            {
+                await _context.AddAsync(habilidade);
+
+                int sucesso = await _context.SaveChangesAsync();
+                return sucesso == 0 ? false : true;
+
+            }catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

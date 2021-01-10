@@ -35,6 +35,30 @@
             </div>
         </div>
 
+        <div class="d-flex justify-content-between align-items-center">
+
+            <div class="ml-2">
+                <div class="h5 m-0">
+                    Adicionar Conhecimento:
+                    @await Component.InvokeAsync("HabilidadeVaga", new { id = item.Id })
+                    <span class="badge badge-dark" id="adicionarHabilidadeVaga">+</span>
+                    <div class="row mt-2">
+                        <form method="post" id="formNewHabilidadeVaga" style="display:none">
+                            <div class="col-md-5">
+                                <input type="text" class="form-control" name="IdVaga" id="IdVaga" value="@item.Id" style="display:none" />
+                                <input type="text" class="form-control" name="NomeHabilidade" id="NomeHabilidade" />
+                            </div>
+                            <div class="col-md-3">
+                                <button type="submit" class="btn btn-secondary">Adicionar</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                </div>
+
+            </div>
+        </div>
+
     </div>
     <div class="card-body">
         <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>@item.DataPostagem.ToString("dd/MM/yyyy HH:mm")</div>

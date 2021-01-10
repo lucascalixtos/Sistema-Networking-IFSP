@@ -111,8 +111,17 @@ $('body').on('submit', '#formNewHabilidade', function (evt) {
     });
 });
 
-
-
+$('body').on('submit', '#formNewHabilidadeVaga', function (evt) {
+    evt.preventDefault();
+    $.ajax({
+        url: '/Vaga/NovaHabilidade',
+        type: 'post',
+        data: $('#formNewHabilidadeVaga').serialize(),
+        success: function () {
+            document.location.reload();
+        }
+    });
+});
 
 $('body').on('submit', '#formNewVaga', function (evt) {
     evt.preventDefault();
@@ -150,6 +159,10 @@ $('body').on('click', '#triggerUpload', function () {
 
 $("#adicionarHabilidade").click(function () {
     $("#formNewHabilidade").show();
+});
+
+$("#adicionarHabilidadeVaga").click(function () {
+    $("#formNewHabilidadeVaga").show();
 });
 
 

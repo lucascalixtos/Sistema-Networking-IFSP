@@ -1,0 +1,18 @@
+﻿@model List<PlataformaNetworking.Models.HabilidadeVaga>
+
+@{
+    ViewData["Title"] = "Default";
+}
+
+@foreach (var item in Model)
+{
+    <div class="btn btn-default" id="habilidade-@item.Id">
+        @item.NomeHabilidade
+    </div>
+    
+        
+}
+
+
+
+

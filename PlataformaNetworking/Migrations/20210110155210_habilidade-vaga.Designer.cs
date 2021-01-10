@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PlataformaNetworking.Data;
 
 namespace PlataformaNetworking.Migrations
 {
     [DbContext(typeof(PlataformaNetworkingContext))]
-    partial class CadernoDigitalColaborativoContextModelSnapshot : ModelSnapshot
+    [Migration("20210110155210_habilidade-vaga")]
+    partial class habilidadevaga
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
