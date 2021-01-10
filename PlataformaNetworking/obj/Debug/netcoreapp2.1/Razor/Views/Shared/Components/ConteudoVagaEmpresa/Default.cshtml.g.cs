@@ -116,7 +116,7 @@ namespace AspNetCore
             WriteLiteral("\n                    <span class=\"badge badge-dark\" id=\"adicionarHabilidadeVaga\">+</span>\n                    <div class=\"row mt-2\">\n                        ");
             EndContext();
             BeginContext(1682, 627, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c44b38e8a9f24559a6bc2d4620464501", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5729fe1d17d94eee9ef4815f57770f65", async() => {
                 BeginContext(1750, 149, true);
                 WriteLiteral("\n                            <div class=\"col-md-5\">\n                                <input type=\"text\" class=\"form-control\" name=\"IdVaga\" id=\"IdVaga\"");
                 EndContext();
