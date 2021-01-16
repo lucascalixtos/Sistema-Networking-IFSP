@@ -28,5 +28,6 @@ namespace PlataformaNetworking.Data
         public DbSet<Curriculo> Curriculo { get; set; }
         public DbSet<Professor> Professor { get; set; }
         public DbSet<HabilidadeVaga> HabilidadeVaga { get; set; }
+        public DbSet<Entrevista> Entrevista { get; set; }
     }
 }

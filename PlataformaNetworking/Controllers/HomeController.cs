@@ -22,19 +22,19 @@ namespace PlataformaNetworking.Controllers
 
         public IActionResult Index()
         {
-            if(HttpContext.Session.GetInt32("id") != null) {
-                
+            if (HttpContext.Session.GetInt32("id") != null) {
+
                 //Busca o usuário logado 
                 Usuario usuarioLogado = _context.Usuario.First(x => x.Id == HttpContext.Session.GetInt32("id"));
                 HomeViewModel usuario = new HomeViewModel();
                 usuario.Usuario = usuarioLogado;
-      
+
                 return View(usuario);
 
             } else {
                 return Redirect(Url.Action("Login", "Usuarios"));
             }
-            
+
         }
 
         public IActionResult About()
@@ -71,19 +71,37 @@ namespace PlataformaNetworking.Controllers
 
 
         [Route("/ListaCandidatosVaga")]
-        
+
         public async Task<IActionResult> ListaCandidatosVaga(int idVaga)
         {
-           
-
             return View(await _context.Candidato.FromSql("SELECT * FROM dbo.Candidato").
                 Where(c => c.IdVaga == idVaga).ToListAsync());
         }
 
-
-        public IActionResult Privacy()
+        [HttpPost]
+        public async Task<bool> AgendarEntrevista([Bind("Endereco,Data,IdAluno,IdVaga")] Entrevista entrevista)
         {
-            return View();
+
+            try
+            {
+                if (string.IsNullOrEmpty(entrevista.Endereco))
+                     return false;
+
+
+                //Busca o usuário logado 
+                _context.Entrevista.Add(entrevista);
+                Candidato candidato = _context.Candidato.Where(cand => cand.IdUsuario == entrevista.IdAluno).FirstOrDefault();
+                candidato.EntrevistaAgendada = true;
+                 //Salva os dados no banco
+                 int sucesso = await _context.SaveChangesAsync();
+
+                 return sucesso == 0 ? false : true;
+
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

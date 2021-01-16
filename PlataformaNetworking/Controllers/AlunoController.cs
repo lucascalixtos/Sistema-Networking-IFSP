@@ -165,7 +165,7 @@ namespace PlataformaNetworking.Controllers
             }
             _context.Curriculo.Add(aluno.Curriculo);
             _context.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("MeuPerfil", "Usuarios");
         }
 
         public async Task<IActionResult> DownloadFileFromDatabase(int id) {

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PlataformaNetworking.Data;
 
 namespace PlataformaNetworking.Migrations
 {
     [DbContext(typeof(PlataformaNetworkingContext))]
-    partial class CadernoDigitalColaborativoContextModelSnapshot : ModelSnapshot
+    [Migration("20210116201923_entrevistas")]
+    partial class entrevistas
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -43,8 +45,6 @@ namespace PlataformaNetworking.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Email");
-
-                    b.Property<bool>("EntrevistaAgendada");
 
                     b.Property<int>("IdUsuario");
 
