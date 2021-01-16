@@ -1,0 +1,31 @@
+﻿@model PlataformaNetworking.Models.ViewModels.HomeViewModel
+@{ ViewData["Title"] = "Vagas";
+    //string uploadimagem = Model.UploadPictureUrl == null ? "~/images/avatar3.png" : Model.UploadPictureUrl; }
+
+}
+<!-- Page Container -->
+<div class="container-fluid gedf-wrapper mt-3">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                @await Component.InvokeAsync("Usuario")
+                @await Component.InvokeAsync("Painel")
+            </div>
+        </div>
+        <div class="col-md-6 gedf-main">
+
+            @await Component.InvokeAsync("CandidaturaVagaAluno")
+
+
+        </div>
+        <div class="col-md-3 justify-content">
+            <!--Pedido de Amizade-->
+            @await Component.InvokeAsync("PedidoAmizade")
+        </div>
+    </div>
+</div>
+
+
+@section Scripts{
+    <script src="~/js/uploadImagem.js"></script>
+}

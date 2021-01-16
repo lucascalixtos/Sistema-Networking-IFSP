@@ -408,7 +408,6 @@ C:\Users\lucas\Source\Repos\Sistema-Networking-IFSP\PlataformaNetworking\obj\Deb
 C:\Users\lucas\Source\Repos\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\lucas\Source\Repos\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Home\ListaCandidatosVaga.cshtml.g.cs
 C:\Users\lucas\Source\Repos\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Home\Privacy.cshtml.g.cs
-C:\Users\lucas\Source\Repos\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Home\Vagas - Cópia.cshtml.g.cs
 C:\Users\lucas\Source\Repos\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Home\Vagas.cshtml.g.cs
 C:\Users\lucas\Source\Repos\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Components\Amizade\Default.cshtml.g.cs
 C:\Users\lucas\Source\Repos\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Components\Comentario\Default.cshtml.g.cs
@@ -468,3 +467,5 @@ C:\Users\lucas\Source\Repos\Sistema-Networking-IFSP\PlataformaNetworking\obj\Deb
 C:\Users\lucas\Source\Repos\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\PlataformaNetworking.genruntimeconfig.cache
 C:\Users\lucas\source\repos\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Components\HabilidadeVaga\Default.cshtml.g.cs
 C:\Users\lucas\source\repos\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Components\AfinidadeVaga\Default.cshtml.g.cs
+C:\Users\lucas\source\repos\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Home\Candidaturas.cshtml.g.cs
+C:\Users\lucas\source\repos\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Components\CandidaturaVagaAluno\Default.cshtml.g.cs

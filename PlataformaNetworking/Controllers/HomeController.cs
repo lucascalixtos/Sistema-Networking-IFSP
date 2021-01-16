@@ -69,6 +69,26 @@ namespace PlataformaNetworking.Controllers
             }
         }
 
+        [Route("/Candidaturas")]
+        public IActionResult Candidaturas()
+        {
+            if (HttpContext.Session.GetInt32("id") != null)
+            {
+                //Busca o usuário logado 
+                Usuario usuarioLogado = _context.Usuario.First(x => x.Id == HttpContext.Session.GetInt32("id"));
+                var tipo = usuarioLogado.GetType();
+                System.Diagnostics.Debug.WriteLine("Tipo: " + usuarioLogado.GetType().ToString());
+                //var discriminator = _context.Usuario.Where(l => (l.Id == HttpContext.Session.GetInt32("id"))).Select(l => l.Discriminator).first();
+                HomeViewModel usuario = new HomeViewModel();
+                usuario.Usuario = usuarioLogado;
+                return View(usuario);
+
+            }
+            else
+            {
+                return Redirect(Url.Action("Login", "Usuarios"));
+            }
+        }
 
         [Route("/ListaCandidatosVaga")]
 
