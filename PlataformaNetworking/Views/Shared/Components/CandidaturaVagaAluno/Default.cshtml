@@ -119,6 +119,7 @@
         <div class="card-body">
             <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>@item.DataPostagem.ToString("dd/MM/yyyy HH:mm")</div>
             <p class="card-text">
+                @await Component.InvokeAsync("EntrevistaAgendada", new { idVaga = item.Id })
                 @item.Conteudo
             </p>
 
@@ -127,6 +128,7 @@
         <div class="card-footer">
             <button id="candidatar-@item.Id" class="btn btn-primary" data-toggle="modal" data-target="#myModalCandidatar-@item.Id">Candidatar-se</button>
             <button id="desfazerCandidatura-@item.Id" style="display: none" class="btn btn-primary" data-toggle="modal" data-target="#myModalDesfazerCandidatura-@item.Id">Desfazer Candidatura</button>
+
             <!--<input type="button" onclick="Candidatar(@item.Id)" value="Confirmar" class="btn btn-primary" />-->
         </div>
     </div>

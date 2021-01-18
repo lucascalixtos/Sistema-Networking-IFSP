@@ -469,3 +469,4 @@ C:\Users\lucas\source\repos\Sistema-Networking-IFSP\PlataformaNetworking\obj\Deb
 C:\Users\lucas\source\repos\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Components\AfinidadeVaga\Default.cshtml.g.cs
 C:\Users\lucas\source\repos\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Home\Candidaturas.cshtml.g.cs
 C:\Users\lucas\source\repos\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Components\CandidaturaVagaAluno\Default.cshtml.g.cs
+C:\Users\lucas\source\repos\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Components\EntrevistaAgendada\Default.cshtml.g.cs

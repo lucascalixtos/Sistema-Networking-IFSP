@@ -9,25 +9,18 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace PlataformaNetworking.ViewComponents {
-    public class CandidaturaVagaAlunoViewComponent: ViewComponent {
+    public class EntrevistaAgendadaViewComponent: ViewComponent {
         private readonly PlataformaNetworkingContext _context;
 
-        public CandidaturaVagaAlunoViewComponent(PlataformaNetworkingContext context) {
+        public EntrevistaAgendadaViewComponent(PlataformaNetworkingContext context) {
             _context = context;
         }
 
-        public async Task<IViewComponentResult> InvokeAsync() {
-            List<int> ids = await _context.Candidato.Where(x => x.IdUsuario == HttpContext.Session.GetInt32("id")).Select(x=> x.IdVaga).ToListAsync();
+        public async Task<IViewComponentResult> InvokeAsync(int idVaga) {
 
-            List<Vaga> vagas = new List<Vaga>();
-
-            foreach (var id in ids)
-            {
-                Vaga vaga = await _context.Vaga.FirstOrDefaultAsync(x => x.Id == id);
-                vagas.Add(vaga);
-            }
+            Entrevista entrevista = await _context.Entrevista.Where(x => x.IdAluno == HttpContext.Session.GetInt32("id") && x.IdVaga == idVaga).FirstOrDefaultAsync();
             
-            return View(vagas);
+            return View(entrevista);
         }
     }
 }
