@@ -6,10 +6,10 @@
 
 @foreach (var item in Model)
 {
-    <div class="btn btn-default" id="habilidade-@item.Id">
-        @item.NomeHabilidade <span class="badge badge-light">@item.Recomendacoes</span>
-        <span class="btn btn-secondary" id="recomendar-@item.Id" onclick="recomendar(@item.Id, @item.IdAluno)" style="display: none">Recomendar</span>
-    </div>
+<div class="btn btn-default" id="habilidade-@item.Id">
+    @item.NomeHabilidade   <span class="badge badge-light">@item.Recomendacoes</span>
+    <span class="btn btn-secondary" id="recomendar-@item.Id" onclick="recomendar(@item.Id, @item.IdAluno)" style="display: none">Recomendar</span>
+</div>
     
         
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using PlataformaNetworking.Data;
 using PlataformaNetworking.Models;
 
@@ -138,6 +139,18 @@ namespace PlataformaNetworking.Controllers
             {
                 throw ex;
             }
+        }
+
+        public async Task<IActionResult> DeletarVaga(int idVaga)
+        {
+            Vaga vaga = await _context.Vaga.FirstOrDefaultAsync(x => x.Id == idVaga);
+            var entrevistas =  _context.Entrevista.Where(x => x.IdVaga == idVaga);
+            var candidaturas = _context.Candidato.Where(x => x.IdVaga == idVaga);
+            _context.Entrevista.RemoveRange(entrevistas);
+            _context.Candidato.RemoveRange(candidaturas);
+            _context.Vaga.Remove(vaga);
+            int sucesso = await _context.SaveChangesAsync();
+            return RedirectToAction("Vagas", "Home");
         }
     }
 }

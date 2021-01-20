@@ -99,13 +99,12 @@ namespace PlataformaNetworking.Controllers
         }
 
         [HttpPost]
-        public async Task<bool> AgendarEntrevista([Bind("Endereco,Data,IdAluno,IdVaga")] Entrevista entrevista)
+        public async Task<IActionResult> AgendarEntrevista([Bind("Endereco,Data,IdAluno,IdVaga")] Entrevista entrevista)
         {
 
             try
             {
-                if (string.IsNullOrEmpty(entrevista.Endereco))
-                     return false;
+
 
 
                 //Busca o usuário logado 
@@ -115,12 +114,12 @@ namespace PlataformaNetworking.Controllers
                  //Salva os dados no banco
                  int sucesso = await _context.SaveChangesAsync();
 
-                 return sucesso == 0 ? false : true;
+                 return Redirect(Url.Action("ListaCandidatosVaga", "Home", new { idVaga = entrevista.IdVaga }));
 
             }
             catch (Exception)
             {
-                return false;
+                return View();
             }
         }
 

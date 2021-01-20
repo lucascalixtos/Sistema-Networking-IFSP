@@ -105,7 +105,7 @@ WriteAttributeValue("", 874, imagemPerfil, 874, 13, false);
             ");
             EndContext();
             BeginContext(1394, 193, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5dd3c94614af4456b44fc5b09f2c6139", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "42580c11a8ee4aa69ba5db22e7836aee", async() => {
                 BeginContext(1437, 86, true);
                 WriteLiteral("\n                <input name=\"ProfilePictureUrl\" id=\"campoInputNovaImagem\" type=\"text\"");
                 EndContext();
@@ -446,12 +446,12 @@ WriteAttributeValue("", 1531, Model.Usuario.ProfilePictureUrl, 1531, 32, false);
                     ");
             EndContext();
             BeginContext(7122, 338, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "59e3f61f8c894a9280a672c0e9a4a6e5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a8e06223214940f2a8b3403c4993d684", async() => {
                 BeginContext(7224, 95, true);
                 WriteLiteral("\n                        <input type=\"file\" name=\"arquivo\" required />\n                        ");
                 EndContext();
                 BeginContext(7319, 113, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5b3cfdd250f94a93ae2c3ca14638bb42", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3fbc921447ec44b8b06cedbe997f3afa", async() => {
                     BeginContext(7417, 6, true);
                     WriteLiteral("Salvar");
                     EndContext();
@@ -505,7 +505,7 @@ WriteAttributeValue("", 1531, Model.Usuario.ProfilePictureUrl, 1531, 32, false);
                 WriteLiteral("\n    ");
                 EndContext();
                 BeginContext(7601, 44, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "feabe2f50cde4ff28e032cdd2663e635", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a4f28a5738b343cda973cad373b015c6", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

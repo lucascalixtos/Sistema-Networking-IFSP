@@ -40,19 +40,26 @@
             <p class="card-text">
                 @item.Post.TextoPost
             </p>
-            <img src="@item.Post.Imagem" style="width:100%" alt="Post Image" class="w3-margin-bottom">
+            @{
+                if(item.Post.Imagem != null)
+                {
+                     <img src="@item.Post.Imagem" style="width:100%" alt="Post Image" class="w3-margin-bottom"> 
+
+                }
+            }
+
 
         </div>
         <div class="card-footer">
             <span class="card-link" id="curtir" style="cursor: pointer;" onclick="Like(@item.Post.Id)">Curtir</span>
             <span class="card-link" id="descurtir" style="cursor: pointer; display: none" onclick="Dislike(@item.Post.Id)">Descurtir</span>
             <span class="card-link" id="comentar" onclick="Comentar(@item.Post.Id)" style="cursor: pointer"><i class="fa fa-comment"></i> Comentar</span>
-            <span class="card-link" style="cursor: pointer;">Compartilhar</span>
+
             <div class="row mt-2">
                 <form method="post" id="formComentario-@item.Post.Id" style="display:none">
                     <input type="hidden" id="IdPost" name="IdPost" value="@item.Post.Id" />
                     <div class="col-md-5">
-                        <input type="text" class="form-control" name="CommentText" id="CommentText" />
+                        <input type="text" class="form-control input-lg" name="CommentText" id="CommentText" />
                     </div>
                     <div class="col-md-3">
                         <button onclick="FormComentario(@item.Post.Id)" type="submit" class="btn btn-primary">Comentar</button>
@@ -63,10 +70,9 @@
             <p>
                 <span class="glyphicon glyphicon-thumbs-up card-link"></span> @item.Post.Like
                 <span class="glyphicon glyphicon-comment card-link" onclick="MostrarComentarios(@item.Post.Id)" id="mostrarComentarios" style="cursor: pointer"></span> @item.Post.Comentarios
-                <span class="glyphicon glyphicon-share card-link"></span> 0
             </p>
 
-            <div id="comentarios-@item.Post.Id" style="display: none">
+            <div id="comentarios-@item.Post.Id" class="col-xs-4" style="display: none">
                 @await Component.InvokeAsync("Comentario", item.Post.Id)
             </div>
         </div>

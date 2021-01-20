@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PlataformaNetworking.Data;
 using System;
@@ -15,7 +16,7 @@ namespace PlataformaNetworking.ViewComponents {
         }
 
         public async Task<IViewComponentResult> InvokeAsync() {
-            return View(await _context.Vaga.ToListAsync());
+            return View(await _context.Vaga.Where(x => x.IdUsuario == HttpContext.Session.GetInt32("id")).ToListAsync());
         }
     }
 }

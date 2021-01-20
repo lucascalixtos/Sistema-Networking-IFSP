@@ -196,14 +196,12 @@ namespace PlataformaNetworking.Controllers
             try {
                 var contaAtiva = _context.Usuario.Where(l => (l.Email == Email) && (l.Senha == Senha)).Select(l => l.Situacao).First();
 
-                System.Diagnostics.Debug.WriteLine("Conta ativa: " + contaAtiva.ToString());
 
                 if (contaAtiva.ToString().Equals("Ativo")) {
                     Usuario usuario = _context.Usuario.Where(l => (l.Email == Email) && (l.Senha == Senha)).FirstOrDefault();
                     System.Diagnostics.Debug.WriteLine("Conta ativa: Entrou no if");
                     HttpContext.Session.SetInt32("id", usuario.Id);
                     HttpContext.Session.GetInt32("id");
-                    System.Diagnostics.Debug.WriteLine("Teste: " + HttpContext.Session.GetInt32("id").ToString());
                     string tipo = usuario.GetType().Name;
                     HttpContext.Session.SetString("tipo", tipo);
                     if (tipo == "Administrador"){

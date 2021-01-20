@@ -17,7 +17,7 @@
         <div class="w3-content"><h3><b>@usuario</b></h3></div>
         <p class="w3-center">
             <div class=" containerPerfil" id="triggerUploadClick">
-                <img src="@imagemPerfil" class="w3-circle imagemPerfil" alt="Avatar" id="imagemPerfilAlterar">
+                <img src=" @(@imagemPerfil == null ? "/images/avatar2.png" : @imagemPerfil)" class="w3-circle imagemPerfil" alt="Avatar" id="imagemPerfilAlterar">
                 <div class="overlay">
                     <a href="#" class="icon" title="User Profile">
                         <i class="fa fa-camera"></i>
