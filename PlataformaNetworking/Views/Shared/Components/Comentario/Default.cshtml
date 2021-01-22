@@ -1,4 +1,4 @@
-﻿@model IEnumerable<PlataformaNetworking.Models.Comment>
+﻿@model IEnumerable<PlataformaNetworking.Models.ViewModels.HomePostViewModel>
 
 @{
     ViewData["Title"] = "View";
@@ -7,14 +7,28 @@
 
 @foreach (var item in Model.Reverse())
 {
+    <div class="card gedf-card">
+        <div class="card-header">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="mr-3">
+                        <img class="rounded-circle" width="50" id="FotoPerfil-@item.Comentario.Id" src="@item.Usuario.ProfilePictureUrl" alt="">
+                    </div>
+                    <div class="ml-2">
+                        <a class="h5 m-0" href="Usuarios/Perfil/@item.Usuario.Id">@item.Usuario.Nome @item.Usuario.Sobrenome</a>
+                    </div>
+                </div>
+            </div>
 
+        </div>
         <div class="card-body">
-            <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>@item.CommentTime.ToString("dd/MM/yyyy HH:mm")</div>
+            <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>@item.Comentario.CommentTime.ToString("dd/MM/yyyy HH:mm")</div>
             <p class="card-text">
-                @item.CommentText            
+                @item.Comentario.CommentText
             </p>
 
         </div>
+    </div>
 }
 
 

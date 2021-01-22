@@ -127,7 +127,7 @@ WriteAttributeValue("", 1256, Url.Action("Candidaturas", "Home"), 1256, 35, fals
             WriteLiteral("\r\n                <span class=\"badge badge-dark\" id=\"adicionarHabilidade\">+</span>\r\n                <div class=\"row mt-2\">\r\n                    ");
             EndContext();
             BeginContext(2230, 463, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1d8ad794e2014bcdb0f81de780dc85af", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "95a5d65651784eff852b90c53a745489", async() => {
                 BeginContext(2294, 392, true);
                 WriteLiteral(@"
                         <div class=""col-md-5"">

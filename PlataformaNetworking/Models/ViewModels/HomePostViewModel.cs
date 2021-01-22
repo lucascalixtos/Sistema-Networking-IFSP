@@ -6,5 +6,7 @@ namespace PlataformaNetworking.Models.ViewModels
     {
         public PostModel Post { get; set; }
         public Usuario Usuario { get; set; }
+
+        public Comment Comentario { get; set; }
     }
 }

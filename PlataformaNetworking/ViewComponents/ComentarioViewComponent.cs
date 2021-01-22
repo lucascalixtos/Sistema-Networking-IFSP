@@ -5,6 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PlataformaNetworking.Data;
 using Remotion.Linq.Clauses;
+using PlataformaNetworking.Models.ViewModels;
+using System.Collections.Generic;
+using PlataformaNetworking.Models;
 
 namespace PlataformaNetworking.ViewComponents
 {
@@ -18,10 +21,30 @@ namespace PlataformaNetworking.ViewComponents
             _context = context;
         }
 
+        /* public async Task<IViewComponentResult> InvokeAsync(int IdPost)
+         {
+             var comentarios = await _context.Comment.Where(x => x.IdPost == IdPost).ToListAsync();
+             return View(comentarios);
+         }*/
+
         public async Task<IViewComponentResult> InvokeAsync(int IdPost)
         {
-            var comentarios = await _context.Comment.Where(x => x.IdPost == IdPost).ToListAsync();
-            return View(comentarios);
+            List<HomePostViewModel> posts = new List<HomePostViewModel>();
+
+            List<Comment> comentarios = new List<Comment>();
+
+            comentarios = await _context.Comment.Where(x => x.IdPost == IdPost).ToListAsync();
+
+            foreach (var item in comentarios)
+            {
+                HomePostViewModel post = new HomePostViewModel();
+                post.Comentario = item;
+                post.Usuario = _context.Usuario.First(x => x.Id == item.IdUsuario);
+                posts.Add(post);
+            }
+
+            //var posts = await _context.Post.ToListAsync();
+            return View(posts);
         }
     }
 }
