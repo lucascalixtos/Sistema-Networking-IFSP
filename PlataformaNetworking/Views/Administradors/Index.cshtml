@@ -25,9 +25,6 @@
                 @Html.DisplayNameFor(model => model.DataNascimento)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Senha)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Situacao)
             </th>
             <th></th>
@@ -50,9 +47,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DataNascimento)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Senha)
             </td>
             <td>
                 <a asp-action="MudarStatus" asp-route-id="@item.Id">

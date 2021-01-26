@@ -242,7 +242,6 @@ C:\Users\thiag\Desktop\FACULDADE\Sistema-Networking-IFSP\PlataformaNetworking\ob
 C:\Users\thiag\Desktop\FACULDADE\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\PlataformaNetworking.csproj.CopyComplete
 C:\Users\thiag\Desktop\FACULDADE\Sistema-Networking-IFSP\Sistema-Networking-IFSP\PlataformaNetworking\bin\Debug\netcoreapp2.1\appsettings.Development.json
 C:\Users\thiag\Desktop\FACULDADE\Sistema-Networking-IFSP\Sistema-Networking-IFSP\PlataformaNetworking\bin\Debug\netcoreapp2.1\appsettings.json
-C:\Users\thiag\Desktop\FACULDADE\Sistema-Networking-IFSP\Sistema-Networking-IFSP\PlataformaNetworking\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
 C:\Users\thiag\Desktop\FACULDADE\Sistema-Networking-IFSP\Sistema-Networking-IFSP\PlataformaNetworking\bin\Debug\netcoreapp2.1\PlataformaNetworking.deps.json
 C:\Users\thiag\Desktop\FACULDADE\Sistema-Networking-IFSP\Sistema-Networking-IFSP\PlataformaNetworking\bin\Debug\netcoreapp2.1\PlataformaNetworking.runtimeconfig.json
 C:\Users\thiag\Desktop\FACULDADE\Sistema-Networking-IFSP\Sistema-Networking-IFSP\PlataformaNetworking\bin\Debug\netcoreapp2.1\PlataformaNetworking.runtimeconfig.dev.json
