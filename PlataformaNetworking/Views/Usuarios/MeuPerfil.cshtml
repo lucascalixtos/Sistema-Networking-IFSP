@@ -172,20 +172,5 @@
 
 @section Scripts{
     <script src="~/js/uploadImagem.js"></script>
-    <script>
-        function SolicitaAmizade() {
-            $('body').on('submit', '#formAmizade', function (evt) {
-                evt.preventDefault();
-                $.ajax({
-                    url: '/Usuarios/SolicitaAmizade',
-                    type: 'post',
-                    data: $('#formAmizade').serialize(),
-                    success: function () {
-                        document.location.reload();
-                    }
-                });
-            });
-        }
-    </script>
 }
     </div>

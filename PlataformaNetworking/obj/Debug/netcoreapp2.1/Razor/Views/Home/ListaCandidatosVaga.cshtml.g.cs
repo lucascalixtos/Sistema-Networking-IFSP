@@ -70,7 +70,7 @@ namespace AspNetCore
                 WriteLiteral("\n    ");
                 EndContext();
                 BeginContext(160, 44, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c8b90feb7ed44530978cc285845a4731", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "51576169947a40a38c2aaad70380283a", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -162,7 +162,7 @@ namespace AspNetCore
             WriteLiteral("\n            </td>\n            <td>\n                ");
             EndContext();
             BeginContext(1048, 95, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "394b4d5d10e049efbe6db9a16f112dc9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bf10905dd4a0458b9e254994fbdf88d5", async() => {
                 BeginContext(1129, 10, true);
                 WriteLiteral("Ver Perfil");
                 EndContext();
@@ -288,7 +288,7 @@ WriteAttributeValue(" ", 1657, item.IdVaga, 1658, 12, false);
                     ");
             EndContext();
             BeginContext(2305, 1031, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f4c0161f769e429493b6ce90073daaee", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "726fdb8e07174b0fa7c77359bc40ac9e", async() => {
                 BeginContext(2407, 787, true);
                 WriteLiteral(@"
                         <div class=""form-group m-3"">
@@ -304,7 +304,7 @@ WriteAttributeValue(" ", 1657, item.IdVaga, 1658, 12, false);
                         ");
                 EndContext();
                 BeginContext(3194, 114, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ad7e75b6a3cf404d94fd967be3e060f1", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "43a02504e215489e9ff757541cf6e4eb", async() => {
                     BeginContext(3293, 6, true);
                     WriteLiteral("Salvar");
                     EndContext();

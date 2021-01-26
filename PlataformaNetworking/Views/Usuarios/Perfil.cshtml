@@ -44,10 +44,6 @@
         </p>
         @await Component.InvokeAsync("Curriculo", new { id = Model.Usuario.Id })
     </div><br />
-    <form method="post" id="formAmizade">
-        <input type="hidden" id="IdUsuario2" name="IdUsuario2" value="@Model.Usuario.Id" />
-        <button onclick="SolicitaAmizade()" type="submit" class="btn btn-primary">Solicitar Amizade</button>
-    </form>
 </div>
 
 </div>
@@ -61,27 +57,7 @@
 </li>
 
 
-<div class="container col-md-3">
-    <h2>Amigos</h2>
-    @await Component.InvokeAsync("Amizade", Model.Usuario.Id)
-</div>
-
-
 @section Scripts{
     <script src="~/js/uploadImagem.js"></script>
-    <script>
-        function SolicitaAmizade() {
-            $('body').on('submit', '#formAmizade', function (evt) {
-                evt.preventDefault();
-                $.ajax({
-                    url: '/Usuarios/SolicitaAmizade',
-                    type: 'post',
-                    data: $('#formAmizade').serialize(),
-                    success: function () {
-                        document.location.reload();
-                    }
-                });
-            });
-        }
-    </script>
+
 }

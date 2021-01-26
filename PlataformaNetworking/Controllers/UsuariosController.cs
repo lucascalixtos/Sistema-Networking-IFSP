@@ -348,50 +348,6 @@ namespace PlataformaNetworking.Controllers
             }
         }
 
-        public async Task<bool> SolicitaAmizade([Bind("IdUsuario2")] Amizade amizade)
-        {
-            try
-            {
-                //Busca o usuário logado 
-                Usuario usuario = _context.Usuario.First(x => x.Id == HttpContext.Session.GetInt32("id"));
-
-                amizade.IdUsuario1 = usuario.Id;
-                amizade.Status = AmizadeStatus.Pendente;
-                usuario.AmizadesPendentes = true;
-
-                _context.Add(amizade);
-
-                int sucesso = await _context.SaveChangesAsync();
-
-                return sucesso == 0 ? false : true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
-
-        public async Task<ActionResult> AceitaSolicitacaoAmizade(int id)
-        {
-            try
-            {
-                Amizade amizade = _context.Amizade.First(x => x.Id == id);
-                amizade.Status = AmizadeStatus.Ativo;
-
-                _context.Amizade.Update(amizade);
-
-                int sucesso = await _context.SaveChangesAsync();
-
-                return RedirectToAction("Index", "Home");
-
-                //return sucesso == 0 ? false : true;
-            }
-            catch (Exception)
-            {
-                return RedirectToAction("Index", "Home");
-            }
-        }
-
 
     }
 }

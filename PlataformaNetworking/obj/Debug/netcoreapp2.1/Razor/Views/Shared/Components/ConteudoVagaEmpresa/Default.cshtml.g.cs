@@ -98,7 +98,7 @@ namespace AspNetCore
                         ");
             EndContext();
             BeginContext(1019, 108, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5819b433b80c4c8fa0214abb8a72c7a4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "00f14ddff6694f38a88b9f77cb4a1a13", async() => {
                 BeginContext(1117, 6, true);
                 WriteLiteral("Apagar");
                 EndContext();
@@ -158,7 +158,7 @@ namespace AspNetCore
             WriteLiteral("\r\n                    <span class=\"badge badge-dark\" id=\"adicionarHabilidadeVaga\">+</span>\r\n                    <div class=\"row mt-2\">\r\n                        ");
             EndContext();
             BeginContext(1659, 635, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ebf2df3cf1d149c88ac721e937e521ef", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7d55921bd9bc4ffea3424099709d8358", async() => {
                 BeginContext(1727, 151, true);
                 WriteLiteral("\r\n                            <div class=\"col-md-5\">\r\n                                <input type=\"text\" class=\"form-control\" name=\"IdVaga\" id=\"IdVaga\"");
                 EndContext();
