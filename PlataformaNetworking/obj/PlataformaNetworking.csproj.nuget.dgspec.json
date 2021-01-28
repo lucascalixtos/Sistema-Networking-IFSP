@@ -1,21 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\thiag\\Desktop\\FACULDADE\\Sistema-Networking-IFSP\\Sistema-Networking-IFSP\\PlataformaNetworking\\PlataformaNetworking.csproj": {}
+    "C:\\Users\\lucas\\Documents\\Sistema-Networking-IFSP\\PlataformaNetworking\\PlataformaNetworking.csproj": {}
   },
   "projects": {
-    "C:\\Users\\thiag\\Desktop\\FACULDADE\\Sistema-Networking-IFSP\\Sistema-Networking-IFSP\\PlataformaNetworking\\PlataformaNetworking.csproj": {
+    "C:\\Users\\lucas\\Documents\\Sistema-Networking-IFSP\\PlataformaNetworking\\PlataformaNetworking.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\thiag\\Desktop\\FACULDADE\\Sistema-Networking-IFSP\\Sistema-Networking-IFSP\\PlataformaNetworking\\PlataformaNetworking.csproj",
+        "projectUniqueName": "C:\\Users\\lucas\\Documents\\Sistema-Networking-IFSP\\PlataformaNetworking\\PlataformaNetworking.csproj",
         "projectName": "PlataformaNetworking",
-        "projectPath": "C:\\Users\\thiag\\Desktop\\FACULDADE\\Sistema-Networking-IFSP\\Sistema-Networking-IFSP\\PlataformaNetworking\\PlataformaNetworking.csproj",
-        "packagesPath": "C:\\Users\\thiag\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\thiag\\Desktop\\FACULDADE\\Sistema-Networking-IFSP\\Sistema-Networking-IFSP\\PlataformaNetworking\\obj\\",
+        "projectPath": "C:\\Users\\lucas\\Documents\\Sistema-Networking-IFSP\\PlataformaNetworking\\PlataformaNetworking.csproj",
+        "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lucas\\Documents\\Sistema-Networking-IFSP\\PlataformaNetworking\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\thiag\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
@@ -76,7 +80,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

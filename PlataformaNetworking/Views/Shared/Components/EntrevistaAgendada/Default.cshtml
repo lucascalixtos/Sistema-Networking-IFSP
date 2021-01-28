@@ -8,17 +8,14 @@
     if (Model != null)
     {
     <div class="alert alert-success" role="alert">
-        Parabéns! Sua entrevista foi agendada.
+        Parabéns! Você foi selecionado para o processo seletivo. Em breve a empresa entrará em contato com você.
         <br /><br />
-        <b>Endereço da entrevista</b>: @Model.Endereco
-        <br />
-        <b>Data da entrevista</b>: @Model.Data.ToString("dd/MM/yyyy HH:mm")
         
     </div>
     }
     else
     {
-         <div class="alert alert-warning" role="alert"> Sua entrevista não foi agendada ainda.</div>
+         <div class="alert alert-warning" role="alert"> A empresa está avaliando seu currículo.</div>
     }
 
 }

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -104,9 +106,8 @@ namespace PlataformaNetworking.Controllers
 
             try
             {
-
-
-
+                Aluno aluno = _context.Aluno.Where(x => x.Id == entrevista.IdAluno).FirstOrDefault();
+                Vaga vaga = _context.Vaga.Where(x => x.Id == entrevista.IdVaga).FirstOrDefault();
                 //Busca o usuário logado 
                 _context.Entrevista.Add(entrevista);
                 Candidato candidato = _context.Candidato.Where(cand => cand.IdUsuario == entrevista.IdAluno).FirstOrDefault();
@@ -114,7 +115,18 @@ namespace PlataformaNetworking.Controllers
                  //Salva os dados no banco
                  int sucesso = await _context.SaveChangesAsync();
 
-                 return Redirect(Url.Action("ListaCandidatosVaga", "Home", new { idVaga = entrevista.IdVaga }));
+                var client = new SmtpClient("smtp.gmail.com", 587)
+                {
+                    Credentials = new NetworkCredential("smtptcc@gmail.com", "Teste@123"),
+                    EnableSsl = true
+                };
+
+                string titulo = "Plataforma de networking - Processo iniciado";
+                string corpo = $"Parabens, {aluno.Nome}. \n\n Você foi selecionado para a vaga {vaga.Titulo} e em breve a empresa deve entrar em contato com você. \n\n Boa sorte! ";
+
+                client.Send("smtptcc@gmail.com", "lucascalixto180@gmail.com", titulo, corpo);
+
+                return Redirect(Url.Action("ListaCandidatosVaga", "Home", new { idVaga = entrevista.IdVaga }));
 
             }
             catch (Exception)
