@@ -122,9 +122,9 @@ namespace PlataformaNetworking.Controllers
                 };
 
                 string titulo = "Plataforma de networking - Processo iniciado";
-                string corpo = $"Parabens, {aluno.Nome}. \n\n Você foi selecionado para a vaga {vaga.Titulo} e em breve a empresa deve entrar em contato com você. \n\n Boa sorte! ";
+                string corpo = $"Parabens, {aluno.Nome}. \n\n Você foi selecionado para o processo seletivo da vaga {vaga.Titulo} e em breve a empresa deve entrar em contato com você. \n\n Boa sorte! ";
 
-                client.Send("smtptcc@gmail.com", "lucascalixto180@gmail.com", titulo, corpo);
+                client.Send("smtptcc@gmail.com", aluno.Email, titulo, corpo);
 
                 return Redirect(Url.Action("ListaCandidatosVaga", "Home", new { idVaga = entrevista.IdVaga }));
 
