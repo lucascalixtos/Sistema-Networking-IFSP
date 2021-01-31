@@ -131,9 +131,9 @@ namespace PlataformaNetworking.Controllers
                 return Redirect(Url.Action("ListaCandidatosVaga", "Home", new { idVaga = entrevista.IdVaga }));
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return View();
+                return Redirect(Url.Action("ListaCandidatosVaga", "Home", new { idVaga = entrevista.IdVaga }));
             }
         }
 
