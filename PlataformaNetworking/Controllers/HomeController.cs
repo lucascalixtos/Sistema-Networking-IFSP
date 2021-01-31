@@ -110,10 +110,12 @@ namespace PlataformaNetworking.Controllers
                 Vaga vaga = _context.Vaga.Where(x => x.Id == entrevista.IdVaga).FirstOrDefault();
                 //Busca o usuário logado 
                 _context.Entrevista.Add(entrevista);
-                Candidato candidato = _context.Candidato.Where(cand => cand.IdUsuario == entrevista.IdAluno).FirstOrDefault();
+                await _context.SaveChangesAsync();
+                Candidato candidato = _context.Candidato.Where(cand => cand.IdUsuario == entrevista.IdAluno && cand.IdVaga == entrevista.IdVaga).FirstOrDefault();
+                Console.WriteLine("aaa");
                 candidato.EntrevistaAgendada = true;
                  //Salva os dados no banco
-                 int sucesso = await _context.SaveChangesAsync();
+                 await _context.SaveChangesAsync();
 
                 var client = new SmtpClient("smtp.gmail.com", 587)
                 {

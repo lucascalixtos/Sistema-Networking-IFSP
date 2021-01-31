@@ -480,7 +480,6 @@ C:\Users\lucas\Documents\Sistema-Networking-IFSP\PlataformaNetworking\bin\Debug\
 C:\Users\lucas\Documents\Sistema-Networking-IFSP\PlataformaNetworking\bin\Debug\netcoreapp2.1\PlataformaNetworking.pdb
 C:\Users\lucas\Documents\Sistema-Networking-IFSP\PlataformaNetworking\bin\Debug\netcoreapp2.1\PlataformaNetworking.Views.dll
 C:\Users\lucas\Documents\Sistema-Networking-IFSP\PlataformaNetworking\bin\Debug\netcoreapp2.1\PlataformaNetworking.Views.pdb
-C:\Users\lucas\Documents\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\PlataformaNetworking.csprojAssemblyReference.cache
 C:\Users\lucas\Documents\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\PlataformaNetworking.AssemblyInfoInputs.cache
 C:\Users\lucas\Documents\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\PlataformaNetworking.AssemblyInfo.cs
 C:\Users\lucas\Documents\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\PlataformaNetworking.csproj.CoreCompileInputs.cache
@@ -636,3 +635,4 @@ C:\Users\vinic\Desktop\Vini\Sistema-Networking-IFSP\PlataformaNetworking\obj\Deb
 C:\Users\vinic\Desktop\Vini\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\PlataformaNetworking.pdb
 C:\Users\vinic\Desktop\Vini\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\PlataformaNetworking.genruntimeconfig.cache
 C:\Users\vinic\Desktop\Vini\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\PlataformaNetworking.csproj.CopyComplete
+C:\Users\lucas\Documents\Sistema-Networking-IFSP\PlataformaNetworking\obj\Debug\netcoreapp2.1\PlataformaNetworking.csprojAssemblyReference.cache

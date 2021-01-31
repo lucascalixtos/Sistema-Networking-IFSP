@@ -47,7 +47,7 @@
             <td>
                 @{ if (item.EntrevistaAgendada)
                     {
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#agendarEntrevista" onclick="setValues(@item.IdUsuario, @item.IdVaga)">O aluno já esta em processo seletivo com a empresa</button><br />
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#agendarEntrevista" onclick="setValues(@item.IdUsuario, @item.IdVaga disabled)">O aluno já esta em processo seletivo com a empresa</button><br />
                     }
                     else
                     {
