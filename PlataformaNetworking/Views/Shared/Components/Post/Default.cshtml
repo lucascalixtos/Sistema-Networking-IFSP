@@ -20,17 +20,7 @@
                     </div>
                 </div>
                 <div>
-                    <div class="dropdown">
-                        <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-ellipsis-h"></i>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1">
-                            <div class="h6 dropdown-header">Configuration</div>
-                            <a class="dropdown-item" href="#">Save</a>
-                            <a class="dropdown-item" href="#">Hide</a>
-                            <a class="dropdown-item" href="#">Report</a>
-                        </div>
-                    </div>
+
                 </div>
             </div>
 
@@ -40,21 +30,27 @@
             <p class="card-text">
                 @item.Post.TextoPost
             </p>
-            <img src="@item.Post.Imagem" style="width:100%" alt="Post Image" class="w3-margin-bottom">
+            @{
+                if (item.Post.Imagem != null)
+                {
+                    <img src="@item.Post.Imagem" style="width:100%" alt="Post Image" class="w3-margin-bottom">
+                }
+            }
 
         </div>
         <div class="card-footer">
             <span class="card-link" id="curtir-@item.Post.Id" style="cursor: pointer;" onclick="Like(@item.Post.Id)">Curtir</span>
             <span class="card-link" id="descurtir-@item.Post.Id" style="cursor: pointer; display: none" onclick="Dislike(@item.Post.Id)">Descurtir</span>
             <span class="card-link" id="comentar-@item.Post.Id" onclick="Comentar(@item.Post.Id)" style="cursor: pointer"><i class="fa fa-comment"></i> Comentar</span>
-            <span class="card-link" style="cursor: pointer;">Compartilhar</span>
             <div class="row mt-2">
                 <form method="post" id="formComentario-@item.Post.Id" style="display:none">
                     <input type="hidden" id="IdPost" name="IdPost" value="@item.Post.Id" />
-                    <div class="col-md-5">
-                        <input type="text" class="form-control" name="CommentText" id="CommentText" />
+                    <div class="col-md-10 ml-2">
+                        <div class="row">
+                            <textarea rows="3" class="form-control" name="CommentText" id="CommentText" ></textarea>
+                        </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-1">
                         <button onclick="FormComentario(@item.Post.Id)" type="submit" class="btn btn-primary">Comentar</button>
                     </div>
                 </form>
