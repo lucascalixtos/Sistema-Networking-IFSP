@@ -72,7 +72,7 @@ namespace PlataformaNetworking.Controllers
         }
 
         // GET: Usuarios/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        /*public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
             {
@@ -85,19 +85,19 @@ namespace PlataformaNetworking.Controllers
                 return NotFound();
             }
             return View(usuario);
-        }
+        }*/
 
         // POST: Usuarios/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, Usuario model)
+        public async Task<IActionResult> Edit(HomeViewModel model)
         {
-            if (id != model.Id)
+            /*if (id != model.Usuario.Id)
             {
                 return NotFound();
-            }
+            }*/
 
             if (ModelState.IsValid)
             {
@@ -105,14 +105,14 @@ namespace PlataformaNetworking.Controllers
                 {
 
                     //Busca o usuário no contexto
-                    var usuario = await _context.Usuario.FindAsync(id);
+                    var usuario = await _context.Usuario.FindAsync(model.Usuario.Id);
 
                     //Prepara os dados a serem atualizados no banco
-                    usuario.Nome = model.Nome;
-                    usuario.Sobrenome = model.Sobrenome;
+                    usuario.Nome = model.Usuario.Nome;
+                    usuario.Sobrenome = model.Usuario.Sobrenome;
                     //usuario.Curso = model.Curso;
-                    usuario.Email = model.Email;
-                    usuario.DataNascimento = model.DataNascimento;
+                    usuario.Email = model.Usuario.Email;
+                    usuario.DataNascimento = model.Usuario.DataNascimento;
 
                     _context.Update(usuario);
 
@@ -121,7 +121,7 @@ namespace PlataformaNetworking.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!UsuarioExists(model.Id))
+                    if (!UsuarioExists(model.Usuario.Id))
                     {
                         return NotFound();
                     }
@@ -130,7 +130,7 @@ namespace PlataformaNetworking.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction("Perfil");
+                return RedirectToAction("MeuPerfil");
             }
             return View(model);
         }
@@ -269,8 +269,10 @@ namespace PlataformaNetworking.Controllers
         {
            if (HttpContext.Session.GetInt32("id") != null) {
                 Usuario usuarioLogado = _context.Usuario.First(x => x.Id == HttpContext.Session.GetInt32("id"));
-                HomeViewModel usuario = new HomeViewModel();
-                usuario.Usuario = usuarioLogado;
+                HomeViewModel usuario = new HomeViewModel
+                {
+                    Usuario = usuarioLogado
+                };
                 return View(usuario);
             } else {
                 return RedirectToAction("Login");
